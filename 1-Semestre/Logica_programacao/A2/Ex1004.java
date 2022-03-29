@@ -8,7 +8,6 @@ public class Ex1004 {
 	    primeiroNumero = s.nextInt();
 	    segundoNumero = s.nextInt();
 
-		
 		prod = primeiroNumero*segundoNumero;
 		
 		System.out.println("PROD = " + prod);

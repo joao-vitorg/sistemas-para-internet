@@ -8,7 +8,6 @@ public class Ex1003 {
 	    primeiroNumero = s.nextInt();
 	    segundoNumero = s.nextInt();
 
-		
 		soma = primeiroNumero+segundoNumero;
 		
 		System.out.println("SOMA = " + soma);
