@@ -3,17 +3,14 @@ import java.util.Scanner;
 public class Ex05 {
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
-		double horaAula, pagamento;
+		int[] tabela = { 12, 17, 25 };
+		double horaAula;
 		int nivel;
-		
+
 		nivel = s.nextInt();
 		horaAula = s.nextDouble();
-		
-		pagamento = horaAula * ((nivel==1) ? 12 : 
-								(nivel==2) ? 17 : 
-								(nivel==3) ? 25 : 0);
 
-		System.out.printf("O pagamento é de %.2f\n", pagamento);
+		System.out.printf("O pagamento é de %.2f\n", tabela[nivel - 1] * horaAula);
 
 		s.close();
 	}

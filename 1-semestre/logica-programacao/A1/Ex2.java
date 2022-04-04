@@ -1,17 +1,15 @@
 import java.util.Scanner;
 
 public class Ex2 {
-    public static void main(String[] args) {
-        Scanner s = new Scanner(System.in);
-        double pesoUsuario, alturaUsuario, imc;
-        
-        pesoUsuario = s.nextDouble();
-        alturaUsuario = s.nextDouble();
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		double pesoUsuario, alturaUsuario;
 
-        imc = pesoUsuario/(Math.pow(alturaUsuario, 2));
-        
-        System.out.println(imc);
+		pesoUsuario = s.nextDouble();
+		alturaUsuario = s.nextDouble();
 
-        s.close();
-    }
+		System.out.println(pesoUsuario / (Math.pow(alturaUsuario, 2)));
+
+		s.close();
+	}
 }

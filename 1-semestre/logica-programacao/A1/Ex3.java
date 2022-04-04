@@ -1,21 +1,19 @@
 import java.util.Scanner;
 
 public class Ex3 {
-    public static void main(String[] args) {
-        Scanner s = new Scanner(System.in);
-        double baseRetangulo, alturaRetangulo, diagonal, perimetro, area;
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		double baseRetangulo, alturaRetangulo, diagonal;
 
-        baseRetangulo = s.nextDouble();
-        alturaRetangulo = s.nextDouble();
+		baseRetangulo = s.nextDouble();
+		alturaRetangulo = s.nextDouble();
 
-        area = baseRetangulo*alturaRetangulo;
-        perimetro = 2*(baseRetangulo+alturaRetangulo);
-        diagonal = Math.sqrt(Math.pow(baseRetangulo, 2) + Math.pow(alturaRetangulo, 2));
+		diagonal = Math.sqrt(Math.pow(baseRetangulo, 2) + Math.pow(alturaRetangulo, 2));
 
-        System.out.println("AREA = " + area);
-        System.out.println("PERIMETRO = " + perimetro);
-        System.out.println("DIAGONAL = " + diagonal);
+		System.out.println("AREA = " + baseRetangulo * alturaRetangulo);
+		System.out.println("PERIMETRO = " + (2 * (baseRetangulo + alturaRetangulo)));
+		System.out.println("DIAGONAL = " + diagonal);
 
-        s.close();
-    }
+		s.close();
+	}
 }

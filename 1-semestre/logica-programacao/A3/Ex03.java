@@ -5,19 +5,20 @@ public class Ex03 {
 		Scanner s = new Scanner(System.in);
 		int primeiraNota, segundaNota, terceiraNota;
 		double mediaNota;
-		String resposta;
 
 		primeiraNota = s.nextInt();
 		segundaNota = s.nextInt();
 		terceiraNota = s.nextInt();
-		
-		mediaNota = (primeiraNota+segundaNota+terceiraNota)/3.0;
 
-		resposta  = (mediaNota>=7) ? "O aluno foi Aprovado" : 
-					(mediaNota>5) ? "O aluno está de Recuperação" : "O aluno está Reprovado";
+		mediaNota = (primeiraNota + segundaNota + terceiraNota) / 3.0;
 
-		System.out.println(resposta);
-		
+		if (mediaNota >= 7)
+			System.out.println("O aluno foi Aprovado");
+		else if (mediaNota > 5)
+			System.out.println("O aluno está de Recuperação");
+		else
+			System.out.println("O aluno está Reprovado");
+
 		s.close();
 	}
 }
