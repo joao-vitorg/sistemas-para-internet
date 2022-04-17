@@ -3,15 +3,12 @@ import java.util.Scanner;
 public class ERE07 {
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
-		int idade, menorIdade, maiorIdade, acimaTresMil, pessoas;
-		double salario, somaSalario;
+		int idade, menorIdade, maiorIdade, acimaTresMil = 0, pessoas = 0;
+		double salario, somaSalario = 0;
 		char sexo, continuar;
 
 		menorIdade = Integer.MAX_VALUE;
 		maiorIdade = Integer.MIN_VALUE;
-		acimaTresMil = 0;
-		somaSalario = 0;
-		pessoas = 0;
 
 		do {
 			idade = s.nextInt();

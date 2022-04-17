@@ -6,7 +6,9 @@ public class ERE06 {
 	public static void main(String[] args) {
 		int ano;
 
-		for (ano = s.nextInt(); (ano < 1900 || ano > 2022); ano = s.nextInt()) {
+		ano = s.nextInt();
+
+		for (; (ano < 1900 || ano > 2022); ano = s.nextInt()) {
 			System.out.println("Ano invalido");
 		}
 

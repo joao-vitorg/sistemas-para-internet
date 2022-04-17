@@ -6,11 +6,11 @@ public class ERE09 {
 	public static void main(String[] args) {
 		int inicio, fim;
 
-		inicio = s.nextInt() + 1;
+		inicio = s.nextInt();
 		fim = s.nextInt();
 
-		for (; inicio < fim; inicio++) {
-			System.out.println(inicio);
+		for (int i = inicio + 1; i < fim; i++) {
+			System.out.println(i);
 		}
 	}
 }

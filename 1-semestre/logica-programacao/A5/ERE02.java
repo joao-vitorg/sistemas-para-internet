@@ -11,8 +11,8 @@ public class ERE02 {
 
 		inicio += (inicio & 1); // Transforma o número em par com Bitwise
 
-		for (; inicio <= fim; inicio += 2) {
-			System.out.println(inicio);
+		for (int i = inicio; i <= fim; i += 2) {
+			System.out.println(i);
 		}
 	}
 }
