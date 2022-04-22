@@ -42,15 +42,15 @@ ul li a:hover {
 }
 
 ul li:nth-child(1) a:hover {
-	background-image: url("images/html5.png");
+	background-image: url("../images/html5.png");
 }
 
 ul li:nth-child(2) a:hover {
-	background-image: url("images/css3.png");
+	background-image: url("../images/css3.png");
 }
 
 ul li:nth-child(3) a:hover {
-	background-image: url("images/javascript.png");
+	background-image: url("../images/javascript.png");
 }
 
 header {
@@ -132,7 +132,7 @@ main section:nth-child(2) img {
 }
 
 main section:nth-child(2) img:hover {
-	content: url("images/webdesign02.jpg");
+	content: url("../images/webdesign02.jpg");
 }
 
 main h3 {
