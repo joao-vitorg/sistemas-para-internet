@@ -1,5 +1,5 @@
-# CSS - Introdução exercício 2
+## 💅 CSS - Introdução Exercício 2
 
-*	[Situação A](situacao-a/index.html)
-*	[Situação B](situacao-b/index.html)
-*	[Situação C](situacao-c/index.html)
+-   [Situação A](situacao-a)
+-   [Situação B](situacao-b)
+-   [Situação C](situacao-c)

@@ -1,0 +1,16 @@
+## 📄 Website estático - HTML
+
+-   [Esqueleto](esqueleto)
+-   [Meta Tags](meta-tags)
+    -   [Exercício 1](meta-tags/exercicio-1)
+    -   [Exercício 2](meta-tags/exercicio-2)
+-   [Hospedagem](hospedagem)
+-   [Formatação](formatacao)
+-   [Listas e Links](lista-e-links)
+-   [Tabelas](tabelas)
+-   [Formulários](formulario)
+-   [Validação](validacao)
+-   [Layout](layout)
+    -   [Projeto 1](layout/projeto-1)
+    -   [Projeto 2](layout/projeto-2)
+    -   [Projeto 3](layout/projeto-3)
