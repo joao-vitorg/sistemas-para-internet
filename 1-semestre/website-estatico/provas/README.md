@@ -1,4 +1,5 @@
 ## 📗 Website estático - Provas
 
--   [Primeira prova](primeira)
--   [Segunda prova](segunda)
+### [1º prova](primeira)
+
+### [2º prova](segunda)

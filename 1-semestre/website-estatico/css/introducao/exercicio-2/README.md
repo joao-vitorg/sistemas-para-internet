@@ -1,5 +1,7 @@
-## 💅 CSS - Introdução Exercício 2
+## 🌱 Introdução - Exercício 2
 
--   [Situação A](situacao-a)
--   [Situação B](situacao-b)
--   [Situação C](situacao-c)
+### [Situação A](situacao-a)
+
+### [Situação B](situacao-b)
+
+### [Situação C](situacao-c)
