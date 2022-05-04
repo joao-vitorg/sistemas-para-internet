@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Document</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet" />
+		<style>
+			* {
+				margin: 0px;
+			}
+			header ul {
+				background-color: black;
+				text-align: center;
+				list-style: none;
+				padding: 0px;
+			}
+			header ul li {
+				display: inline-block;
+			}
+			header a:link,
+			header a:visited {
+				font-family: "Oswald";
+				text-decoration: none;
+				display: inline-block;
+				color: white;
+				padding: 50px 20px 15px;
+
+				background-repeat: no-repeat;
+				background-position: center 10px;
+				border-bottom: 3px solid black;
+			}
+
+			header a.face {
+				background-image: url("./images/faceBlack.png");
+			}
+			header a.insta {
+				background-image: url("./images/instaBlack.png");
+			}
+			header a.maps {
+				background-image: url("./images/mapsBlack.png");
+			}
+			header a.twitter {
+				background-image: url("./images/twitterBlack.png");
+			}
+			header a.youtube {
+				background-image: url("./images/youtubeBlack.png");
+			}
+
+			header a.face:hover {
+				background-image: url("./images/face.png");
+				color: lightblue;
+				border-bottom: 3px solid lightblue;
+			}
+			header a.insta:hover {
+				background-image: url("./images/insta.png");
+				color: purple;
+				border-bottom: 3px solid purple;
+			}
+			header a.maps:hover {
+				background-image: url("./images/maps.png");
+				color: green;
+				border-bottom: 3px solid green;
+			}
+			header a.twitter:hover {
+				background-image: url("./images/twitter.png");
+				color: yellow;
+				border-bottom: 3px solid yellow;
+			}
+			header a.youtube:hover {
+				background-image: url("./images/youtube.png");
+				color: red;
+				border-bottom: 3px solid red;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header>
+			<nav>
+				<ul>
+					<li><a href="" class="face">Facebook</a></li>
+					<li><a href="" class="insta">Instagram</a></li>
+					<li><a href="" class="maps">Google Maps</a></li>
+					<li><a href="" class="twitter">Twitter</a></li>
+					<li><a href="" class="youtube">Youtube</a></li>
+				</ul>
+			</nav>
+		</header>
+	</body>
+</html>
