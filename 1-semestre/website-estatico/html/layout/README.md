@@ -1,7 +1,7 @@
-## 📄 HTML - Layout projetos
+## ✨ HTML - Layout projetos
 
-### [Projeto 1](projeto-1)
+### [1️⃣ Projeto](projeto-1)
 
-### [Projeto 2](projeto-2)
+### [2️⃣ Projeto](projeto-2)
 
-### [Projeto 3](projeto-3)
+### [3️⃣ Projeto](projeto-3)

@@ -1,5 +1,5 @@
-## 📄 HTML - Meta tags
+## 🏷️ HTML - Meta tags
 
-### [Exercício 1](exercicio-1)
+### [1️⃣ Exercício](exercicio-1)
 
-### [Exercício 2](exercicio-2)
+### [2️⃣ Exercício](exercicio-2)

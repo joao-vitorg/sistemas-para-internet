@@ -1,19 +1,19 @@
 ## 📄 Website estático - HTML
 
-### [Esqueleto](esqueleto)
+### [🦴 Esqueleto](esqueleto)
 
-### [Meta Tags](meta-tags)
+### [🏷️ Meta Tags](meta-tags)
 
-### [Hospedagem](hospedagem)
+### [🖥️ Hospedagem](hospedagem)
 
-### [Formatação](formatacao)
+### [📏 Formatação](formatacao)
 
-### [Listas e Links](lista-e-links)
+### [🔗 Listas e Links](lista-e-links)
 
-### [Tabelas](tabelas)
+### [📌 Tabelas](tabelas)
 
-### [Formulários](formulario)
+### [📋 Formulários](formulario)
 
-### [Validação](validacao)
+### [👍 Validação](validacao)
 
-### [Layout](layout)
+### [✨ Layout](layout)

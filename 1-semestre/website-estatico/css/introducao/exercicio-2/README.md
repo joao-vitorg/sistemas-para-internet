@@ -1,4 +1,4 @@
-## 🌱 Introdução - Exercício 2
+## 2️⃣ Introdução - Exercício 2
 
 ### [Situação A](situacao-a)
 
