@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Document</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet" />
+		<style>
+			* {
+				margin: 0px;
+			}
+			header nav {
+				top: 100px;
+				left: -65px;
+
+				position: fixed;
+				box-sizing: content-box;
+			}
+
+			header nav ul {
+				padding-left: 0%;
+			}
+			header nav li {
+				list-style: none;
+			}
+
+			header nav a:any-link {
+				font-family: "Oswald";
+				text-decoration: none;
+				color: black;
+
+				border-right: black solid 10px;
+				border-top-right-radius: 10px;
+				border-bottom-right-radius: 10px;
+
+				display: block;
+				width: 60px;
+				padding: 10px;
+
+				transition: all 0.5s;
+			}
+			header nav a:hover {
+				padding-left: 100px;
+			}
+
+			header nav li:nth-child(1) a {
+				background-color: lightblue;
+			}
+			header nav li:nth-child(2) a {
+				background-color: yellow;
+			}
+			header nav li:nth-child(3) a {
+				background-color: pink;
+			}
+			header nav li:nth-child(4) a {
+				background-color: lightgreen;
+			}
+			header nav li:nth-child(5) a {
+				background-color: lightcoral;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header>
+			<nav>
+				<ul>
+					<li><a href="">Opção 1</a></li>
+					<li><a href="">Opção 2</a></li>
+					<li><a href="">Opção 3</a></li>
+					<li><a href="">Opção 4</a></li>
+					<li><a href="">Opção 5</a></li>
+				</ul>
+			</nav>
+		</header>
+	</body>
+</html>
