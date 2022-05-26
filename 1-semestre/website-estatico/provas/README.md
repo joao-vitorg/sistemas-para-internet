@@ -1,5 +1,5 @@
 ## 📗 Website estático - Provas
 
-### [🥇 prova](primeira)
+### [🥇 Primeira prova](primeira)
 
-### [🥈 prova](segunda)
+### [🥈 Segunda prova](segunda)
