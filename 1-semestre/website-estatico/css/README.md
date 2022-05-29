@@ -4,6 +4,6 @@
 
 ### [🖼️ Menu com imagem](menu)
 
-### [🗿 Position](position)
+### [🔧 Position fixed](fixed)
 
 ### [✨ Layout](layout)
