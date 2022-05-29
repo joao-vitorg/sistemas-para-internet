@@ -1,0 +1,60 @@
+* {
+	margin: 0px;
+	box-sizing: border-box;
+}
+
+p {
+	border: 1px solid black;
+}
+
+[class^="col"] {
+	float: left;
+	text-align: center;
+}
+
+.container {
+	width: 1000px;
+	margin: auto;
+}
+
+/* Header */
+
+header nav p {
+	background-color: forestgreen;
+	color: white;
+	text-align: center;
+	padding: 20px;
+}
+
+/* Principal info */
+
+main #info {
+	background-color: lightgreen;
+}
+
+main #info p {
+	padding: 10px;
+}
+
+main #info p:nth-of-type(1) {
+	background-color: darkblue;
+	color: white;
+}
+
+main #info p:nth-of-type(2) {
+	background-color: white;
+	text-align: left;
+}
+
+main #info p:nth-of-type(3) {
+	background-color: lightcoral;
+}
+
+/* Rodapé */
+
+footer p {
+	background-color: darkblue;
+	color: white;
+	text-align: center;
+	padding: 20px;
+}
