@@ -1,0 +1,131 @@
+* {
+	margin: 0px;
+	box-sizing: border-box;
+}
+
+body {
+	background-image: url(../image/bgColor.png);
+	margin: 50px;
+}
+
+section {
+	padding: 20px;
+}
+
+img {
+	width: 100%;
+	display: block;
+}
+
+[class^="col"] {
+	float: left;
+	text-align: center;
+}
+
+.container {
+	background-color: white;
+	margin: 20px 0px;
+}
+
+/* Cores */
+
+[class^="bg"] {
+	color: white;
+	padding: 15px;
+}
+
+.bgVerde {
+	background-color: #92ce0a;
+}
+
+.bgAmarelo {
+	background-color: #ffe202;
+}
+.bgVermelho {
+	background-color: red;
+}
+
+.bgAzul {
+	background-color: blue;
+}
+
+.bgLaranja {
+	background-color: orange;
+}
+
+.bgAzulClaro {
+	background-color: #04bacf;
+}
+
+/* Cabeçalho */
+
+header [class^="bg"] {
+	font-size: 30px;
+}
+
+header #images div {
+	padding: 15px;
+}
+
+/* Cabeçalho conheça */
+
+header #conheca h2 {
+	text-align: center;
+	margin: 15px 0px;
+	padding: 20px;
+}
+
+header #conheca p,
+header #conheca h3 {
+	text-align: left;
+	padding: 10px 0px;
+}
+
+/* Principal */
+
+main div {
+	padding: 15px;
+}
+
+main h2 {
+	padding-bottom: 20px;
+	font-weight: normal;
+	font-size: 30px;
+	color: blue;
+	text-align: left;
+}
+
+/* Principal info */
+
+main #info p:last-of-type {
+	padding: 10px 0px;
+}
+
+/* Principal mirim */
+
+main #mirim h2 {
+	padding-left: 15px;
+}
+
+main #mirim p {
+	padding: 20px;
+	font-size: 20px;
+}
+
+/* Principal QA */
+
+main #qa p {
+	text-align: left;
+}
+
+main #qa div {
+	padding: 0px;
+}
+
+main #qa article {
+	padding: 0 20px;
+}
+
+main #qa img {
+	padding-right: 20px;
+}
