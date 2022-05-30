@@ -1,4 +1,4 @@
-## 🥇 Primeira lista - Grid View
+## 🥇 Primeira lista
 
 ### [🏫 IFTM](iftm)
 

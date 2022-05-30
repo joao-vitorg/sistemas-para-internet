@@ -1,4 +1,4 @@
-## 📄 Website estático - HTML
+## 📄 HTML
 
 ### [🦴 Esqueleto](esqueleto)
 
@@ -16,4 +16,4 @@
 
 ### [👍 Validação](validacao)
 
-### [✨ Layout](layout)
+### [✨ Layout projetos](layout)

@@ -110,6 +110,7 @@ main #mirim h2 {
 main #mirim p {
 	padding: 20px;
 	font-size: 20px;
+	text-shadow: 1px 1px 1px black;
 }
 
 /* Principal QA */

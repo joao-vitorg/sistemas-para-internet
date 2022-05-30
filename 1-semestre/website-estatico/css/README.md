@@ -1,4 +1,4 @@
-## 💅 Website Estático - CSS
+## 💅 CSS
 
 ### [🌱 Introdução](introducao)
 
@@ -6,4 +6,6 @@
 
 ### [🔧 Position fixed](fixed)
 
-### [✨ Layout](layout)
+### [✨ Layout simples](simples)
+
+### [⛓️ Grid View](grid-view)

@@ -1,4 +1,4 @@
-## ✨ HTML - Layout projetos
+## ✨ Layout projetos
 
 ### [1️⃣ Projeto](projeto-1)
 

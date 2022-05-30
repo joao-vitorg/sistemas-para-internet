@@ -1,4 +1,4 @@
-## ✨ Layout - Simples
+## ✨ Layout simples
 
 ### [🥇 Primeiro completo](primeiro)
 

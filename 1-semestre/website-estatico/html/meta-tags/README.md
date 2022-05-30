@@ -1,4 +1,4 @@
-## 🏷️ HTML - Meta tags
+## 🏷️ Meta tags
 
 ### [1️⃣ Exercício](exercicio-1)
 

@@ -1,4 +1,4 @@
-## 📗 Website estático - Provas
+## 📗 Provas
 
 ### [🥇 Primeira prova](primeira)
 

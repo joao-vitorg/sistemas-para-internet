@@ -1,4 +1,4 @@
-## 🌱 CSS - Introdução
+## 🌱 Introdução
 
 ### [1️⃣ Exercício](exercicio-1)
 
