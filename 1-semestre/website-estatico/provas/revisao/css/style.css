@@ -1,0 +1,171 @@
+* {
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 1200px;
+    margin: auto;
+}
+
+.flex {
+    display: flex;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+    color: gray;
+    font-size: 18px;
+}
+
+h1 {
+    font-size: 42px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 30px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 15px;
+    color: darkorange;
+}
+
+/* Cabeçalho navegação */
+
+header ul {
+    padding-left: 0px;
+    text-align: right;
+}
+
+header li {
+    display: inline-block;
+    list-style-type: none;
+}
+
+header a:any-link {
+    color: gray;
+    text-decoration: none;
+    display: inline-block;
+    padding: 30px 20px;
+}
+
+/* Principal banner */
+
+main #banner {
+    height: 520px;
+    margin-bottom: 50px;
+}
+
+main #banner > div {
+    width: 100%;
+}
+
+main #banner > div > div {
+    width: 600px;
+}
+
+/* Principal info */
+
+main #info {
+    background-color: darkblue;
+    padding-top: 25px;
+    padding-right: 25px;
+}
+
+main #info > div {
+    margin-left: auto;
+    background-color: white;
+    border: 5px solid darkorange;
+    border-radius: 15px;
+    padding: 40px 30px;
+    text-align: center;
+}
+
+main #info p {
+    line-height: 30px;
+    padding: 20px 0px;
+}
+
+main #botao {
+    justify-content: center;
+}
+
+main #botao a {
+    background-color: darkorange;
+    font-weight: bold;
+    color: white;
+    border-radius: 15px;
+    padding: 10px 20px;
+    margin: 10px;
+    text-decoration: none;
+}
+
+main #botao a:hover {
+    background-color: lightsalmon;
+}
+
+/* Principal tablet */
+
+main #tablet {
+    background-color: darkorange;
+    margin-right: auto;
+    padding-left: 20px;
+}
+
+/* Principal notebook */
+
+main #notebook {
+    padding-top: 50px;
+    text-align: center;
+}
+
+main #notebook p {
+    padding: 20px 0px;
+}
+
+/* principal lighthouse */
+
+main #lighthouse {
+    width: 1000px;
+    margin: auto;
+    padding: 50px 0px;
+}
+
+main #lighthouse h2 {
+    margin-bottom: 50px;
+}
+
+main #lighthouse img {
+    width: 100%;
+    padding-right: 50px;
+}
+
+main #lighthouse li {
+    color: gray;
+    line-height: 40px;
+}
+
+main #lighthouse > div > div {
+    width: 50%;
+}
+
+/* Rodapé */
+
+footer {
+    padding-top: 50px;
+}
+
+footer p {
+    background-color: darkorange;
+    color: white;
+    padding: 50px;
+    text-align: center;
+}
