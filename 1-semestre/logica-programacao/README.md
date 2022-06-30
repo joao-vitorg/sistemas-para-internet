@@ -4,12 +4,20 @@ Logica de programação com **Java**.
 
 ### Estruturas sequenciais
 
--   [A2](A2)
+- [A1](A1)
 
 ### Estruturas condicionais
 
--   [A4](A4)
+- [A2](A2)
 
 ### Estruturas de repetição
 
--   [A6](A6)
+- [A3](A3)
+
+### Exercícios sobre vetores
+
+- [A4](A4)
+
+### Exercícios sobre matriz
+
+- [A5](A5)
