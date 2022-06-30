@@ -1,0 +1,145 @@
+* {
+	margin: 0px;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+	width: 1200px;
+	margin: auto;
+}
+
+[class^="col-"] {
+	float: left;
+}
+
+/* Cabeçalho */
+
+header p {
+	color: darkred;
+	font-weight: bold;
+	text-align: center;
+	font-size: 18px;
+}
+
+/* Cabeçalho nav */
+
+header nav {
+	position: fixed;
+	width: 100%;
+	background-color: rgba(255, 140, 0, 0.95);
+	text-align: right;
+}
+
+header ul {
+	padding-left: 0px;
+}
+
+header li {
+	list-style: none;
+	display: inline-block;
+}
+
+header a:any-link {
+	padding: 25px;
+	text-decoration: none;
+	display: inline-block;
+	color: white;
+	border-top: 3px solid rgba(255, 140, 0, 0.95);
+	border-bottom: 3px solid rgba(255, 140, 0, 0.95);
+}
+
+header a:hover {
+	background-color: white;
+	color: darkorange;
+	border-color: darkblue;
+}
+
+header section {
+	background-color: darkblue;
+	padding: 90px 0px 20px;
+}
+
+/* Cabeçalho titulo */
+
+header section div {
+	background-color: white;
+	border: 5px solid darkorange;
+	border-radius: 30px;
+	padding: 40px 160px;
+}
+
+header h1 {
+	text-align: center;
+	font-size: 45px;
+	padding-bottom: 20px;
+}
+
+header img {
+	width: 100%;
+}
+
+/* Principal */
+
+main section {
+	padding: 50px 0px;
+}
+
+main p {
+	text-align: justify;
+	line-height: 1.5em;
+}
+
+main h2 {
+	font-size: 30px;
+}
+
+/* Principal portfolio */
+
+main #portfolio article {
+	padding: 20px;
+}
+
+main #portfolio div {
+	padding: 20px 0px;
+	text-align: center;
+}
+
+main #portfolio div:first-of-type {
+	padding-left: 0px;
+}
+
+main #portfolio div:last-of-type {
+	padding-right: 0px;
+}
+
+main #portfolio summary {
+	padding-top: 20px;
+	color: darkorange;
+	font-weight: bold;
+}
+
+main #portfolio details p {
+	padding-top: 20px;
+}
+
+/* Principal artigos */
+
+main #artigos p {
+	padding: 20px 0px;
+}
+
+/* Rodapé */
+
+footer {
+	background-color: darkred;
+	text-align: center;
+	padding: 50px;
+}
+
+footer p {
+	color: white;
+}

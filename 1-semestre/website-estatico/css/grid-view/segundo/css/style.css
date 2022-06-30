@@ -63,8 +63,21 @@ header [class^="bg"] {
 	font-size: 30px;
 }
 
+/* Cabeçalho images */
+
 header #images div {
 	padding: 15px;
+}
+
+header #images a:any-link {
+	display: inline-block;
+	text-decoration: none;
+	width: 100%;
+	transition: all 0.5s;
+}
+
+header #images a:hover {
+	text-shadow: 5px 5px 5px black;
 }
 
 /* Cabeçalho conheça */

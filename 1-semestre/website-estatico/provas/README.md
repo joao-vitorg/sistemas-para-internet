@@ -1,7 +1,7 @@
 ## 📗 Provas
 
-### [🥇 Primeira prova](primeira)
+### [1️⃣ Primeira prova](primeira)
 
-### [🥈 Segunda prova](segunda)
+### [2️⃣ Segunda prova](segunda)
 
-### [⚽ Revisão prova](revisao)
+### [3️⃣ Terceira prova](terceira)
