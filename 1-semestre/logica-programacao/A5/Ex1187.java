@@ -1,9 +1,10 @@
 import java.util.Scanner;
 
-public class Main {
+public class Ex1187 {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-        double soma = 0, matriz[][] = new double[12][12];
+        double soma = 0;
+        double[][] matriz = new double[12][12];
 
         char t = s.next().charAt(0);
 
