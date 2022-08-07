@@ -1,4 +1,4 @@
-## 💬 Diálogo - 2 Semestre
+## 💬 Diálogo - JavaScript Básico
 
 ### [EXERCÍCIO 1](index1.html)
 

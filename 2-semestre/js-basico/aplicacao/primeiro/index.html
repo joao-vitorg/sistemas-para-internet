@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport" />
+        <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            const nome = prompt("Digite seu nome").trim()
+
+            document.write(`<p>Seu nome possui ${nome.length} caracteres</p>`)
+            document.write(`<p>A primeira letra do seu nome é ${nome.charAt(0)}</p>`)
+            document.write(`<p>Seu nome convertido para letras maiúsculas: ${nome.toUpperCase()}</p>`)
+            document.write(`<p>Seu nome possui ${nome.split(" ").length} palavras</p>`)
+            document.write(`<p>Seu nome <span style=color:red>${nome}</span> na cor vermelha</span>`)
+            document.write(`<p>Seu nome escrito 5 vezes na cor azul:</p>`)
+
+            document.writeln(`<ul>`)
+            for (let i = 0; i < 5; i++) {
+                document.write(`<li style=color:blue>${nome}</li>`)
+            }
+            document.writeln(`</ul>`)
+        </script>
+    </body>
+</html>
