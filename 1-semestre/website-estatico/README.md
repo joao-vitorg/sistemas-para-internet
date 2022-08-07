@@ -14,4 +14,4 @@ Exercícios de introdução ao **HTML**.
 
 ### [🪟 Trabalho final](https://github.com/joao-vitorg/windows-css)
 
-Windows XP funcional feito com CSS e HTML. 
+Windows XP funcional feito com **CSS** e **HTML**. 
