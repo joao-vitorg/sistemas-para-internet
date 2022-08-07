@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Document</title>
+    <script>
+        const notaPrimeiro = prompt("Nota do 1° bimestre?");
+        const notaSegundo = prompt("Nota do 2° bimestre?");
+        const nota = +notaPrimeiro + +notaSegundo;
+
+        if (nota >= 60) {
+            alert(`Você FOI aprovado!`);
+        } else {
+            alert(`Você NÃO FOI aprovado! Faltam ${60 - nota} pontos para você passar`);
+        }
+    </script>
+</head>
+
+<body>
+</body>
+</html>
