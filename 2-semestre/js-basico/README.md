@@ -2,6 +2,8 @@
 
 ### [💬 Diálogo](dialogo)
 
+### [📱 Aplicação](aplicacao)
+
 ### [📜 String](string)
 
-### [📱 Aplicação](aplicacao)
+### [🧮 Números aleatórios e arrays](numeros_aleatorios)
