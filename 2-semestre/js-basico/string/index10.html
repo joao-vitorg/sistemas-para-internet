@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport" />
+        <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+        <title>Document</title>
+    </head>
+
+    <body>
+        <script>
+            const n = prompt("Digite o um número positivo maior que 2")
+
+            document.write(`
+                <table border="1">
+                    <tr>
+                        <th>Base decimal</th>
+                        <th>Base binária</th>
+                        <th>Base hexadecimal</th>
+                    </tr>`)
+
+            for (let i = 0; i <= n; i++) {
+                document.write(`
+                    <tr>
+                        <td style="text-align: center">${i}</td>
+                        <td style="text-align: center">${i.toString(2)}</td>
+                        <td style="text-align: center">${i.toString(16)}</td>
+                    </tr>`)
+            }
+
+            document.write(`</table>`)
+        </script>
+    </body>
+</html>

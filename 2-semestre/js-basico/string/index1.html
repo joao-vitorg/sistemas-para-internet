@@ -1,0 +1,18 @@
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <title></title>
+        <script type="text/javascript">
+            const nome = prompt("Qual o seu nome?")
+            const sobrenome = prompt("Qual o seu sobrenome?")
+            const n = prompt("Quantas vezes?")
+            const cor = prompt("Digite a cor (inglês)?")
+
+            for (let i = 1; i <= n; i++) {
+                document.write(`<p style="color: ${i % 2 === 0 ? cor : "black"}">${i} - ${nome} ${sobrenome}</p>`)
+            }
+        </script>
+    </head>
+
+    <body></body>
+</html>
