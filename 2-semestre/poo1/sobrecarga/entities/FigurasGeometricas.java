@@ -1,12 +1,7 @@
 package entities;
 
 public class FigurasGeometricas {
-    private double lado;
-    private double base;
-    private double altura;
-    private double xc;
-    private double yc;
-    private double raio;
+    private double lado, base, altura, xc, yc, raio;
 
     public FigurasGeometricas(double lado) {
         this.lado = lado;

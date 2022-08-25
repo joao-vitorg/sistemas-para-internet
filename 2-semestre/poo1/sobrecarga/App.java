@@ -2,8 +2,8 @@ import entities.FigurasGeometricas;
 
 import java.util.Scanner;
 
-public class Application {
-    private static Scanner s = new Scanner(System.in);
+public class App {
+    private static final Scanner s = new Scanner(System.in);
 
     public static void main(String[] args) {
         while (true) {
@@ -11,10 +11,10 @@ public class Application {
             System.out.println("2 - Triângulo");
             System.out.println("3 - Quadrado");
             System.out.println("4 - Sair");
-
             System.out.print("DIGITE A OPÇÃO: ");
             int op = s.nextInt();
 
+            System.out.println();
             if (op == 1) circulo();
             else if (op == 2) triangulo();
             else if (op == 3) quadrado();
@@ -23,7 +23,7 @@ public class Application {
     }
 
     private static void circulo() {
-        System.out.print("\nDigite o xc: ");
+        System.out.print("Digite o xc: ");
         double xc = s.nextDouble();
 
         System.out.print("Digite o yc: ");
@@ -32,14 +32,12 @@ public class Application {
         System.out.print("Digite a raio: ");
         double raio = s.nextDouble();
 
-        FigurasGeometricas figura;
-        figura = new FigurasGeometricas(xc, yc, raio);
-
+        FigurasGeometricas figura = new FigurasGeometricas(xc, yc, raio);
         figura.exibeCirculo();
     }
 
     private static void triangulo() {
-        System.out.print("\nDigite a base: ");
+        System.out.print("Digite a base: ");
         double base = s.nextDouble();
 
         System.out.print("Digite a altura: ");
@@ -50,7 +48,7 @@ public class Application {
     }
 
     private static void quadrado() {
-        System.out.print("\nDigite a largura: ");
+        System.out.print("Digite a largura: ");
         double largura = s.nextDouble();
 
         FigurasGeometricas figura = new FigurasGeometricas(largura);
