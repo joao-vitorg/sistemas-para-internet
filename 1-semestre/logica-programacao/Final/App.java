@@ -1,15 +1,13 @@
-package Final;
-
-import Final.entities.Cliente;
+import entities.Cliente;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.OptionalDouble;
 import java.util.Scanner;
 
-import static Final.entities.Cliente.precos;
+import static entities.Cliente.precos;
 
-public class Main {
+public class App {
     private static final Scanner sc = new Scanner(System.in);
     private static final List<Cliente> clientes = new ArrayList<>();
 
@@ -75,29 +73,34 @@ public class Main {
     }
 
     private static void ReceitaTotal() {
-        System.out.printf("A receita total: %.2f\n", clientes.stream().mapToDouble(Cliente::ValorDaConta).sum());
+        System.out.printf("A receita total: %.2f\n", clientes.stream()
+                .mapToDouble(Cliente::ValorDaConta)
+                .sum());
     }
 
     private static void ContaMaisBarata() {
         System.out.println("Conta foi mais barata:");
-        clientes.stream().reduce((c, c2) -> c.ValorDaConta() < c2.ValorDaConta() ? c : c2).ifPresent(System.out::println);
+        clientes.stream()
+                .reduce((c, c2) -> c.ValorDaConta() < c2.ValorDaConta() ? c : c2)
+                .ifPresent(System.out::println);
     }
 
     private static void ConsumoMedioTipo1() {
-        OptionalDouble average = clientes.stream().filter(cliente -> cliente.tipo() == 1).mapToDouble(Cliente::minutos).average();
-
+        OptionalDouble average = clientes.stream()
+                .filter(cliente -> cliente.tipo() == 1)
+                .mapToDouble(Cliente::minutos).average();
         System.out.printf("Consumo medio de clientes tipo 1: %.2f\n", (average.isPresent() ? average.getAsDouble() : 0));
     }
 
     private static void ClientesAcima120Minutos() {
         System.out.println("Clientes que consumiram acima de 120 pulsos:");
-
-        clientes.stream().filter(cliente -> cliente.minutos() > 120).forEach(System.out::println);
+        clientes.stream()
+                .filter(cliente -> cliente.minutos() > 120)
+                .forEach(System.out::println);
     }
 
     private static void PorcentagemClientes2() {
         long porcentagem = clientes.stream().filter(cliente -> cliente.tipo() == 2).count();
-
         System.out.printf("Porcentagem de clientes tipo 2: %.2f%%\n", (100.0 * porcentagem) / clientes.size());
     }
 }

@@ -1,4 +1,4 @@
-package Final.entities;
+package entities;
 
 public record Cliente(String nome, String telefone, int tipo, int minutos) {
     public static final double[][] precos = new double[3][2];
