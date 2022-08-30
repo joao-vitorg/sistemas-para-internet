@@ -9,6 +9,8 @@
       <sourceFolder url="file://$MODULE_DIR$/1-semestre/logica-programacao/A4" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/1-semestre/logica-programacao/A5" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/1-semestre/logica-programacao/Final" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2-semestre/poo1/encapsulamento" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2-semestre/poo1/sobrecarga" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

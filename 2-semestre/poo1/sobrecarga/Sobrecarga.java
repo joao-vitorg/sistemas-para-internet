@@ -2,7 +2,7 @@ import entities.FigurasGeometricas;
 
 import java.util.Scanner;
 
-public class App {
+public class Sobrecarga {
     private static final Scanner s = new Scanner(System.in);
 
     public static void main(String[] args) {
