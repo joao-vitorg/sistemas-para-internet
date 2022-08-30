@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Title</title>
+    </head>
+
+    <body>
+        <script>
+            const n1 = parseFloat(prompt("Digite o 1º valor"))
+            const n2 = parseFloat(prompt("Digite o 2º valor"))
+            const op = prompt("Digite o operador (+, -, * ou /)")
+
+            const calc = {
+                "+": (a, b) => a + b,
+                "-": (a, b) => a - b,
+                "*": (a, b) => a * b,
+                "/": (a, b) => a / b,
+            }[op](n1, n2)
+
+            document.write(calc)
+        </script>
+    </body>
+</html>

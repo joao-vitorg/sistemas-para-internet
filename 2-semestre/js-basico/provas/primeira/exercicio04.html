@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Title</title>
+    </head>
+
+    <body>
+        <script>
+            const candidatos = [
+                { numero: 1, nome: "Jair Bolsonaro", partido: "PL" },
+                { numero: 2, nome: "Luiz Inácio Lula da Silva", partido: "PT" },
+                { numero: 3, nome: "Ciro Gomes", partido: "PDT" },
+                { numero: 4, nome: "Simone Tebet", partido: "MDB" },
+            ]
+
+            const vencedores = [candidatos.splice(Math.floor(Math.random() * 4), 1)[0], candidatos.splice(Math.floor(Math.random() * 3), 1)[0]]
+
+            vencedores[0]["porcentagem"] = (Math.random() * 100).toFixed(2)
+            vencedores[1]["porcentagem"] = (100 - vencedores[0]["porcentagem"]).toFixed(2)
+
+            for (let v of vencedores) {
+                document.write(`<div style="display: flex; margin-bottom: 20px">
+                                        <img src="img/candidato${v["numero"]}.png"/>
+                                        <div>
+                                            <p>${v["nome"]}</p>
+                                            <p>Partido (${v["partido"]})</p>
+                                            <p>Resultado: ${v["porcentagem"]}%</p>
+                                        </div>
+                                    </div>`)
+            }
+
+            const vencedor = vencedores[0]["porcentagem"] > vencedores[1]["porcentagem"] ? vencedores[0] : vencedores[1]
+
+            document.write(`<p style="font-weight: bold;font-size: 30px">Candidato(a) vencedor(a): ${vencedor["nome"].toUpperCase()} (${vencedor["porcentagem"]}%)</p>`)
+        </script>
+    </body>
+</html>

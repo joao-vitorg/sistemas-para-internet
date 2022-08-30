@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Title</title>
+    </head>
+
+    <body>
+        <script>
+            const text = prompt("Informe um texto qualquer").split(" ")
+            const palavra = prompt("Informe a palavra a ser encontrada").toLowerCase()
+            let count = 0
+
+            for (let t of text) {
+                if (t.toLocaleLowerCase() === palavra) {
+                    document.write(`<p>${t}</p>`)
+                    count++
+                }
+            }
+
+            document.write(`<p>Número de ocorrências ${count}</p>`)
+        </script>
+    </body>
+</html>

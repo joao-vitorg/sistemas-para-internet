@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Title</title>
+    </head>
+
+    <body>
+        <script>
+            const text = prompt("Informe um texto qualquer")
+            const op = parseInt(prompt("Que configuração você quer aplicar\n(1) itálico, (2) negrito ou (3) sublinhado:"))
+
+            const style = ["font-style: italic", "font-weight: bold", "text-decoration: underline"][op - 1]
+
+            document.write(`<p style="${style};">${text}</p>`)
+        </script>
+    </body>
+</html>
