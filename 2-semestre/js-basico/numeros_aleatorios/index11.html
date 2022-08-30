@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            let cartas = [...Array(26).keys()]
+
+            document.write(`<h1 style="text-align:center;">JOGUE TRUCO</h1>`)
+
+            for (let i = 0; i < 4; i++) {
+                document.write(`<div style="display:flex; gap:20px; margin:20px">`)
+                document.write(`<p style="font-size:30px;font-weight: bold;">Cartas do jogador ${i + 1}:</p>`)
+
+                for (let i = 0; i < 3; i++) {
+                    const rand = Math.floor(Math.random() * cartas.length)
+                    document.write(`<img src="cartas/carta${+cartas.splice(rand, 1) + 1}.png" />`)
+                }
+
+                document.write(`</div>`)
+            }
+        </script>
+    </body>
+</html>

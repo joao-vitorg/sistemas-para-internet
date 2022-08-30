@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            const joquempo = ["pedra", "papel", "tesoura"]
+            const logica = [
+                [0, 1, 2],
+                [2, 0, 1],
+                [1, 2, 0],
+            ]
+
+            const player1 = Math.floor(Math.random() * 3)
+            const player2 = Math.floor(Math.random() * 3)
+
+            const resultado = ["EMPATA", "PERDE", "GANHA"][logica[player1][player2]]
+
+            document.write(`<img src="joquempo/${joquempo[player1]}.png" width="200" />`)
+            document.write(`<img src="joquempo/${joquempo[player2]}.png" width="200" />`)
+
+            document.write(`<p>${joquempo[player1]} ${resultado} de ${joquempo[player2]}</p>`)
+        </script>
+    </body>
+</html>
