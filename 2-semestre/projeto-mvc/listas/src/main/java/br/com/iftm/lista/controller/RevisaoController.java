@@ -1,6 +1,6 @@
-package com.example.primeira.controller;
+package br.com.iftm.lista.controller;
 
-import com.example.primeira.model.Pessoa;
+import br.com.iftm.lista.model.Pessoa;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,4 +1,4 @@
-package com.example.primeira.controller;
+package br.com.iftm.lista.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

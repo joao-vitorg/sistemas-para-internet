@@ -1,13 +1,13 @@
-package com.example.primeira;
+package br.com.iftm.lista;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PrimeiraApplication {
+public class ListaApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(PrimeiraApplication.class, args);
+        SpringApplication.run(ListaApplication.class, args);
     }
 
 }

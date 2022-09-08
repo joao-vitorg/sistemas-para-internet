@@ -8,14 +8,16 @@
         <version>2.7.3</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.example</groupId>
-    <artifactId>primeira</artifactId>
+
+    <groupId>br.com.iftm</groupId>
+    <artifactId>lista</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>primeira</name>
-    <description>primeira</description>
+    <name>lista</name>
+    <description>lista</description>
     <properties>
         <java.version>17</java.version>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -25,11 +27,9 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
         </dependency>
     </dependencies>
 
@@ -41,5 +41,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

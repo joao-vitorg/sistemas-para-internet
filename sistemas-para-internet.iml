@@ -9,10 +9,10 @@
       <sourceFolder url="file://$MODULE_DIR$/1-semestre/logica-programacao/A4" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/1-semestre/logica-programacao/A5" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/1-semestre/logica-programacao/Final" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/2-semestre/algoritimos/strings/replit" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/2-semestre/poo1/encapsulamento" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/2-semestre/poo1/generico" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/2-semestre/poo1/sobrecarga" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2-semestre/algoritimos/linguagem/strings/replit" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2-semestre/poo1/linguagem/encapsulamento" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2-semestre/poo1/linguagem/generico" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2-semestre/poo1/linguagem/sobrecarga" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
