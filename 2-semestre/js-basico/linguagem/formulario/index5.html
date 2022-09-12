@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport" />
+        <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+        <title>Document</title>
+        <script>
+            function nota() {
+                const element = (t) => parseFloat(document.getElementById(t).value)
+                const nota = element("nota1") + element("nota2")
+
+                alert(nota >= 60 ? `Aprovado com ${nota} pontos` : `Reprovado faltando ${60 - nota} pontos`)
+            }
+        </script>
+    </head>
+
+    <body>
+        <form>
+            <label for="nota1">Nota (1º bimestre): </label>
+            <input id="nota1" name="" type="text" />
+            <br />
+            <label for="nota2">Nota (2º bimestre): </label>
+            <input id="nota2" name="" type="text" />
+            <br />
+            <input onclick="nota()" type="button" value="Resultado" />
+        </form>
+    </body>
+</html>

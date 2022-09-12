@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport" />
+        <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+        <title>Document</title>
+        <script>
+            function exibir() {
+                alert(document.getElementById("nome").value.toUpperCase())
+            }
+        </script>
+    </head>
+
+    <body>
+        <form>
+            <label for="nome">Nome: </label>
+            <input id="nome" name="" type="text" />
+            <input onClick="exibir()" type="button" value="Exibir" />
+        </form>
+    </body>
+</html>

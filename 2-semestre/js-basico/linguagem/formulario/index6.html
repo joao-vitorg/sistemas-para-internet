@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport" />
+        <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+        <title>Document</title>
+        <script>
+            function calcula(op) {
+                const element = (t) => parseFloat(document.getElementById(t).value)
+                const n1 = element("valor1")
+                const n2 = element("valor2")
+
+                if (isNaN(n1) || isNaN(n2)) return
+
+                if (op === "/" && n2 === 0) {
+                    alert("Divisão por zero")
+                    return
+                }
+
+                document.getElementById("resultado").value = {
+                    "+": (a, b) => a + b,
+                    "-": (a, b) => a - b,
+                    "*": (a, b) => a * b,
+                    "/": (a, b) => a / b,
+                }[op](n1, n2)
+            }
+        </script>
+    </head>
+
+    <body>
+        <form>
+            <p style="font-weight: bold; margin: 0">Calculadora</p>
+            <label for="valor1">1º valor: </label>
+            <input id="valor1" name="" size="10" type="text" />
+            <br />
+            <label for="valor2">2º valor: </label>
+            <input id="valor2" name="" size="10" type="text" />
+            <br />
+            <input onclick="calcula('+')" type="button" value="+" />
+            <input onclick="calcula('-')" type="button" value="-" />
+            <input onclick="calcula('*')" type="button" value="*" />
+            <input onclick="calcula('/')" type="button" value="/" />
+            <br />
+            <label for="resultado">Resultado: </label>
+            <input id="resultado" name="" size="8" type="text" />
+        </form>
+    </body>
+</html>
