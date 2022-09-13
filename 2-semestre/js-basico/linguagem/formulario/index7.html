@@ -5,20 +5,32 @@
         <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport" />
         <meta content="ie=edge" http-equiv="X-UA-Compatible" />
         <title>Document</title>
-        <link href="style.css" rel="stylesheet" />
-        <script>
-            function login() {
-                const element = (t) => parseFloat(document.getElementById(t).value)
-                const n1 = element("valor1")
-                const n2 = element("valor2")
+        <style>
+            * {
+                margin: 0;
+                box-sizing: border-box;
+            }
 
-                if (login)
-                    document.getElementById("resultado").value = {
-                        "+": (a, b) => a + b,
-                        "-": (a, b) => a - b,
-                        "*": (a, b) => a * b,
-                        "/": (a, b) => a / b,
-                    }[op](n1, n2)
+            th {
+                font-size: 24px;
+                color: blue;
+                font-family: Verdana, sans-serif;
+            }
+        </style>
+        <script>
+            const element = (t) => document.getElementById(t)
+            const value = (t) => element(t).value
+
+            function validar() {
+                if (!value("login")) {
+                    alert("Login invalido")
+                } else if (!value("senha") || value("senha") !== value("confSenha")) {
+                    alert("Senha invalida")
+                    element("senha").value = ""
+                    element("confSenha").value = ""
+                } else {
+                    alert("SEJA BEM VINDO")
+                }
             }
         </script>
     </head>
@@ -45,7 +57,7 @@
                 </tr>
                 <tr>
                     <td align="center" colspan="3">
-                        <input onclick="login()" type="button" value="Entrar" />
+                        <input onclick="validar()" type="button" value="Entrar" />
                         <button type="reset">Limpar</button>
                     </td>
                 </tr>
