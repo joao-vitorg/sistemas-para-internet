@@ -6,6 +6,6 @@
     </head>
 
     <body>
-        <p th:text="|${n1} - ${n2} - ${n3} - ${n4} - ${n5} - ${n6}|"></p>
+        <p th:each=" n : ${numeros}" th:text="${n}"></p>
     </body>
 </html>

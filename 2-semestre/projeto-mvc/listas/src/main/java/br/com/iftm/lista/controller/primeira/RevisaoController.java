@@ -1,4 +1,4 @@
-package br.com.iftm.lista.controller;
+package br.com.iftm.lista.controller.primeira;
 
 import br.com.iftm.lista.model.Pessoa;
 import org.springframework.stereotype.Controller;
@@ -13,7 +13,7 @@ public class RevisaoController {
         Pessoa pessoa = new Pessoa("João vitor");
         model.addAttribute("name", pessoa);
         model.addAttribute("outroname", "ifts");
-        return "revisao";
+        return "primeira/revisao";
     }
 
 }
