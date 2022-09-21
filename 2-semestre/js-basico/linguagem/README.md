@@ -7,3 +7,5 @@
 ### [🧮 Números aleatórios e arrays](numeros_aleatorios)
 
 ### [☑️ Formulário](formulario)
+
+### [🎫 Eventos](eventos)

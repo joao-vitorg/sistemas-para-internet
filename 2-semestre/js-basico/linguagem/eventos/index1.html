@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+            name="viewport"
+        />
+        <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+        <title>Title</title>
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+        </style>
+        <script>
+            const element = (v) => document.getElementById(v)
+
+            let personagem, mensagem
+
+            const estados = [
+                ["Pensativo", "zzzzzzzzzz!!!"],
+                ["Assustado", "O que você quer?"],
+                ["Nervoso", "Não me aperte!!!"],
+                ["Alegre", ""],
+            ]
+
+            function carregar() {
+                personagem = element("personagem")
+                mensagem = element("mensagem")
+
+                alterarImagem(0)
+            }
+
+            function alterarImagem(i, msg) {
+                personagem.src = `personagens/${estados[i][0]}.png`
+                mensagem.innerHTML = msg || estados[i][1]
+            }
+
+            function alegre() {
+                alterarImagem(3, `${prompt("Qual é o seu nome?")}, vamos brincar?`)
+            }
+        </script>
+    </head>
+
+    <body onload="carregar()">
+        <img
+            alt=""
+            id="personagem"
+            onmousedown="alterarImagem(2)"
+            onmouseleave="alterarImagem(0)"
+            onmouseover="alterarImagem(1)"
+            onmouseup="alegre()"
+            src=""
+        />
+        <p id="mensagem"></p>
+    </body>
+</html>

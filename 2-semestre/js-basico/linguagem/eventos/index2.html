@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+            name="viewport"
+        />
+        <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+        <title>Title</title>
+        <link href="style.css" rel="stylesheet" />
+        <script>
+            const element = (v) => document.getElementById(v)
+            const candidatoList = (i) => element(`candidato${i}`).classList
+
+            const votos = [0, 0, 0, 0]
+            let CPFs = []
+
+            function votar(op) {
+                if (!validarCPF()) {
+                    alert("CPF ERRADO!!!")
+                    return
+                }
+
+                element(`voto${op}`).innerText = (++votos[op]).toString()
+
+                const max = Math.max(...votos)
+                votos.map((v, i) =>
+                    v === max ? candidatoList(i).add("vencedor") : candidatoList(i).remove("vencedor")
+                )
+            }
+
+            function validarCPF() {
+                const cpf = parseInt(prompt("Digite o seu CPF"))
+
+                if (!cpf || CPFs.includes(cpf)) return false
+
+                CPFs.push(cpf)
+                return true
+            }
+        </script>
+    </head>
+
+    <body>
+        <div>
+            <h2>Candidato 1</h2>
+            <div class="box" id="candidato0" onclick="votar(0)">
+                <p>Mickey</p>
+                <img alt="" src="candidatos/candidato1.jpg" />
+                <p>Número de votos: <span class="voto" id="voto0">0</span></p>
+            </div>
+        </div>
+
+        <div>
+            <h2>Candidato 2</h2>
+            <div class="box" id="candidato1" onclick="votar(1)">
+                <p>Minnie</p>
+                <img alt="" src="candidatos/candidato2.jpg" />
+                <p>Número de votos: <span class="voto" id="voto1">0</span></p>
+            </div>
+        </div>
+
+        <div>
+            <h2>Candidato 3</h2>
+            <div class="box" id="candidato2" onclick="votar(2)">
+                <p>Pluto</p>
+                <img alt="" src="candidatos/candidato4.jpg" />
+                <p>Número de votos: <span class="voto" id="voto2">0</span></p>
+            </div>
+        </div>
+
+        <div>
+            <h2>Candidato 4</h2>
+            <div class="box" id="candidato3" onclick="votar(3)">
+                <p>Pateta</p>
+                <img alt="" src="candidatos/candidato3.jpg" />
+                <p>Número de votos: <span class="voto" id="voto3">0</span></p>
+            </div>
+        </div>
+    </body>
+</html>
