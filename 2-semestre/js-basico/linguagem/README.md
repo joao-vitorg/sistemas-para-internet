@@ -6,4 +6,4 @@
 
 ### [🧮 Números aleatórios e arrays](numeros_aleatorios)
 
-### [☑️ Formulario](formulario)
+### [☑️ Formulário](formulario)

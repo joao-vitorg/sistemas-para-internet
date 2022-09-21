@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport"/>
+    <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet">
+    <script>
+        const element = (v) => document.getElementById(v)
+        const elementErro = (v) => element(`${v.id}Erro`)
+        const limpaErros = () => Array.from(document.getElementsByClassName("erro")).map((v) => v.remove())
+
+        let inputs, selects, radios
+
+        function adicionaVerificacao() {
+            inputs = Array.from(document.querySelectorAll("input:not([type='button']):not([type='radio']), textarea"))
+            selects = Array.from(document.getElementsByTagName("select"))
+            radios = Array.from(document.getElementsByClassName("radioBox"))
+
+            inputs
+                .concat(selects)
+                .concat(radios)
+                .map((v) =>
+                    v.addEventListener("change", () => {
+                        if (elementErro(v)) elementErro(v).remove()
+                    })
+                )
+        }
+
+        function verificar() {
+            // Verifica inputs
+            inputs
+                .filter((v) => !v.value)
+                .concat(
+                    selects.filter((v) => v.selectedIndex === 0) // Verifica selects
+                )
+                .concat(
+                    radios.filter((v) => !document.querySelector(`input[name=${v.id}]:checked`)) // Verifica radios
+                )
+                .filter((v) => !elementErro(v))
+                .map((v) => v.insertAdjacentHTML("afterend", `<p class='erro' id="${v.id}Erro">Valor errado</p>`))
+        }
+    </script>
+</head>
+
+<body onload="adicionaVerificacao()">
+<form class="container">
+    <label for="nome">Nome:</label>
+    <input id="nome" type="text"/>
+
+    <label for="endereco">Endereço:</label>
+    <input id="endereco" type="text"/>
+
+    <label for="telefone">Telefone: </label>
+    <input id="telefone" type="tel"/>
+
+    <label for="idade">Idade </label>
+    <input id="idade" type="number"/>
+
+    <label for="email">E-mail:</label>
+    <input id="email" type="email"/>
+
+    <div class="box radioBox" id="genero">
+        <p>Genero:</p>
+        <label for="masculino">Masculino <input id="masculino" name="genero" type="radio"/></label>
+        <label for="feminino">Feminino <input id="feminino" name="genero" type="radio"/></label>
+    </div>
+
+    <label for="estadoCivil">Estado civil: </label>
+    <select id="estadoCivil" name="">
+        <option value="Selecione">Selecione</option>
+        <option value="Solteiro(a)">Solteiro(a)</option>
+        <option value="Casado(a)">Casado(a)</option>
+        <option value="Divorciado(a)">Divorciado(a)</option>
+    </select>
+
+    <label for="comentario"></label><textarea id="comentario" placeholder="Sugestões, elogios ou comentários"
+                                              rows="10"></textarea>
+
+    <div style="display: flex; margin-top: 20px; gap: 50px">
+        <input onclick="verificar()" type="button" value="Cadastrar"/>
+        <button onclick="limpaErros()" type="reset">Limpar</button>
+    </div>
+</form>
+</body>
+</html>
