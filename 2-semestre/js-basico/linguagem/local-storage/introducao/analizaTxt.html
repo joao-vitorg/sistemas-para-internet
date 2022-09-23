@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+            name="viewport"
+        />
+        <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+        <title>Analizar Texto</title>
+        <link href="style.css" rel="stylesheet" />
+        <script>
+            const element = (v) => document.getElementById(v)
+            const value = (v) => element(v).value
+
+            function getTextHome() {
+                element("txtAnt").innerHTML = window.localStorage.getItem("txt")
+            }
+
+            function analizaTxt() {
+                const txt = (value("op") === "Sim" ? value("txtInfo") : window.localStorage.getItem("txt")).split(" ")
+
+                element("txtLength").innerHTML = txt.length.toString()
+                element("palavraM").value = txt.filter((v) => v.toLowerCase()[0] === "m").join(", ")
+                element("primeiraPalavra").value = txt[0]
+                element("segundaPalavra").value = txt[1]
+                element("ultimaPalavra").value = txt[txt.length - 1]
+            }
+        </script>
+    </head>
+
+    <body onload="getTextHome()">
+        <p class="destaque">1) Texto informado pelo usuario na página anterior:</p>
+        <p id="txtAnt"></p>
+
+        <label class="destaque"
+            >2) Gostaria de analizar a informação disponibilizada pelo usuario na página anterior:
+            <select id="op">
+                <option>Não</option>
+                <option>Sim</option>
+            </select></label
+        >
+
+        <label for="txtInfo"
+            >OBS: Se respondeu "não" na pergunta anterior (2), por favor informar um novo texto na caixa abaixo:</label
+        >
+        <input id="txtInfo" type="text" />
+
+        <input class="bnt" id="enviar" onclick="analizaTxt()" type="button" value="Analizar" />
+
+        <hr />
+
+        <p class="destaque">3) Quantidade de palavras contidas no texto: <span id="txtLength"></span></p>
+
+        <label class="destaque" for="palavraM"
+            >4) Palavras iniciadas com a letra M: <input id="palavraM" type="text"
+        /></label>
+
+        <label class="destaque" for="primeiraPalavra"
+            >5) Primeira palavra do texto: <input id="primeiraPalavra" type="text"
+        /></label>
+
+        <label class="destaque" for="segundaPalavra"
+            >6) Segunda palavra do texto: <input id="segundaPalavra" type="text"
+        /></label>
+
+        <label class="destaque" for="ultimaPalavra"
+            >7) Útima palavra do texto: <input id="ultimaPalavra" type="text"
+        /></label>
+
+        <input
+            class="bnt"
+            onclick="window.open('felizNatal.html', '_self')"
+            type="button"
+            value="Abrir a pagina do papai noel"
+        />
+    </body>
+</html>

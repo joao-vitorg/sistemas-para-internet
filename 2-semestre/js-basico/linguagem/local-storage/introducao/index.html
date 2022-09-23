@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+              name="viewport"/>
+        <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+        <title>Seja Bem-Vindo</title>
+        <link href="style.css" rel="stylesheet"/>
+        <script>
+            function gravaValor() {
+                window.localStorage.setItem("txt", document.getElementById("txt").value)
+                window.open("analizaTxt.html", "_self")
+            }
+        </script>
+    </head>
+
+    <body>
+        <label>Informe um texto qualquer: <input id="txt" size="70" type="text"/></label>
+        <input onclick="gravaValor()" type="button" value="Enviar"/>
+    </body>
+</html>

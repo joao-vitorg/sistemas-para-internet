@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+              name="viewport"/>
+        <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+        <title>Document</title>
+        <link href="style.css" rel="stylesheet"/>
+        <script>
+            function exibirFalasPN() {
+                const falas = +document.getElementById("qtnFalas").value
+
+                for (let i = 0; i < falas; i++) {
+                    document.body.innerHTML += "<p>Ho Ho Ho Feliz Natal!!!!</p>"
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <label>Quantas falas do Papai Noel? <input id="qtnFalas" type="text"/></label>
+        <input class="bnt" onclick="exibirFalasPN()" type="button" value="Mostrar falas do Papai Noel"/>
+    </body>
+</html>
