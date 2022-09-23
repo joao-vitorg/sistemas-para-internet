@@ -19,11 +19,12 @@ public class JogoDaVelha {
     private static void userJoga() {
         int x, y;
 
-        System.out.println("---------- JOGADOR ----------");
+        System.out.println("---------- JOGADOR (X) ----------");
 
         do {
             System.out.print("Digite o X: ");
             x = s.nextInt();
+
             System.out.print("Digite o Y: ");
             y = s.nextInt();
         } while (!tabuleiro.userJoga(x, y));

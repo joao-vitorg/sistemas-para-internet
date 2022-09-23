@@ -9,6 +9,7 @@ public class Logica {
     private final int[] soma_linha = new int[3];
     private final int[] soma_coluna = new int[3];
     private final int[] soma_diagonais = new int[2];
+    private final Random random = new Random();
     private int jogadas = 0;
 
     public boolean jogar(int x, int y, int player) {
@@ -66,40 +67,46 @@ public class Logica {
     }
 
     public void pcJoga() {
-        if (pcVerificaPerda()) return;
+        // Verifica se tem possibilidade de ganhar ou de perder na proxima rodada
+        if (pcVerificaGanhaPerda()) return;
 
-        Random random = new Random();
+        // Verifica jogada central
+        if (jogar(1, 1, -1)) return;
+
+        // Faz uma jogada randomizada
         int x, y;
-
         do {
             x = random.nextInt(0, 3);
             y = random.nextInt(0, 3);
         } while (!jogar(x, y, -1));
     }
 
-    private boolean pcVerificaPerda() {
-        // Verifica linhas
-        for (int i = 0; i < 3; i++) {
-            if (soma_linha[i] == 2) {
-                return jogar(i, 0, -1) || jogar(i, 1, -1) || jogar(i, 2, -1);
+    private boolean pcVerificaGanhaPerda() {
+        // Verifica se ganha (-2) ou se perde (2)
+        for (int op = -2; op <= 2; op += 4) {
+            // Verifica linhas
+            for (int i = 0; i < 3; i++) {
+                if (soma_linha[i] == op) {
+                    return jogar(i, 0, -1) || jogar(i, 1, -1) || jogar(i, 2, -1);
+                }
             }
-        }
 
-        // Verifica colunas
-        for (int j = 0; j < 3; j++) {
-            if (soma_coluna[j] == 2) {
-                return jogar(0, j, -1) || jogar(1, j, -1) || jogar(2, j, -1);
+            // Verifica colunas
+            for (int j = 0; j < 3; j++) {
+                if (soma_coluna[j] == op) {
+                    return jogar(0, j, -1) || jogar(1, j, -1) || jogar(2, j, -1);
+                }
             }
-        }
 
-        // Verifica diagonal principal
-        if (soma_diagonais[0] == 2) {
-            return jogar(0, 0, -1) || jogar(1, 1, -1) || jogar(2, 2, -1);
-        }
+            // Verifica diagonal principal
+            if (soma_diagonais[0] == op) {
+                return jogar(0, 0, -1) || jogar(1, 1, -1) || jogar(2, 2, -1);
+            }
 
-        // Verifica diagonal secundaria
-        if (soma_diagonais[1] == 2) {
-            return jogar(2, 0, -1) || jogar(1, 1, -1) || jogar(0, 2, -1);
+            // Verifica diagonal secundaria
+            if (soma_diagonais[1] == op) {
+                return jogar(2, 0, -1) || jogar(1, 1, -1) || jogar(0, 2, -1);
+            }
         }
 
         return false;

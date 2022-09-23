@@ -63,8 +63,8 @@ public class Tabuleiro {
                         %c | %c | %c
                         %c | %c | %c
                         %c | %c | %c
-                        """, pecas[0][0], pecas[1][0], pecas[2][0],
-                pecas[0][1], pecas[1][1], pecas[2][1],
-                pecas[0][2], pecas[1][2], pecas[2][2]);
+                        """, pecas[0][0], pecas[0][1], pecas[0][2],
+                pecas[1][0], pecas[1][1], pecas[1][2],
+                pecas[2][0], pecas[2][1], pecas[2][2]);
     }
 }
