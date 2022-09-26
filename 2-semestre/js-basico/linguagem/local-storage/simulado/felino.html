@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+            name="viewport"
+        />
+        <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+        <title>Title</title>
+        <link href="style.css" rel="stylesheet" />
+        <script>
+            const element = (v) => document.getElementById(v)
+            const elementSetText = (v, t) => (element(v).innerText = t)
+            let carinhos = 0
+
+            const nome = window.localStorage.getItem("nome").split(" ")[0]
+
+            const gato1 = () => alert(`Oi ${nome}, tudo bem com você?`)
+
+            const gato2 = () => elementSetText("carinhos", (++carinhos).toString())
+
+            const gato3 = (op) => (element("gato3").src = `felinos/gato0${op ? 6 : 3}.gif`)
+
+            const gato4 = (op) => elementSetText("gato4-txt", op ? "Ai, pare de fazer cócegas!" : "Lá Lá Lá Lá Lá Lá")
+
+            const gato5 = () => (element("sorte").value = Math.floor(Math.random() * 100) + 1)
+        </script>
+    </head>
+
+    <body onload="carregar()">
+        <div class="container">
+            <img alt="" onclick="gato1()" src="felinos/gato01.gif" />
+            <img alt="" onclick="gato2()" src="felinos/gato02.gif" />
+            <img alt="" id="gato3" onmouseleave="gato3(false)" onmouseover="gato3(true)" src="felinos/gato03.gif" />
+            <img alt="" onmouseleave="gato4(false)" onmouseover="gato4(true)" src="felinos/gato04.gif" />
+            <img alt="" src="felinos/gato05.gif" />
+
+            <p>Clique em mim!</p>
+            <div>
+                <p>Clique em mim várias vezes!</p>
+                <p>Carinhos: <span id="carinhos">0</span></p>
+            </div>
+            <p>Passe o mouse sobre mim!</p>
+            <p id="gato4-txt">Lá Lá Lá Lá Lá Lá</p>
+            <div>
+                <input class="btn-cat" onclick="gato5()" type="button" value="Gerar número da sorte" />
+                <label><input class="input-cat" id="sorte" type="text" /></label>
+            </div>
+        </div>
+    </body>
+</html>

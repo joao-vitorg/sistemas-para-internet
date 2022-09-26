@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+form,
+h2 {
+    color: green;
+}
+
+fieldset,
+input[type="button"] {
+    border: 3px solid green;
+}
+
+fieldset,
+h2 {
+    padding: 30px;
+}
+
+input[type="button"],
+fieldset {
+    margin: auto;
+}
+
+legend,
+.container,
+h2 {
+    text-align: center;
+}
+
+fieldset {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 20px 3px;
+    width: 40%;
+}
+
+input[type="text"]:not(.input-cat) {
+    border: 0;
+    border-bottom: 3px solid green;
+    outline: none;
+    width: 100%;
+}
+
+input[type="button"] {
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
+    display: block;
+}
+
+input[type="button"]:not(.btn-cat) {
+    background-color: green;
+    width: 30%;
+}
+
+fieldset input[type="button"] {
+    grid-column: span 3;
+}
+
+input[type="button"]:hover,
+img:hover {
+    cursor: pointer;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(5, 1fr);
+    justify-items: center;
+}
+
+.container div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-cat {
+    background-color: darkred;
+    border-color: darkred !important;
+}
+
+.input-cat {
+    border-radius: 7px;
+}
+
+img {
+    width: 100px;
+}

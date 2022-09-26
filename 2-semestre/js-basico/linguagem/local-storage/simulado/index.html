@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+            name="viewport"
+        />
+        <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+        <title>Title</title>
+        <link href="style.css" rel="stylesheet" />
+        <script>
+            alert("Olá, seja bem-vindo!")
+
+            const element = (v) => document.getElementById(v)
+            const value = (v) => element(v).value
+
+            function entrar() {
+                const nome = value("nome")
+
+                if (!nome || nome.split(" ").length < 2) {
+                    alert("NOME ERRADO!!!")
+                    return
+                }
+
+                window.localStorage.setItem("nome", nome)
+                window.open("menu.html", "_self")
+            }
+        </script>
+    </head>
+
+    <body>
+        <form>
+            <fieldset>
+                <legend>Acesso ao sistema</legend>
+
+                <label for="nome">Nome completo: </label>
+                <input id="nome" type="text" />
+
+                <input onclick="entrar()" type="button" value="Entrar" />
+            </fieldset>
+        </form>
+    </body>
+</html>
