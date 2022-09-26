@@ -1,5 +1,5 @@
 ## JavaScript Básico
 
-### [💾 Linguagem](linguagem)
+### [🗿 Linguagem](linguagem)
 
 ### [📗 Provas](provas)

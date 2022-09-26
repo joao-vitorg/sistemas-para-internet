@@ -1,4 +1,4 @@
-## 💾 Linguagem - JavaScript Básico
+## 🗿 Linguagem - JavaScript Básico
 
 ### [💬 Diálogo](dialogo)
 
@@ -9,3 +9,5 @@
 ### [☑️ Formulário](formulario)
 
 ### [🎫 Eventos](eventos)
+
+### [💾 Local storage](local-storage)

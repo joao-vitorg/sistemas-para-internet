@@ -3,4 +3,3 @@
 ### [✋ Manipulação](manipulacao)
 
 ### [👌 Validação](validacao)
-
