@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+            name="viewport"
+        />
+        <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+        <title>Document</title>
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            img {
+                width: 500px;
+            }
+
+            h2 span {
+                color: red;
+            }
+        </style>
+        <script>
+            const element = (v) => document.getElementById(v)
+
+            function carregar() {
+                element("usuario").innerText = window.localStorage.getItem("user").toUpperCase()
+            }
+        </script>
+    </head>
+
+    <body onload="carregar()">
+        <img alt="" src="img/areaRestrita.jpg" />
+        <h2><span id="usuario"></span>, você não tem autorização para acessar esta área!</h2>
+    </body>
+</html>

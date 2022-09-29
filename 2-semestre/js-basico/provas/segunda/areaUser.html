@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+            name="viewport"
+        />
+        <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+        <title>Document</title>
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+            }
+
+            img {
+                width: 100px;
+                cursor: pointer;
+            }
+        </style>
+        <script>
+            const element = (v) => document.getElementById(v)
+            const value = (v) => element(v).value
+
+            function maisUm() {
+                element("clicks").value = (parseInt(value("clicks")) + 1 || 0).toString()
+            }
+
+            function alterarImagem(op) {
+                element("imagem").src = `img/${op}.jpg`
+            }
+        </script>
+    </head>
+
+    <body>
+        <div>
+            <input onclick="alterarImagem('amor')" type="button" value="Amor" />
+            <input onclick="alterarImagem('alegre')" type="button" value="Alegre" />
+            <input onclick="alterarImagem('coco')" type="button" value="Coco" />
+            <label><input id="clicks" type="text" value="0" /></label>
+        </div>
+
+        <img alt="" id="imagem" onclick="maisUm()" src="" />
+    </body>
+</html>

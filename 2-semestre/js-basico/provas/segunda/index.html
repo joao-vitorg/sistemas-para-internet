@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+            name="viewport"
+        />
+        <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+        <title>Document</title>
+        <style>
+            input:not([type="button"]) {
+                display: block;
+                margin-bottom: 10px;
+            }
+        </style>
+        <script>
+            const element = (v) => document.getElementById(v)
+            const value = (v) => element(v).value.toLowerCase()
+            let nome
+
+            function carregar() {
+                nome = prompt("Qual é o seu nome?") || "Visitante"
+                alert(`${nome}, seja bem-vindo!`)
+                element("usuario").value = nome
+            }
+
+            function login() {
+                const usuario = value("usuario")
+
+                if (!usuario) {
+                    element("usuario").focus()
+                    return
+                } else if (!value("senha")) {
+                    element("senha").focus()
+                    return
+                }
+
+                window.localStorage.setItem("user", usuario)
+                window.open(usuario !== "wilton" ? "areaRestrita.html" : "areaUser.html", "_self")
+            }
+        </script>
+    </head>
+
+    <body onload="carregar()">
+        <form>
+            <label for="usuario">Usuário:</label>
+            <input id="usuario" type="text" />
+
+            <label for="senha">Senha:</label>
+            <input id="senha" type="password" />
+
+            <input onclick="login()" type="button" value="Entrar" />
+            <button type="reset">Limpar</button>
+        </form>
+    </body>
+</html>
