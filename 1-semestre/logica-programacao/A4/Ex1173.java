@@ -7,7 +7,7 @@ public class Ex1173 {
 
 		n = s.nextInt();
 
-		int array[] = new int[10];
+		int[] array = new int[10];
 		array[0] = n;
 
 		for (int i = 1; i < 10; i++) {

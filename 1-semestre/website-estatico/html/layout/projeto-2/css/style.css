@@ -1,13 +1,12 @@
 * {
 	box-sizing: border-box;
-	margin: 0px;
+	margin: 0;
 }
 
 body {
-	margin: 0px;
-	font-family: verdana;
+	margin: 0;
 	line-height: 1.4em;
-	font-family: "Roboto", Verdana;
+	font-family: "Roboto", Verdana, serif;
 }
 
 ul {
@@ -15,7 +14,7 @@ ul {
 	list-style: none;
 	text-align: right;
 	padding: 15px;
-	margin: 0px;
+	margin: 0;
 }
 
 ul li {
@@ -26,7 +25,6 @@ ul li {
 ul li a {
 	color: white;
 	text-decoration: none;
-	color: white;
 	padding: 25px;
 	transition: all 0.4s;
 	background-position: -80px 17px;
@@ -71,7 +69,7 @@ header h1:hover {
 header h2 {
 	color: red;
 	font-size: 22px;
-	margin: 60px 0px;
+	margin: 60px 0;
 	transition: all 1s;
 }
 
@@ -92,8 +90,8 @@ table td {
 }
 
 table td p {
-	padding: 0px;
-	margin: 0px;
+	padding: 0;
+	margin: 0;
 }
 
 main section {
@@ -128,7 +126,7 @@ main section:nth-child(2) img {
 	float: left;
 	text-align: center;
 	transition: all 1s;
-	margin: 0px 20px 20px 0px;
+	margin: 0 20px 20px 0;
 }
 
 main section:nth-child(2) img:hover {
@@ -138,7 +136,7 @@ main section:nth-child(2) img:hover {
 main h3 {
 	color: green;
 	font-size: 18px;
-	margin: 15px 0px 0px 0px;
+	margin: 15px 0 0 0;
 }
 
 footer {

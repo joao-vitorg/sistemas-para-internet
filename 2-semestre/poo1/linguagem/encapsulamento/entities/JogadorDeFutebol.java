@@ -1,7 +1,12 @@
 package entities;
 
 public class JogadorDeFutebol {
-    public String nome, nascimenento, altura, peso, nacionalidade, posicao;
+    public final String nome;
+    public final String nascimenento;
+    public final String altura;
+    public final String peso;
+    public final String nacionalidade;
+    public final String posicao;
 
     public JogadorDeFutebol(String nome, String nascimenento, String altura, String peso, String nacionalidade, String posicao) {
         this.nome = nome;

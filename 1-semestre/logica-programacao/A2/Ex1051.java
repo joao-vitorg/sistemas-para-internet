@@ -3,14 +3,14 @@ import java.util.Scanner;
 public class Ex1051 {
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
-		Double salario;
+		double salario;
 
 		salario = s.nextDouble();
 
 		if (salario <= 2000) {
 			System.out.println("Isento");
 		} else {
-			Double imposto;
+			double imposto;
 
 			if (salario >= 4500) {
 				imposto = (salario - 4500) * 0.28 + 350;

@@ -4,7 +4,7 @@ public class Ex1041 {
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
 		String resposta;
-		Double x, y;
+		double x, y;
 
 		x = s.nextDouble();
 		y = s.nextDouble();
@@ -16,7 +16,7 @@ public class Ex1041 {
 		} else if (x < 0) {
 			resposta = (y > 0) ? "Q2" : "Q3";
 		} else {
-			resposta = (y == 0) ? "Eixo X" : "Eixo Y";
+			resposta = "Eixo Y";
 		}
 
 		System.out.println(resposta);

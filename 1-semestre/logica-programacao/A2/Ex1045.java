@@ -27,7 +27,7 @@ public class Ex1045 {
 
 			if (max == mid && mid == min) {
 				System.out.println("TRIANGULO EQUILATERO");
-			} else if ((max == mid && max != min) || (max == min && max != mid) || (mid == min && mid != max)) {
+			} else if (max == mid || max == min || mid == min) {
 				System.out.println("TRIANGULO ISOSCELES");
 			}
 		}

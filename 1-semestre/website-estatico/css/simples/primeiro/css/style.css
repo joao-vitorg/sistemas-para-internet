@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 
 * {
-	margin: 0px;
+	margin: 0;
 	box-sizing: border-box;
 }
 
@@ -14,10 +14,10 @@ header {
 header ul {
 	background-color: black;
 	list-style-type: none;
-	padding: 0px;
+	padding: 0;
 
 	text-align: center;
-	font-size: 0px;
+	font-size: 0;
 }
 
 header ul li {
@@ -104,7 +104,7 @@ main div.geral {
 main div.geral > div {
 	width: 33.33%;
 	float: left;
-	padding: 0px 30px;
+	padding: 0 30px;
 
 	text-align: center;
 }

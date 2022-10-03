@@ -5,7 +5,7 @@ public class Ex1178 {
 		Scanner s = new Scanner(System.in);
 
 		double x = s.nextDouble();
-		double vetor[] = new double[100];
+		double[] vetor = new double[100];
 
 		for (int i = 0; i < 100; i++, x /= 2) {
 			vetor[i] = x;

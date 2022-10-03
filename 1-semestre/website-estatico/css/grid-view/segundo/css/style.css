@@ -1,5 +1,5 @@
 * {
-	margin: 0px;
+	margin: 0;
 	box-sizing: border-box;
 }
 
@@ -24,7 +24,7 @@ img {
 
 .container {
 	background-color: white;
-	margin: 20px 0px;
+	margin: 20px 0;
 }
 
 /* Cores */
@@ -84,14 +84,14 @@ header #images a:hover {
 
 header #conheca h2 {
 	text-align: center;
-	margin: 15px 0px;
+	margin: 15px 0;
 	padding: 20px;
 }
 
 header #conheca p,
 header #conheca h3 {
 	text-align: left;
-	padding: 10px 0px;
+	padding: 10px 0;
 }
 
 /* Principal */
@@ -111,7 +111,7 @@ main h2 {
 /* Principal info */
 
 main #info p:last-of-type {
-	padding: 10px 0px;
+	padding: 10px 0;
 }
 
 /* Principal mirim */
@@ -133,7 +133,7 @@ main #qa p {
 }
 
 main #qa div {
-	padding: 0px;
+	padding: 0;
 }
 
 main #qa article {

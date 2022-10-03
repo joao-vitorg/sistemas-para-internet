@@ -1,5 +1,5 @@
 body {
-	margin: 0px;
+	margin: 0;
 	border-top: 10px solid #00124a;
 	box-sizing: border-box;
 	font-family: sans-serif;
@@ -83,12 +83,12 @@ section table h2 {
 
 section:nth-child(1) table h2 {
 	color: black;
-	margin: 0px;
+	margin: 0;
 }
 
 section:nth-child(2) table h2 {
 	color: white;
-	margin: 0px;
+	margin: 0;
 	padding: 5px;
 }
 
@@ -114,11 +114,11 @@ summary {
 
 section:nth-child(2) {
 	background-color: #bfe38e;
-	padding: 10px 0px;
+	padding: 10px 0;
 }
 
 section:nth-child(2) table {
-	border: 0px;
+	border: 0;
 }
 
 section:nth-child(2) a {
@@ -151,7 +151,7 @@ input[type="email"] {
 
 footer input[type="button"] {
 	width: 100px;
-	border: 0px;
+	border: 0;
 	border-radius: 3px;
 	padding: 7px;
 }

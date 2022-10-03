@@ -8,7 +8,7 @@ public class Ex1171 {
 
 		n = s.nextInt();
 
-		int array[] = new int[2001];
+		int[] array = new int[2001];
 		Arrays.fill(array, 0);
 
 		for (int i = 0; i < n; i++) {

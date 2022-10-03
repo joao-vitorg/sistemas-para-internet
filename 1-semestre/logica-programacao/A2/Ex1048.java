@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Ex1048 {
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
-		Double salario, percentual;
+		double salario, percentual;
 
 		salario = s.nextDouble();
 

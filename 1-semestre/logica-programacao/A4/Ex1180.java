@@ -6,7 +6,7 @@ public class Ex1180 {
 		int n, minPosi = 0, min = 1001;
 
 		n = s.nextInt();
-		int vetor[] = new int[n];
+		int[] vetor = new int[n];
 
 		for (int i = 0; i < n; i++) {
 			vetor[i] = s.nextInt();
