@@ -1,8 +1,10 @@
-import entities.Tabuleiro;
+package jogoDaVelha;
+
+import jogoDaVelha.entities.Tabuleiro;
 
 import java.util.Scanner;
 
-public class JogoDaVelha {
+public class App {
     private static final Scanner s = new Scanner(System.in);
     private static final Tabuleiro tabuleiro = new Tabuleiro();
 

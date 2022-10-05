@@ -1,4 +1,4 @@
-package entities;
+package jogoDaVelha.entities;
 
 import java.util.Arrays;
 import java.util.Random;

@@ -1,4 +1,4 @@
-package entities;
+package sobrecarga.entities;
 
 public class FigurasGeometricas {
     private double lado, base, altura, xc, yc, raio;

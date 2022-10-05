@@ -1,4 +1,4 @@
-package entities;
+package generico.entities;
 
 public class Pessoa<T, U> {
     private String nome;

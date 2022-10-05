@@ -1,4 +1,4 @@
-package entities;
+package elevador.entities;
 
 public class Elevador {
     private int totalAndares;

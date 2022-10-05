@@ -1,4 +1,4 @@
-package entities;
+package encapsulamento.entities;
 
 public class JogadorDeFutebol {
     public final String nome;

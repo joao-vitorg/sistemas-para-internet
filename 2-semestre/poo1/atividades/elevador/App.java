@@ -1,8 +1,10 @@
-import entities.Elevador;
+package elevador;
+
+import elevador.entities.Elevador;
 
 import java.util.Scanner;
 
-public class ElevadorApp {
+public class App {
     private static Elevador elevador;
 
     public static void main(String[] args) {

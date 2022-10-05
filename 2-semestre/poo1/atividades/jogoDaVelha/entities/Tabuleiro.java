@@ -1,4 +1,4 @@
-package entities;
+package jogoDaVelha.entities;
 
 public class Tabuleiro {
     private final Logica tabuleiro = new Logica();

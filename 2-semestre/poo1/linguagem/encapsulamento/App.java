@@ -1,8 +1,10 @@
-import entities.JogadorDeFutebol;
+package encapsulamento;
+
+import encapsulamento.entities.JogadorDeFutebol;
 
 import java.util.Scanner;
 
-public class Encapsulamento {
+public class App {
     private static final Scanner s = new Scanner(System.in);
 
     public static void main(String[] args) {

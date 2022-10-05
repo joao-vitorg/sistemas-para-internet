@@ -1,6 +1,8 @@
-import entities.Pessoa;
+package generico;
 
-public class Generico {
+import generico.entities.Pessoa;
+
+public class App {
     public static void main(String[] args) {
         Pessoa<Integer, Integer> integerIntegerPessoa = new Pessoa<>("joao", 1234, 56710);
         System.out.println(integerIntegerPessoa);
