@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport"/>
+    <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+    <title>Document</title>
+    <style>
+        #container {
+            margin: auto;
+            width: 300px;
+        }
+    </style>
+    <script>
+        const element = (v) => document.getElementById(v)
+        let slides = [
+                {img: 1, nome: "Alcatel", desc: "Descrição do produto 1", valor: "R$500,00"},
+                {img: 2, nome: "Panasolic", desc: "Descrição do produto 2", valor: "R$300,00"},
+                {img: 3, nome: "Nokia", desc: "Descrição do produto 3", valor: "R$5.000,00"},
+            ],
+            slideInterval,
+            posicao = 1
+
+        function mudarImagem() {
+            slideInterval = setInterval(() => {
+                posicao = posicao % 3
+
+                element("slide-show").src = `img/celular${slides[posicao].img}.jpg`
+                element("nome").innerText = slides[posicao].nome
+                element("desc").innerText = slides[posicao].desc
+                element("valor").innerText = slides[posicao].valor
+
+                posicao++
+            }, 1000)
+        }
+
+        function pausar() {
+            clearInterval(slideInterval)
+        }
+    </script>
+</head>
+
+<body onload="mudarImagem()">
+<div id="container" onmouseleave="mudarImagem()" onmouseover="pausar()">
+    <img alt="" id="slide-show" src="img/celular1.jpg" />
+            <h2 id="nome">Alcatel</h2>
+            <p id="desc">Descrição do produto 1</p>
+            <p id="valor">R$500,00</p>
+        </div>
+    </body>
+</html>
