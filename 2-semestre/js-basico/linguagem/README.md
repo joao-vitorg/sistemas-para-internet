@@ -4,10 +4,12 @@
 
 ### [📜 String](string)
 
-### [🧮 Números aleatórios e arrays](numeros_aleatorios)
+### [🧮 Números aleatórios e arrays](numeros-aleatorios)
 
-### [☑️ Formulário](formulario)
+### [🎲 Formulário](formulario)
 
 ### [🎫 Eventos](eventos)
 
 ### [💾 Local storage](local-storage)
+
+### [⏱ Timer](timer)
