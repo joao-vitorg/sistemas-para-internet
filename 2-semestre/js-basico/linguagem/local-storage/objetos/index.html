@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport"/>
+    <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+    <title>Title</title>
+    <style>
+        label,
+        input {
+            display: block;
+        }
+
+        input {
+            margin-bottom: 20px;
+        }
+
+        div {
+            display: flex;
+            gap: 10px;
+        }
+    </style>
+    <script>
+        const element = (t) => document.getElementById(t)
+        const value = (v) => element(v).value
+        const focus = (v) => element(v).focus()
+        const reset = (v) => (element(v).value = "")
+
+        function cadastrar() {
+            if (!value("usuario")) {
+                alert("Usuário errado!!!")
+                focus("usuario")
+            } else if (!value("senha")) {
+                alert("Senha errada!!!")
+                focus("senha")
+            } else {
+                if (typeof localStorage !== "undefined") {
+                    localStorage["user"] = JSON.stringify({
+                        usuario: value("usuario"),
+                        senha: value("senha"),
+                    })
+                }
+
+                reset("usuario")
+                reset("senha")
+            }
+        }
+    </script>
+</head>
+
+<body>
+<form action="">
+    <label for="usuario">Usuário</label>
+    <input id="usuario" type="text"/>
+
+    <label for="senha">Senha:</label>
+    <input id="senha" type="password"/>
+
+    <div>
+                <input onclick="cadastrar()" type="button" value="Cadastrar" />
+                <input type="reset" value="Limpar" />
+            </div>
+
+            <a href="listarUsuario.html">Mostrar usuário cadastrado</a>
+        </form>
+    </body>
+</html>

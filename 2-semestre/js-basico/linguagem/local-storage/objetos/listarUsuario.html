@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport" />
+        <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+        <title>Title</title>
+        <script>
+            const setText = (v, t) => (document.getElementById(v).innerText = t)
+
+            function carregar() {
+                if (typeof localStorage === "undefined" || !localStorage["user"]) {
+                    setText("user", `Não há nenhum usuário cadastrado!`)
+                } else {
+                    let { usuario, senha } = JSON.parse(localStorage["user"])
+
+                    setText("user", `Usuário = ${usuario} e Senha = ${senha}`)
+                }
+            }
+        </script>
+    </head>
+
+    <body onload="carregar()">
+        <h1>Usuários cadastrados:</h1>
+        <p id="user"></p>
+    </body>
+</html>
