@@ -1,0 +1,6 @@
+<!DOCTYPE html>
+<html lang="pt-br" th:include="template :: modelo" xmlns:th="http://www.thymeleaf.org">
+    <body th:fragment="conteudo">
+        <span th:each="n : ${numeros}" th:text="|${n} |"></span>
+    </body>
+</html>
