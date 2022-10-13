@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br" th:include="template :: modelo" xmlns:th="http://www.thymeleaf.org">
+    <body th:fragment="conteudo">
+        <header th:replace="jdbc/contatos/fragments/header :: header"></header>
+
+        <main class="container">
+            <form action="/jdbc/contato/cadastrar" method="post" th:object="${contato}">
+                <div class="mb-3">
+                    <label for="nome">Nome</label>
+                    <input class="form-control" id="nome" th:field="*{nome}" type="text" />
+                </div>
+                <div class="mb-3">
+                    <label for="telefone">Telefone</label>
+                    <input class="form-control" id="telefone" th:field="*{telefone}" type="text" />
+                </div>
+                <div class="mb-3">
+                    <label for="endereco">Endereço</label>
+                    <input class="form-control" id="endereco" th:field="*{endereco}" type="text" />
+                </div>
+                <button class="btn btn-primary" type="submit">Gravar</button>
+            </form>
+        </main>
+    </body>
+</html>
