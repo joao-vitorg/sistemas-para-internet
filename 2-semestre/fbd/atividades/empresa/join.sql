@@ -28,4 +28,5 @@ select f.nome, c.nome, salario, d.nome, nivel
 from funcionario f
          join cargo c on f.cod_cargo = c.cod_cargo
          join departamento d on d.cod_depto = f.cod_depto
-where year(data_adm) = 2008;
+where c.nivel = 'JR'
+  and year(f.data_adm) = 2008;
