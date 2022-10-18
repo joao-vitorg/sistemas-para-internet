@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Title</title>
+        <meta charset="UTF-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+        <script>
+            const element = (t) => document.getElementById(t)
+
+            function play() {
+                setTimeout(() => {
+                    element("input2").value = element("input1").value
+                    element("input1").value = ""
+                }, (element("tempo").selectedIndex + 1) * 1000)
+            }
+        </script>
+    </head>
+
+    <body>
+        <form action="">
+            <label><input id="input1" type="text" /></label>
+            <label><input id="input2" type="text" /></label>
+            <label>
+                <select id="tempo" name="">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </label>
+
+            <input onclick="play()" type="button" value="Play" />
+        </form>
+    </body>
+</html>

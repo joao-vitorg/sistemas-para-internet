@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Title</title>
+        <meta charset="UTF-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+        <script>
+            const element = (t) => document.getElementById(t)
+            let interval,
+                fs = 14
+
+            function carregar() {
+                element("nome").innerText = prompt("Digite o seu nome")
+
+                interval = setInterval(() => {
+                    element("nome").style.fontSize = fs + "px"
+
+                    if (fs >= 40) clearInterval(interval)
+                    else fs += 2
+                }, 500)
+            }
+        </script>
+    </head>
+
+    <body onload="carregar()">
+        <p id="nome"></p>
+    </body>
+</html>

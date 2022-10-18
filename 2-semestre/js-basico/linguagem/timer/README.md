@@ -1,3 +1,5 @@
 ## ⏱ Timer - JavaScript Básico
 
-### [introdução](introducao)
+### [✋ Introdução](introducao)
+
+### [💪 Exercícios](exercicios)

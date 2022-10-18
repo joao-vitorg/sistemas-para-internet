@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Title</title>
+        <meta charset="UTF-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+        <script>
+            const element = (t) => document.getElementById(t)
+            let interval
+
+            function carregar() {
+                const n = +prompt("Digite a quantidade de nome")
+                let nomes = []
+
+                for (let i = 0; i < n; i++) {
+                    nomes.push(prompt(`Digite o ${i + 1}º nome`))
+                }
+
+                interval = setInterval(() => {
+                    document.body.insertAdjacentHTML("beforeend", `<p>${nomes.shift()}</p>`)
+                    if (!nomes.length) clearInterval(interval)
+                }, 1000)
+            }
+        </script>
+    </head>
+
+    <body onload="carregar()"></body>
+</html>

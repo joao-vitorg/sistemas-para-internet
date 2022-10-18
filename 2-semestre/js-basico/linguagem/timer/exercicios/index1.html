@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Title</title>
+        <meta charset="UTF-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+        <script>
+            const element = (t) => document.getElementById(t)
+
+            function play() {
+                setTimeout(() => {
+                    element("input2").value = element("input1").value
+                    element("input1").value = ""
+                }, 2000)
+            }
+        </script>
+    </head>
+
+    <body>
+        <form action="">
+            <label><input id="input1" type="text" /></label>
+            <label><input id="input2" type="text" /></label>
+
+            <input onclick="play()" type="button" value="Play" />
+        </form>
+    </body>
+</html>
