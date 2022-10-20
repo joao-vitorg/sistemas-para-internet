@@ -9,6 +9,8 @@
       <sourceFolder url="file://$MODULE_DIR$/poo1/provas" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/poo1/atividades" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/poo1/linguagem" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/algoritimos/linguagem/hashset/replit" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/algoritimos/linguagem/lista/replit" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
