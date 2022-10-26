@@ -13,3 +13,5 @@
 ### [💾 Local storage](local-storage)
 
 ### [⏱ Timer](timer)
+
+### [🎁 Objetos](objetos)
