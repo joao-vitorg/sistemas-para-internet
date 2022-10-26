@@ -25,13 +25,13 @@ public class ContatoController {
             return new Contato(rs.getLong("id"), rs.getString("nome"), rs.getString("telefone"), rs.getString("endereco"));
         });
         model.addAttribute("contatos", listaContatos);
-        return "jdbc/contatos/index";
+        return "jdbc/contato/index";
     }
 
     @GetMapping("cadastrar")
     public String cadastro(Model model) {
         model.addAttribute("contato", new Contato());
-        return "jdbc/contatos/cadastrar";
+        return "jdbc/contato/cadastrar";
     }
 
     @PostMapping("cadastrar")
@@ -46,7 +46,7 @@ public class ContatoController {
             return new Contato(rs.getLong("id"), rs.getString("nome"), rs.getString("telefone"), rs.getString("endereco"));
         }, cod);
         model.addAttribute("contato", contato);
-        return "jdbc/contatos/editar";
+        return "jdbc/contato/editar";
     }
 
     @PostMapping("editar")

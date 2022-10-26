@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-br" th:include="template :: modelo" xmlns:th="http://www.thymeleaf.org">
     <div th:fragment="conteudo">
-        <form action="/jdbc/professor/editar" method="post" th:object="${Professor}">
+        <form action="/jdbc/contato/editar" method="post" th:object="${contato}">
             <label class="d-none"><input readonly th:field="*{id}" /></label>
 
             <div class="mb-3">
                 <label for="nome">Nome</label>
                 <input class="form-control" id="nome" th:field="*{nome}" type="text" />
+            </div>
+
+            <div class="mb-3">
+                <label for="telefone">Telefone</label>
+                <input class="form-control" id="telefone" th:field="*{telefone}" type="text" />
+            </div>
+
+            <div class="mb-3">
+                <label for="endereco">Endereço</label>
+                <input class="form-control" id="endereco" th:field="*{endereco}" type="text" />
             </div>
 
             <button class="btn btn-primary" type="submit">Gravar</button>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br" th:include="template :: modelo" xmlns:th="http://www.thymeleaf.org">
-    <body class="container" th:fragment="conteudo">
+    <div th:fragment="conteudo">
         <h1>Lista de exercícios</h1>
 
         <h2>Introdução</h2>
@@ -27,18 +27,17 @@
             <li><a href="/jdbc/professor">Professor</a></li>
         </ul>
 
-        <h2>Provas</h2>
-        <h3>Primeira</h3>
+        <h2>1ª Prova</h2>
         <ul>
             <li>
-                <a href="/provas/primeira/ex1">1 Exercício</a>
+                <a href="/provas/primeira/ex1">Exercício 1</a>
             </li>
             <li>
-                <a href="/provas/primeira/ex2">2 Exercício</a>
+                <a href="/provas/primeira/ex2">Exercício 2</a>
             </li>
             <li>
-                <a href="/provas/primeira/ex3">3 Exercício</a>
+                <a href="/provas/primeira/ex3">Exercício 3</a>
             </li>
         </ul>
-    </body>
+    </div>
 </html>

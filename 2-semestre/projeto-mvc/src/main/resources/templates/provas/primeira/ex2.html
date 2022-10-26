@@ -1,11 +1,8 @@
-<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <title>Thymeleaf</title>
-        <meta charset="utf-8" />
-    </head>
-    <body>
+<!DOCTYPE html>
+<html lang="pt-br" th:include="template :: modelo" xmlns:th="http://www.thymeleaf.org">
+    <div th:fragment="conteudo">
         <h2>Product list</h2>
-        <table>
+        <table class="table table-striped">
             <thead>
                 <tr>
                     <th>Description</th>
@@ -21,5 +18,5 @@
                 </tr>
             </tbody>
         </table>
-    </body>
+    </div>
 </html>

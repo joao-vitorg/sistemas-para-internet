@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" th:fragment="modelo">
+<html lang="pt-br" th:fragment="modelo" xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="UTF-8" />
         <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport" />
@@ -18,5 +18,69 @@
         ></script>
     </head>
 
-    <body th:replace="this :: conteudo"></body>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="/">Exercícios</a>
+                    <button
+                        aria-controls="navbarNavDropdown"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                        class="navbar-toggler"
+                        data-bs-target="#navbarNavDropdown"
+                        data-bs-toggle="collapse"
+                        type="button"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button">Introdução</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/introducao/revisao">Revisão</a></li>
+                                    <li><a class="dropdown-item" href="/introducao/apostas">Apostas</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button">Bootstrap</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/bootstrap/1">Etapa 1</a></li>
+                                    <li><a class="dropdown-item" href="/bootstrap/2">Etapa 2</a></li>
+                                    <li><a class="dropdown-item" href="/bootstrap/3">Etapa 3</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button">WireFrame</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/wireframe/pag1">Página 1</a></li>
+                                    <li><a class="dropdown-item" href="/wireframe/pag2">Página 2</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button">JDBC</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/jdbc/contato">Contato</a></li>
+                                    <li><a class="dropdown-item" href="/jdbc/professor">Professor</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button">1ª Prova</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/provas/primeira/ex1">Exercício 1</a></li>
+                                    <li><a class="dropdown-item" href="/provas/primeira/ex2">Exercício 2</a></li>
+                                    <li><a class="dropdown-item" href="/provas/primeira/ex3">Exercício 3</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="container">
+            <div th:replace="this :: conteudo"></div>
+        </main>
+    </body>
 </html>

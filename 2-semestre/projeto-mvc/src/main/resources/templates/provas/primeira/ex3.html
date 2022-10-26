@@ -1,10 +1,6 @@
-<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <title>Thymeleaf fragment</title>
-        <meta charset="utf-8" />
-    </head>
-
-    <body>
+<!DOCTYPE html>
+<html lang="pt-br" th:include="template :: modelo" xmlns:th="http://www.thymeleaf.org">
+    <div th:fragment="conteudo">
         <h1>Thymeleaf fragments</h1>
 
         <div th:replace="provas/primeira/bannerElement :: banner"></div>
@@ -42,5 +38,5 @@
         </dl>
 
         <div th:replace="provas/primeira/bannerElement :: banner"></div>
-    </body>
+    </div>
 </html>
