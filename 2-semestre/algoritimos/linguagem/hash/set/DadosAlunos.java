@@ -14,8 +14,8 @@ public class DadosAlunos {
             System.out.printf("Nome aluno %d: ", i);
             Aluno aluno = new Aluno(s.nextLine());
 
-            leDados(aluno.emails, "E-mail", i);
-            leDados(aluno.telefones, "Telefone", i);
+            leDados(aluno.emails(), "E-mail", i);
+            leDados(aluno.telefones(), "Telefone", i);
 
             alunos.add(aluno);
 

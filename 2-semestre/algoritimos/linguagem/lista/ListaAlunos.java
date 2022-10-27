@@ -54,13 +54,13 @@ public class ListaAlunos {
         String matricula = s.nextLine();
 
         System.out.println();
-        lista.stream().filter(a -> a.getMatricula().equals(matricula)).forEach(System.out::println);
+        lista.stream().filter(a -> a.matricula().equals(matricula)).forEach(System.out::println);
     }
 
     private static void removerAluno() {
         System.out.print("Matrícula: ");
         String matricula = s.nextLine();
 
-        lista.removeIf(a -> a.getMatricula().equals(matricula));
+        lista.removeIf(a -> a.matricula().equals(matricula));
     }
 }
