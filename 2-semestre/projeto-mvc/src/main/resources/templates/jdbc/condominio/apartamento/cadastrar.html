@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br" th:include="template :: modelo" xmlns:th="http://www.thymeleaf.org">
+    <section th:fragment="conteudo">
+        <form action="/jdbc/condominio/apartamento/cadastrar" method="post" th:object="${apartamento}">
+            <div class="mb-3">
+                <label for="numero">Numero</label>
+                <input class="form-control" id="numero" th:field="*{numero}" type="text" />
+            </div>
+            <div class="mb-3">
+                <label for="quartos">Quartos</label>
+                <input class="form-control" id="quartos" th:field="*{quartos}" type="number" />
+            </div>
+            <div class="mb-3">
+                <label for="tipo">Tipo</label>
+                <input class="form-control" id="tipo" th:field="*{tipo}" type="tel" />
+            </div>
+            <div class="mb-3">
+                <label for="proprietario">Proprietario</label>
+                <input class="form-control" id="proprietario" th:field="*{proprietario}" type="text" />
+            </div>
+            <button class="btn btn-primary" type="submit">Gravar</button>
+        </form>
+    </section>
+</html>

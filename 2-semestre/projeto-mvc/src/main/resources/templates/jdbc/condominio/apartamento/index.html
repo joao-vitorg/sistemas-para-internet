@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br" th:include="template :: modelo" xmlns:th="http://www.thymeleaf.org">
+    <section th:fragment="conteudo">
+        <a class="btn btn-success" href="/jdbc/contato/condominio/cadastrar">Cadastrar</a>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Numero</th>
+                    <th scope="col">Quartos</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Proprietario</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="apartamento : ${apartamentos}">
+                    <th th:text="${apartamento.id}"></th>
+                    <td th:text="${apartamento.numero}"></td>
+                    <td th:text="${apartamento.quartos}"></td>
+                    <td th:text="${apartamento.tipo}"></td>
+                    <td th:text="${apartamento.proprietario.nome}"></td>
+                    <td>
+                        <a class="btn btn-primary btn-sm" th:href="@{/jdbc/condominio/apartamento/editar(id=${apartamento.id})}">Editar</a>
+                        <a class="btn btn-danger btn-sm" th:href="@{/jdbc/condominio/apartamento/excluir(id=${apartamento.id})}">Excluir</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</html>
