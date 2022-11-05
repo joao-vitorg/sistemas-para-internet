@@ -1,6 +1,7 @@
-package com.example.projetomvc.jdbc.professor;
+package com.example.projetomvc.jdbc.professor.controller;
 
-import org.springframework.jdbc.core.JdbcTemplate;
+import com.example.projetomvc.jdbc.professor.model.Professor;
+import com.example.projetomvc.jdbc.professor.repository.ProfessorRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,23 +9,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.List;
-
 @Controller
 @RequestMapping("jdbc/professor")
 public class ProfessorController {
-    final JdbcTemplate jdbc;
+    final ProfessorRepository repository;
 
-    public ProfessorController(JdbcTemplate jdbc) {
-        this.jdbc = jdbc;
+    public ProfessorController(ProfessorRepository repository) {
+        this.repository = repository;
     }
 
     @GetMapping()
     public String index(Model model) {
-        List<Professor> professores = jdbc.query("select id, nome from professor", (rs, rowNum) -> {
-            return new Professor(rs.getLong("id"), rs.getString("nome"));
-        });
-        model.addAttribute("professores", professores);
+        model.addAttribute("professores", repository.findAll());
         return "jdbc/professor/index";
     }
 
@@ -36,26 +32,25 @@ public class ProfessorController {
 
     @PostMapping("cadastrar")
     public String cadastrar(Professor professor) {
-        jdbc.update("insert into professor(nome) values (?)", professor.getNome());
+        repository.save(professor);
         return "redirect:";
     }
 
     @GetMapping("editar")
     public String editar(@RequestParam(value = "id") int id, Model model) {
-        Professor professor = jdbc.queryForObject("select id, nome from professor where id = ?;", (rs, rowNum) -> new Professor(rs.getLong("id"), rs.getString("nome")), id);
-        model.addAttribute("Professor", professor);
+        model.addAttribute("Professor", repository.findById(id));
         return "jdbc/professor/editar";
     }
 
     @PostMapping("editar")
     public String editar(Professor professor) {
-        jdbc.update("update professor set nome = ? where id = ?", professor.getNome(), professor.getId());
+        repository.update(professor);
         return "redirect:";
     }
 
     @GetMapping("excluir")
     public String excluir(@RequestParam(value = "id") int id) {
-        jdbc.update("delete from professor where id = ?", id);
+        repository.delete(id);
         return "redirect:";
     }
 }
