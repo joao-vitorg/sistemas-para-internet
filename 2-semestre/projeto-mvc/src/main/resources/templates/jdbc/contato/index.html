@@ -1,30 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-br" th:include="template :: modelo" xmlns:th="http://www.thymeleaf.org">
-    <div th:fragment="conteudo">
-        <a class="btn btn-success" href="/jdbc/contato/cadastrar">Cadastrar</a>
-
+<section th:fragment="conteudo">
+    <section>
+        <h2 class="text-center">Contatos</h2>
         <table class="table table-striped">
             <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Telefone</th>
-                    <th scope="col">Endereço</th>
-                    <th scope="col">Ações</th>
-                </tr>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Telefone</th>
+                <th scope="col">Endereço</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Ações</th>
+            </tr>
             </thead>
             <tbody>
-                <tr th:each="contato : ${contatos}">
-                    <th th:text="${contato.id}"></th>
-                    <td th:text="${contato.nome}"></td>
-                    <td th:text="${contato.telefone}"></td>
-                    <td th:text="${contato.endereco}"></td>
-                    <td>
-                        <a class="btn btn-primary btn-sm" th:href="@{/jdbc/contato/editar(id=${contato.id})}">Editar</a>
-                        <a class="btn btn-danger btn-sm" th:href="@{/jdbc/contato/excluir(id=${contato.id})}">Excluir</a>
-                    </td>
-                </tr>
+            <tr th:each="contato : ${contatos}">
+                <th th:text="${contato.id}"></th>
+                <td th:text="${contato.nome}"></td>
+                <td th:text="${contato.telefone}"></td>
+                <td th:text="${contato.endereco}"></td>
+                <td th:text="${contato.tipo.descricao}"></td>
+                <td>
+                    <a class="btn btn-primary btn-sm" th:href="@{/jdbc/contato/editar(id=${contato.id})}">Editar</a>
+                    <a class="btn btn-danger btn-sm" th:href="@{/jdbc/contato/excluir(id=${contato.id})}">Excluir</a>
+                </td>
+            </tr>
             </tbody>
         </table>
-    </div>
+        <a class="btn btn-success" href="/jdbc/contato/cadastrar">Cadastrar</a>
+
+    </section>
+
+    <section>
+        <h2 class="text-center">Tipos</h2>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Descrição</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="tipo : ${tipos}">
+                <th th:text="${tipo.id}"></th>
+                <td th:text="${tipo.descricao}"></td>
+                <td>
+                    <a class="btn btn-primary btn-sm" th:href="@{/jdbc/contato/tipo/editar(id=${tipo.id})}">Editar</a>
+                    <a class="btn btn-danger btn-sm" th:href="@{/jdbc/contato/tipo/excluir(id=${tipo.id})}">Excluir</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <a class="btn btn-success" href="/jdbc/contato/tipo/cadastrar">Cadastrar</a>
+    </section>
+</section>
 </html>

@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-br" th:include="template :: modelo" xmlns:th="http://www.thymeleaf.org">
-    <div th:fragment="conteudo">
+    <section th:fragment="conteudo">
         <form action="/jdbc/contato/editar" method="post" th:object="${contato}">
-            <label class="d-none"><input readonly th:field="*{id}" /></label>
-
+            <label class="d-none"><input readonly th:field="*{id}"/></label>
             <div class="mb-3">
-                <label for="nome">Nome</label>
-                <input class="form-control" id="nome" th:field="*{nome}" type="text" />
+                <label class="form-label" for="nome">Nome</label>
+                <input class="form-control" id="nome" th:field="*{nome}" type="text"/>
             </div>
-
             <div class="mb-3">
-                <label for="telefone">Telefone</label>
-                <input class="form-control" id="telefone" th:field="*{telefone}" type="text" />
+                <label class="form-label" for="telefone">Telefone</label>
+                <input class="form-control" id="telefone" th:field="*{telefone}" type="text"/>
             </div>
-
             <div class="mb-3">
-                <label for="endereco">Endereço</label>
-                <input class="form-control" id="endereco" th:field="*{endereco}" type="text" />
+                <label class="form-label" for="endereco">Endereço</label>
+                <input class="form-control" id="endereco" th:field="*{endereco}" type="text"/>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="descricao">Tipo</label>
+                <select class="form-select" data-th-search="true" id="descricao" th:field="*{tipo.id}">
+                    <option th:each="t : ${tipos}" th:selected="*{tipo.id}" th:text="${t.descricao}"
+                            th:value="${t.id}"></option>
+                </select>
             </div>
 
             <button class="btn btn-primary" type="submit">Gravar</button>
         </form>
-    </div>
+    </section>
 </html>
