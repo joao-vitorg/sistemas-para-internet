@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br" th:include="template :: modelo" xmlns:th="http://www.thymeleaf.org">
+    <section th:fragment="conteudo">
+        <section>
+            <h2 class="text-center">Lista de Apartamentos</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Numero</th>
+                        <th scope="col">Quartos</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Proprietário</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="apartamento : ${apartamentos}">
+                        <th th:text="${apartamento.id}"></th>
+                        <td th:text="${apartamento.numero}"></td>
+                        <td th:text="${apartamento.quartos}"></td>
+                        <td th:text="${apartamento.tipo}"></td>
+                        <td th:text="${apartamento.proprietario.nome}"></td>
+                        <td>
+                            <a class="btn btn-primary btn-sm" th:href="@{/predio/apartamento/editar(id=${apartamento.id})}">Editar</a>
+                            <a class="btn btn-danger btn-sm" th:href="@{/predio/apartamento/excluir(id=${apartamento.id})}">Excluir</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <a class="btn btn-success" href="/predio/apartamento/cadastrar">Cadastrar</a>
+        </section>
+
+        <section>
+            <h2 class="text-center">Proprietários</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Telefone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="proprietario : ${proprietarios}">
+                        <th th:text="${proprietario.id}"></th>
+                        <td th:text="${proprietario.nome}"></td>
+                        <td th:text="${proprietario.telefone}"></td>
+                        <td>
+                            <a class="btn btn-primary btn-sm" th:href="@{/predio/proprietario/editar(id=${proprietario.id})}">Editar</a>
+                            <a class="btn btn-danger btn-sm" th:href="@{/predio/proprietario/excluir(id=${proprietario.id})}">Excluir</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <a class="btn btn-success" href="/predio/proprietario/cadastrar">Cadastrar</a>
+        </section>
+    </section>
+</html>

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-br" th:include="template :: modelo" xmlns:th="http://www.thymeleaf.org">
     <section th:fragment="conteudo">
-        <form action="/jdbc/condominio/apartamento/cadastrar" method="post" th:object="${apartamento}">
+        <form action="/predio/apartamento/cadastrar" method="post" th:object="${apartamento}">
             <div class="mb-3">
                 <label for="numero">Numero</label>
-                <input class="form-control" id="numero" th:field="*{numero}" type="text" />
+                <input class="form-control" id="numero" th:field="*{numero}" type="number" />
             </div>
             <div class="mb-3">
                 <label for="quartos">Quartos</label>
@@ -12,11 +12,17 @@
             </div>
             <div class="mb-3">
                 <label for="tipo">Tipo</label>
-                <input class="form-control" id="tipo" th:field="*{tipo}" type="tel" />
+                <select class="form-select" id="tipo" th:field="*{tipo}">
+                    <option value="Proprietário">Proprietário</option>
+                    <option value="Inquilino">Inquilino</option>
+                    <option value="Vazio">Vazio</option>
+                </select>
             </div>
             <div class="mb-3">
                 <label for="proprietario">Proprietario</label>
-                <input class="form-control" id="proprietario" th:field="*{proprietario}" type="text" />
+                <select class="form-select" id="proprietario" th:field="*{proprietario.id}">
+                    <option th:each="proprietario : ${proprietarios}" th:text="${proprietario.nome}" th:value="${proprietario.id}"></option>
+                </select>
             </div>
             <button class="btn btn-primary" type="submit">Gravar</button>
         </form>

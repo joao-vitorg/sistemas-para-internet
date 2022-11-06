@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br" th:include="template :: modelo" xmlns:th="http://www.thymeleaf.org">
     <section th:fragment="conteudo">
-        <form action="/jdbc/condominio/proprietario/editar" method="post" th:object="${proprietario}">
-            <label class="d-none"><input readonly th:field="*{id}" /></label>
+        <form action="/predio/proprietario/cadastrar" method="post" th:object="${proprietario}">
             <div class="mb-3">
                 <label for="nome">Nome</label>
                 <input class="form-control" id="nome" th:field="*{nome}" type="text" />
