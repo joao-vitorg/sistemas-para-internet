@@ -66,6 +66,12 @@
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button">Condomínio</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/predio">Prédio</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button">1ª Prova</a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="/provas/primeira/ex1">Exercício 1</a></li>
@@ -80,7 +86,7 @@
         </header>
 
         <main class="container">
-            <div th:replace="this :: conteudo"></div>
+            <section th:replace="this :: conteudo"></section>
         </main>
     </body>
 </html>
