@@ -15,3 +15,5 @@
 ### [⏱ Timer](timer)
 
 ### [🎁 Objetos](objetos)
+
+### [👾 Regex](regex)
