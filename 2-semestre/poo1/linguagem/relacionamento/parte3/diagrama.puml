@@ -1,0 +1,20 @@
+@startuml
+class Pessoa {
+    - nome
+    - universidade
+    - departamento
+}
+
+class Universidade {
+    - nome
+    - departamento
+}
+
+class Departamento {
+    - nome
+}
+
+Pessoa --> Universidade
+Universidade o- Departamento
+Pessoa --> Departamento
+@enduml
