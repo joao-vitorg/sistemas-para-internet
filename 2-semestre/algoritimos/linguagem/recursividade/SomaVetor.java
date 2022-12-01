@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Ex05 {
+public class SomaVetor {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
 

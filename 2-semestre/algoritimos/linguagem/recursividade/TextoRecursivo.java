@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Ex04 {
+public class TextoRecursivo {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         String t = s.nextLine();

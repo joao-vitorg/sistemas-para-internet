@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Ex03 {
+class SomaRecursiva {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         System.out.println(soma(s.nextInt()));

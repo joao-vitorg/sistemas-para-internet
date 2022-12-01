@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Ex02 {
+public class MDC {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         int x = s.nextInt();
