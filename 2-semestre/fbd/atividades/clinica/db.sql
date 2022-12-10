@@ -2,7 +2,6 @@ create database clinica;
 use clinica;
 
 -- Criação de table
-
 create table medico
 (
     codm          int primary key auto_increment,
@@ -34,7 +33,6 @@ create table consulta
 );
 
 -- Incerção de dados
-
 insert into medico (nomem, especialidade, sexo, dt_nasc)
 values ('Claudia Avila', 'Ginecologista', 'F', '1960-08-10'),
        ('Claudio Felix', 'Oftalmologista', 'M', '1970-01-02'),
