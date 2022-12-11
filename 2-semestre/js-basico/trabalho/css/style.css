@@ -9,9 +9,8 @@ body {
     background-color: green;
 }
 
-.login > div {
+main > div {
     width: 500px;
-    margin: auto;
     border: 10px solid black;
     border-radius: 50px;
     text-align: center;
@@ -21,22 +20,20 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-left: -250px;
-    margin-top: -300px;
+    margin: -300px auto auto -250px;
 }
 
-.login input[type="text"],
-.login input[type="password"] {
+main input[type="text"],
+main input[type="password"] {
     width: 90%;
-    margin: 10px 0;
     padding: 10px;
     border: none;
     border-bottom: 2px solid orangered;
-    margin-top: 20px;
+    margin: 20px 0 10px;
     outline: none;
 }
 
-.login input[type="button"] {
+main input[type="button"] {
     width: 95%;
     margin: 20px 0;
     padding: 20px;
@@ -49,11 +46,11 @@ body {
     outline: none;
 }
 
-.login input[type="button"]:hover {
+main input[type="button"]:hover {
     background-color: black;
     color: white;
 }
 
-.login p {
+main p {
     font-size: 10px;
 }

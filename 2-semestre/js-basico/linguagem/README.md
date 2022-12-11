@@ -17,5 +17,3 @@
 ### [🎁 Objetos](objetos)
 
 ### [👾 Regex](regex)
-
-### [🔐 Login](login)

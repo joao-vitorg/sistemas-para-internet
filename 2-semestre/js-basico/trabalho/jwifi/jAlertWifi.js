@@ -12,7 +12,7 @@ script.type = "text/javascript"
 document.getElementsByTagName("head")[0].appendChild(script)
 
 let style = document.createElement("link")
-style.href = "../css/jAlertWifi.css"
+style.href = "jwifi/jAlertWifi.css"
 style.rel = "stylesheet"
 document.getElementsByTagName("head")[0].appendChild(style)
 
