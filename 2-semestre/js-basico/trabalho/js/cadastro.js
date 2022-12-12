@@ -14,7 +14,7 @@ function cadastrar() {
 }
 
 function recordNewUser(user) {
-    fetch("json/users.json")
+    fetch("https://sistemas-internet.000webhostapp.com/users.json")
         .then((response) => response.json())
         .then((data) => checkUserCadastro(data, user))
         .catch((err) => console.log(err))

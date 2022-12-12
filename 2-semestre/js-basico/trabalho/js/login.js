@@ -11,7 +11,7 @@ function login() {
 }
 
 function readJSON(user, pwd) {
-    fetch("php/users.json")
+    fetch("https://sistemas-internet.000webhostapp.com/users.json")
         .then((response) => response.json())
         .then((content) => checkUser(content, user, pwd))
         .catch((err) => console.log(err))
@@ -20,7 +20,8 @@ function readJSON(user, pwd) {
 function checkUser(content, user, pwd) {
     if (!content.find(v => v.user === user && v.pwd === pwd)) {
         alertWifi("Usuario invalido!")
+    } else {
+        sessionStorage.setItem("user", user)
+        window.location.href = "players.html"
     }
-
-    window.location.href = "players.html"
 }
