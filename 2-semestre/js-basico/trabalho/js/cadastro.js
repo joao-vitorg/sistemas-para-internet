@@ -21,6 +21,6 @@ function recordNewUser(user) {
 }
 
 function checkUserCadastro(content, user) {
-    if (content.find((usuario) => usuario.user === user)) alert("Usuário já cadastrado!")
+    if (content.find((usuario) => usuario.user === user)) alertWifi("Usuário já cadastrado!")
     else document.getElementsByTagName("form")[0].submit()
 }

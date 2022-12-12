@@ -1,4 +1,4 @@
-let users = JSON.parse(window.localStorage.getItem('users'))
+let users = JSON.parse(window.sessionStorage.getItem("users"))
 if (!users || users.length !== 2) window.location.href = "login.html"
 
 const iframe = document.getElementById("jogo")
