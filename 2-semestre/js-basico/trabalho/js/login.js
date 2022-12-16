@@ -22,6 +22,6 @@ function checkUser(content, user, pwd) {
         alertWifi("Usuario invalido!")
     } else {
         sessionStorage.setItem("user", user)
-        window.location.href = "players.html"
+        window.location.href = "index.html"
     }
 }
