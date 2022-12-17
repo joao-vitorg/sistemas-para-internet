@@ -1,0 +1,81 @@
+@startuml
+class Fornecedor {
+    +id
+    cnpj
+    nome
+    telefone
+}
+class Encomenda {
+    +id
+    dataEncomenda
+}
+class Categoria {
+    +id
+    descricao
+}
+class Produto {
+    +id
+    nome
+    preco
+    estoque
+}
+class ProdutoEncomenda {
+    preco
+    quantidade
+}
+class Cliente {
+    +id
+    email
+    nome
+    senha
+    telefone
+    cpf
+}
+class Endereco {
+    +id
+    codPostal
+    endereco
+}
+class Cartao {
+    +id
+    numero
+    nome
+    expiracao
+}
+class Pedido {
+    +id
+    frete
+    dataPedido
+    statusPedido
+    dataEntrega
+    nParcelas
+}
+class PedidoProduto {
+    preco
+    quantidade
+}
+class Comentario {
+    comentario
+    avaliacao
+    dataComentario
+}
+class Carrinho {
+    quantidade
+}
+
+Cliente "n" -- "n" Produto
+(Cliente, Produto) .. Carrinho
+Cliente "n" -- "n" Produto
+(Cliente, Produto) .. Comentario
+Fornecedor "1" -- "n" Encomenda
+Categoria "1" -u- "n" Produto
+Produto "n" -l- "n" Encomenda
+(Encomenda, Produto) .. ProdutoEncomenda
+Cliente "1" -- "n" Endereco
+Cliente "1" -- "n" Cartao
+Pedido "n" -- "1" Cliente
+Endereco "1" -- "n" Pedido
+Cartao "1" -- "n" Pedido
+Pedido "n" - "n" Produto
+(Pedido, Produto) .. PedidoProduto
+@enduml
