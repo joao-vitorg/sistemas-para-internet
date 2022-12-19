@@ -5,10 +5,13 @@ import com.example.projetomvc.predio.repository.ApartamentoRepository;
 import com.example.projetomvc.predio.repository.ProprietarioRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/predio/apartamento")
@@ -36,7 +39,12 @@ public class ApartamentoController {
     }
 
     @PostMapping("cadastrar")
-    public String cadastro(Apartamento apartamento) {
+    public String cadastro(@Valid Apartamento apartamento, BindingResult result, Model model) {
+        if (result.hasErrors()) {
+            model.addAttribute("proprietarios", proprietarioRepository.findAll());
+            return "predio/apartamento/cadastrar";
+        }
+
         apartamentoRepository.save(apartamento);
         return "redirect:/predio";
     }

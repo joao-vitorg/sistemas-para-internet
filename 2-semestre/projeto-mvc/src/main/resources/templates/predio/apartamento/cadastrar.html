@@ -5,10 +5,12 @@
             <div class="mb-3">
                 <label for="numero">Numero</label>
                 <input class="form-control" id="numero" th:field="*{numero}" type="number" />
+                <div class="alert alert-warning" th:errors="*{numero}" th:if="${#fields.hasErrors('numero')}"></div>
             </div>
             <div class="mb-3">
                 <label for="quartos">Quartos</label>
                 <input class="form-control" id="quartos" th:field="*{quartos}" type="number" />
+                <div class="alert alert-warning" th:errors="*{quartos}" th:if="${#fields.hasErrors('quartos')}"></div>
             </div>
             <div class="mb-3">
                 <label for="tipo">Tipo</label>
@@ -23,6 +25,7 @@
                 <select class="form-select" id="proprietario" th:field="*{proprietario.id}">
                     <option th:each="proprietario : ${proprietarios}" th:text="${proprietario.nome}" th:value="${proprietario.id}"></option>
                 </select>
+                <div class="alert alert-warning" th:errors="*{proprietario.id}" th:if="${#fields.hasErrors('proprietario.id')}"></div>
             </div>
             <button class="btn btn-primary" type="submit">Gravar</button>
         </form>
