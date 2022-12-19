@@ -21,7 +21,8 @@ create table pessoa
     nome     varchar(100) not null,
     telefone varchar(20)  not null,
     endereco varchar(100) not null,
-    id_tipo  int          not null references tipo (id)
+    id_tipo  int          not null,
+    foreign key (id_tipo) references tipo (id)
 );
 
 -- Database prédio
@@ -39,5 +40,6 @@ create table apartamento
     numero          int         not null unique,
     qtd_quartos     int         not null,
     tipo_ocupacao   varchar(20) not null,
-    id_proprietario int         not null references proprietario (id)
+    id_proprietario int         not null,
+    foreign key (id_proprietario) references proprietario (id)
 );

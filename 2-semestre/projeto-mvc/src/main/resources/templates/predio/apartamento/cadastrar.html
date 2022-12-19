@@ -25,7 +25,8 @@
                 <select class="form-select" id="proprietario" th:field="*{proprietario.id}">
                     <option th:each="proprietario : ${proprietarios}" th:text="${proprietario.nome}" th:value="${proprietario.id}"></option>
                 </select>
-                <div class="alert alert-warning" th:errors="*{proprietario.id}" th:if="${#fields.hasErrors('proprietario.id')}"></div>
+                <div class="alert alert-warning" th:errors="*{proprietario}"
+                     th:if="${#fields.hasErrors('proprietario')}"></div>
             </div>
             <button class="btn btn-primary" type="submit">Gravar</button>
         </form>
