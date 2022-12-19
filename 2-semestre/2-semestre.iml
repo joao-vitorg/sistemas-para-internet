@@ -9,11 +9,11 @@
       <sourceFolder url="file://$MODULE_DIR$/poo1/provas" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/poo1/atividades" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/poo1/linguagem" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/algoritimos/linguagem/lista/replit" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/algoritimos/linguagem/hash" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/algoritimos/linguagem/lista" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/algoritimos/linguagem/recursividade" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/algoritimos/provas/segunda" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/algoritimos/provas/terceira" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
