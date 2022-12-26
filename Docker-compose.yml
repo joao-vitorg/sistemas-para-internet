@@ -2,9 +2,8 @@ version: '3.7'
 
 services:
   mariadb:
-    image: mariadb:10.4
+    image: mariadb:latest
     container_name: mariadb
-    restart: always
     environment:
       - MYSQL_ROOT_PASSWORD=test
       - MYSQL_USER=test
