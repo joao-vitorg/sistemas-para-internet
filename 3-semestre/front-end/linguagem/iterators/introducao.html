@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script>
+        const vetAges = [10, 21, 31, 40]
+        const numero = +prompt("Digite um determinado número")
+
+        const somaIdade = vet => vet.reduce((acc, curr) => acc + curr)
+        document.write(`<p>A soma das idades = ${somaIdade(vetAges)}</p>`)
+
+        const mediaIdade = vet => somaIdade(vet) / vet.length
+        document.write(`<p>A média aritmética simples das idades = ${mediaIdade(vetAges)}</p>`)
+
+        const maiorIdade = vet => vet.reduce((acc, curr) => acc > curr ? acc : curr)
+        document.write(`<p>A maior idade = ${maiorIdade(vetAges)}</p>`)
+
+        const imparIdade = vet => vet.filter(x => x % 2 !== 0)
+        document.write(`<p>As idades ímpares = ${imparIdade(vetAges)}</p>`)
+
+        const todosMaiorIdade = vet => vet.every(x => x >= 18)
+        document.write(`<p>Verificar se todos são maiores de idade (idade >= 18) = ${todosMaiorIdade(vetAges)}</p>`)
+
+        const todosMaiorIdadeNumero = vet => vet.every(x => x >= numero)
+        document.write(`<p>Verificar se todas as idades são maiores ou iguais a um valor informado pelo usuário = ${todosMaiorIdadeNumero(vetAges)}</p>`)
+
+        const maiorIdadeNumero = vet => vet.filter(x => x >= numero)
+        document.write(`<p>Exibir todas as idades maiores ou iguais a determinada idade = ${maiorIdadeNumero(vetAges)}</p>`)
+
+        const mediaMaiorIdadeNumero = vet => {
+            const idades = maiorIdadeNumero(vet)
+            return somaIdade(idades) / idades.length
+        }
+        document.write(`<p>A média das idades das pessoas com idades maiores ou iguais à determinada idade = ${mediaMaiorIdadeNumero(vetAges)}</p>`)
+    </script>
+</head>
+<body></body>
+</html>
+
