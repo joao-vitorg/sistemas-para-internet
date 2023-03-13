@@ -20,10 +20,37 @@ O básico de programação Front-end com **JS**.
 Algorítimos e coleções em **Java**.
 
 ### 📦 Programação orientada a objetos 1
+
 Introdução a programação orientada a objetos com **Java**.
 
 ### 🎲 Fundamentos de bando de dados
+
 Introdução a banco de dados com **MySQL**.
 
 ### 🕸️ Projeto sistema Web MVC e SQL
+
 Projeto web MVC com **Java**, **Spring** e **MySQL**.
+
+---
+
+## [3º Semestre](https://joao-vitorg.github.io/sistemas-para-internet/3-semestre)
+
+### [📺 Front-end Web JavaScript ](https://joao-vitorg.github.io/sistemas-para-internet/3-semestre/front-end)
+
+Projeto SPA com **React** e arquitetura REST.
+
+### ⚙️ Back-end Monolítico com ORM
+
+Projeto REST com **Spring**, autenticação, multicamadas e monolítico.
+
+### 📦 Programação orientada a objetos 2
+
+Boas práticas de programação usando programação orientada a objetos.
+
+### ✅ Testes Automatizados
+
+Introdução a testes automatizados com **JUnit**.
+
+### 🎲 Banco de Dados Avançado
+
+Criação e análise de consultas complexas em SQL.
