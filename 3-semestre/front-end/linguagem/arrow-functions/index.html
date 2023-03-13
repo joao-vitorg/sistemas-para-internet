@@ -1,72 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <title>Document</title>
-    <script>
-        const vetAges = [10, 21, 31, 40]
-        const numero = +prompt("Digite um determinado número")
+    <head>
+        <meta charset="UTF-8" />
+        <title>Document</title>
+        <script>
+            const vetAges = [10, 21, 31, 40]
+            const numero = +prompt("Digite um determinado número")
 
-        sumAges = (vet) => {
-            let sum = 0
-            for (let i = 0; i < vet.length; i++) sum += vet[i]
-            return sum
-        }
-
-        document.write(`<p>Soma das idades = ${sumAges(vetAges)}</p>`)
-        media = (vet) => sumAges(vet) / vet.length
-
-        document.write(`<p>A média aritmética simples das idades = ${media(vetAges)}</p>`)
-        maior = (vet) => {
-            let tmp = vet[0]
-            for (let i = 1; i < vet.length; i++) {
-                if (vet[i] > tmp) tmp = vet[i]
+            sumAges = (vet) => {
+                let sum = 0
+                for (let i = 0; i < vet.length; i++) sum += vet[i]
+                return sum
             }
-            return tmp
-        }
+            document.write(`<p>Soma das idades = ${sumAges(vetAges)}</p>`)
 
-        document.write(`<p>A maior idade = ${maior(vetAges)}</p>`)
-        impares = (vet) => {
-            let tmp = []
-            for (let i = 0; i < vet.length; i++) {
-                if (vet[i] % 2 !== 0) tmp.push(vet[i])
+            media = (vet) => sumAges(vet) / vet.length
+            document.write(`<p>A média aritmética simples das idades = ${media(vetAges)}</p>`)
+
+            maior = (vet) => {
+                let tmp = vet[0]
+                for (let i = 1; i < vet.length; i++) {
+                    if (vet[i] > tmp) tmp = vet[i]
+                }
+                return tmp
             }
-            return tmp
-        }
+            document.write(`<p>A maior idade = ${maior(vetAges)}</p>`)
 
-        document.write(`<p>As idades ímpares = ${impares(vetAges)}</p>`)
-        maioridade = (vet) => {
-            for (let i = 0; i < vet.length; i++) {
-                if (vet[i] < 18) return false
+            impares = (vet) => {
+                let tmp = []
+                for (let i = 0; i < vet.length; i++) {
+                    if (vet[i] % 2 !== 0) tmp.push(vet[i])
+                }
+                return tmp
             }
-            return true
-        }
+            document.write(`<p>As idades ímpares = ${impares(vetAges)}</p>`)
 
-        document.write(`<p>Todos são maiores de idade (idade >= 18) = ${maioridade(vetAges)}</p>`)
-
-        maiorQueNumero = (vet) => {
-            for (let i = 0; i < vet.length; i++) {
-                if (vet[i] < numero) return false
+            maioridade = (vet) => {
+                for (let i = 0; i < vet.length; i++) {
+                    if (vet[i] < 18) return false
+                }
+                return true
             }
-            return true
-        }
-        document.write(`<p>Todas as idades são maiores ou iguais a um valor informado pelo usuário = ${maiorQueNumero(vetAges)}</p>`)
+            document.write(`<p>Todos são maiores de idade (idade >= 18) = ${maioridade(vetAges)}</p>`)
 
-        todosMaiorQueNumero = (vet) => {
-            let tmp = []
-            for (let i = 0; i < vet.length; i++) {
-                if (vet[i] >= numero) tmp.push(vet[i])
+            maiorQueNumero = (vet) => {
+                for (let i = 0; i < vet.length; i++) {
+                    if (vet[i] < numero) return false
+                }
+                return true
             }
-            return tmp
-        }
-        document.write(`<p>Exibir todas as idades maiores ou iguais à determinada idade = ${todosMaiorQueNumero(vetAges)}</p>`)
+            document.write(`<p>Todas as idades são maiores ou iguais a um valor informado pelo usuário = ${maiorQueNumero(vetAges)}</p>`)
 
-        mediaMaiorQueNumero = (vet) => {
-            let tmp = todosMaiorQueNumero(vet)
-            return sumAges(tmp) / tmp.length
-        }
-        document.write(`<p>A média das idades das pessoas com idades maiores ou iguais à determinada idade = ${mediaMaiorQueNumero(vetAges)}</p>`)
-    </script>
-</head>
-<body></body>
+            todosMaiorQueNumero = (vet) => {
+                let tmp = []
+                for (let i = 0; i < vet.length; i++) {
+                    if (vet[i] >= numero) tmp.push(vet[i])
+                }
+                return tmp
+            }
+            document.write(`<p>Exibir todas as idades maiores ou iguais à determinada idade = ${todosMaiorQueNumero(vetAges)}</p>`)
+
+            mediaMaiorQueNumero = (vet) => {
+                let tmp = todosMaiorQueNumero(vet)
+                return sumAges(tmp) / tmp.length
+            }
+            document.write(`<p>A média das idades das pessoas com idades maiores ou iguais à determinada idade = ${mediaMaiorQueNumero(vetAges)}</p>`)
+        </script>
+    </head>
+    <body></body>
 </html>

@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <title>Document</title>
-    <script>
-        const vetor1 = [10, 4, 8, 7, 1, 20]
-        const vetor2 = [0, 41, 13, 7, 1, 20]
-        const vetor3 = [21, 33, 43, 19, 87]
+    <head>
+        <meta charset="UTF-8" />
+        <title>Document</title>
+        <script>
+            const vetor1 = [10, 4, 8, 7, 1, 20]
+            const vetor2 = [0, 41, 13, 7, 1, 20]
+            const vetor3 = [21, 33, 43, 19, 87]
 
-        const somarImpares = numeros => numeros.filter(x => x % 2 === 0).reduce((acc, curr) => acc + curr, 0)
+            const somarImpares = (numeros) => numeros.filter((x) => x % 2 === 0).reduce((acc, curr) => acc + curr, 0)
 
-        console.log(somarImpares(vetor1))
-        console.log(somarImpares(vetor2))
-        console.log(somarImpares(vetor3))
-    </script>
-</head>
-<body></body>
+            console.log(somarImpares(vetor1))
+            console.log(somarImpares(vetor2))
+            console.log(somarImpares(vetor3))
+        </script>
+    </head>
+    <body></body>
 </html>
-
