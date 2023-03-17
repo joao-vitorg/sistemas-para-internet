@@ -1,4 +1,4 @@
-package linguagem.revisao.ex2;
+package revisao.ex2;
 
 public class Circulo {
     private Double raio;

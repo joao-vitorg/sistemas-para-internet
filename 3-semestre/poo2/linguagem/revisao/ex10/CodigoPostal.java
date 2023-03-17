@@ -1,4 +1,4 @@
-package linguagem.revisao.ex10;
+package revisao.ex10;
 
 public class CodigoPostal {
     private int indicativo;

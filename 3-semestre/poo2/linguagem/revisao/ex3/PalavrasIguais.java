@@ -1,4 +1,4 @@
-package linguagem.revisao.ex3;
+package revisao.ex3;
 
 import java.util.Scanner;
 

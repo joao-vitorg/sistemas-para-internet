@@ -1,4 +1,4 @@
-package linguagem.revisao.ex5;
+package revisao.ex5;
 
 public class Pessoa {
     private String nome;

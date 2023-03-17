@@ -1,4 +1,4 @@
-package linguagem.revisao.ex9;
+package revisao.ex9;
 
 public class Retangulo {
     private int base;

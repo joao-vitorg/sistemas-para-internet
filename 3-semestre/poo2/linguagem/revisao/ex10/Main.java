@@ -1,8 +1,8 @@
-package linguagem.revisao.ex10;
+package revisao.ex10;
 
 public class Main {
     public static void main(String[] args) {
-        CodigoPostal codigoPostal = new linguagem.revisao.ex10.CodigoPostal(3400, 200, "Centro");
+        CodigoPostal codigoPostal = new CodigoPostal(3400, 200, "Centro");
 
         System.out.println(codigoPostal.mostrar());
     }

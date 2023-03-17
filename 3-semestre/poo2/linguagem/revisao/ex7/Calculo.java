@@ -1,7 +1,7 @@
-package linguagem.revisao.ex7;
+package revisao.ex7;
 
 public class Calculo {
-    private int saldo = 0;
+    private int saldo;
 
     public Calculo(int saldo) {
         this.saldo = saldo;

@@ -1,4 +1,4 @@
-package linguagem.revisao.ex4;
+package revisao.ex4;
 
 public class Funcionario {
     String nome;

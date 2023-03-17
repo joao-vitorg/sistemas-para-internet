@@ -1,4 +1,4 @@
-package linguagem.revisao.ex8;
+package revisao.ex8;
 
 public class ContaCorrente {
     private String nome;

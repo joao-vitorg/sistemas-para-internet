@@ -1,4 +1,4 @@
-package linguagem.revisao.ex6;
+package revisao.ex6;
 
 public class Aluno {
     private String nome;

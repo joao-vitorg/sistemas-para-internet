@@ -1,4 +1,4 @@
-package linguagem.revisao.ex7;
+package revisao.ex7;
 
 public class Main {
     public static void main(String[] args) {
