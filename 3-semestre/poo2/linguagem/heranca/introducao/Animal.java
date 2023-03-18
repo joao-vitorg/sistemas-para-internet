@@ -1,4 +1,4 @@
-package linguagem.heranca;
+package heranca.introducao;
 
 public class Animal {
     private String nome;

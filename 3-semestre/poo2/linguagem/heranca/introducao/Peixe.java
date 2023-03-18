@@ -1,4 +1,4 @@
-package linguagem.heranca;
+package heranca.introducao;
 
 public class Peixe extends Animal {
     private String caracteristicas;
@@ -18,8 +18,6 @@ public class Peixe extends Animal {
 
     public void dadosPeixe() {
         super.dado();
-
-        String sb = "Peixe{" + "caracteristicas='" + caracteristicas + '\'' + '}';
-        System.out.println(sb);
+        System.out.println("Peixe{" + "caracteristicas='" + caracteristicas + '\'' + '}');
     }
 }

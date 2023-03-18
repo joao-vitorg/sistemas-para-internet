@@ -1,4 +1,4 @@
-package linguagem.heranca;
+package heranca.introducao;
 
 public class Mamifero extends Animal {
     private String alimento;
@@ -18,8 +18,6 @@ public class Mamifero extends Animal {
 
     public void dadosMamifero() {
         super.dado();
-
-        String sb = "Mamifero{" + "alimento='" + alimento + '\'' + '}';
-        System.out.println(sb);
+        System.out.println("Mamifero{" + "alimento='" + alimento + '\'' + '}');
     }
 }
