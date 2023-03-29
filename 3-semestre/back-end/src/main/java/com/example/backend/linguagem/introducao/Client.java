@@ -1,4 +1,4 @@
-package com.example.backend.introducao;
+package com.example.backend.linguagem.introducao;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
