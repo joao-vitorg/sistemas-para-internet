@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+:root {
+    --main: black;
+    --background: #1a1a1a;
+    --secundary: #5799ef;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    background: var(--main);
+    font-family: "Roboto", sans-serif;
+    color: white;
+    margin: 2rem 1rem;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+#catalogo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1300px;
+    margin: auto;
+}
+
+.filme {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    transition: all 0.5s;
+}
+
+.filme:hover {
+    transform: scale(1.05);
+}
+
+.poster {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.descricao {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background);
+    gap: 0.5rem;
+    padding: 0.5rem;
+    height: 100%;
+}
+
+.titulo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    height: 100%;
+}
+
+.nota svg {
+    margin-right: 0.3rem;
+}
+
+.categorias {
+    display: flex;
+    gap: 0.3rem;
+    flex-wrap: wrap;
+}
+
+.categorias a {
+    display: inline-block;
+    background-color: var(--secundary);
+    color: var(--main);
+    font-weight: 500;
+    padding: 0.2rem;
+    font-size: 0.9rem;
+}
+
+#paginacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+
+#pagina {
+}
+
+#inicio {
+    margin-right: 10px;
+}
+
+a:hover,
+#esquerda:hover,
+#direita:hover,
+#inicio:hover {
+    cursor: pointer;
+}

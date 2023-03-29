@@ -1,0 +1,32 @@
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+footer h2 {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+footer div {
+    display: flex;
+    gap: 1rem;
+}
+
+footer div a {
+    display: flex;
+    border-radius: 10px;
+    align-items: center;
+    font-size: 0;
+    font-weight: 500;
+    transition: all 0.2s;
+    color: white;
+}
+
+footer div a:hover {
+    font-size: 1rem;
+    gap: 0.5rem;
+}
