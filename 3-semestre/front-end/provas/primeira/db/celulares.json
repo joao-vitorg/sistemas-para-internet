@@ -1,0 +1,20 @@
+[
+  {
+    "marca": "Samsung",
+    "modelo": "Smartphone S12",
+    "valor": "5.000,00",
+    "imagem": "celulares/celular01.jpg"
+  },
+  {
+    "marca": "Motorola",
+    "modelo": "Smartphone Moto G20",
+    "valor": "1.300,00",
+    "imagem": "celulares/celular02.jpg"
+  },
+  {
+    "marca": "Apple",
+    "modelo": "Smartphone Iphone 12",
+    "valor": "4.309,00",
+    "imagem": "celulares/celular03.jpg"
+  }
+]

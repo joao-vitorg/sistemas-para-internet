@@ -2,4 +2,6 @@
 
 ### [🗿 Linguagem](linguagem)
 
+### [📗 Provas](provas)
+
 ### [🎥 TMDB](trabalhos/tmdb)
