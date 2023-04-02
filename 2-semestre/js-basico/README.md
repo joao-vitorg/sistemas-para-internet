@@ -4,4 +4,4 @@
 
 ### [📗 Provas](provas)
 
-### [🎲 Jogo da velha](trabalho)
+### [🎲 Jogo da velha](tic-tac-toe)
