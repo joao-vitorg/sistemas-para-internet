@@ -12,4 +12,5 @@ union all
  from vw_vendas vrv
  where ganho_total <
        coalesce((select avg(v.ganho_total) from vw_vendas v where v.id = vrv.id and ((v.ano < vrv.ano) or (vrv.ano = v.ano and v.mes < vrv.mes))),
-                0));
+                0))
+order by nome, mes desc;
