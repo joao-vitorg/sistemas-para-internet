@@ -18,15 +18,15 @@ create table categoria
 
 create table produto
 (
-    id            int           not null primary key auto_increment,
-    nome          varchar(50)   not null,
-    descricao     text          not null,
-    preco         numeric(9, 2) not null,
-    estoque       int           not null,
-    categoria_id  int           not null,
-    fornecedor_id int           not null,
+    id           int           not null primary key auto_increment,
+    nome         varchar(50)   not null,
+    descricao    text          not null,
+    preco        numeric(9, 2) not null,
+    estoque      int           not null,
+    categoria_id int           not null,
+    loja_id      int           not null,
     foreign key (categoria_id) references categoria (id),
-    foreign key (fornecedor_id) references loja (id)
+    foreign key (loja_id) references loja (id)
 );
 
 create table cliente
@@ -125,7 +125,7 @@ values ('Eletrônico'),
        ('Áudio'),
        ('Vídeo');
 
-insert into produto (nome, descricao, preco, estoque, categoria_id, fornecedor_id)
+insert into produto (nome, descricao, preco, estoque, categoria_id, loja_id)
 values ('Iphone 14', 'Novo smartphone da Apple.', 6500.00, 500, 1, 1),
        ('Camiseta', 'Roupa casual confortável.', 100.00, 300, 2, 2),
        ('Galaxy S20', 'Smartphone premium da Samsung.', 2000.00, 600, 1, 3),
@@ -135,7 +135,8 @@ values ('Iphone 14', 'Novo smartphone da Apple.', 6500.00, 500, 1, 1),
        ('Teclado', 'Dispositivo para entrada de texto.', 300.00, 100, 3, 5),
        ('Monitor', 'Tela de exibição para computador.', 1000.00, 500, 5, 3),
        ('Notebook', 'Computador portátil.', 3000.00, 300, 3, 3),
-       ('Smart TV', 'TV com acesso à internet.', 2000.00, 200, 5, 3);
+       ('Smart TV', 'TV com acesso à internet.', 2000.00, 200, 5, 3),
+       ('Camiseta polo', 'Roupa modelo esporte fino.', 150.00, 300, 2, 2);
 
 insert into cliente (email, nome, senha, telefone, cpf, dt_nascimento, sexo)
 values ('luiz@gmail.com', 'Luiz Fernando Barbosa', '0cc175b9c0f1b6a831c399e269772661', '34992749276', '222.222.222-22', '2001-04-23', 'M'),
@@ -159,11 +160,11 @@ values ('38400-457', 'Rua Fernando Costa, 15', 1),
        ('38411-555', 'Rua México, 124', 2),
        ('38411-104', 'Rua Blanche Galassi, 150', 3),
        ('17052-907', 'Rua Rafael Alves, 15', 4),
-       ('01327-402', 'Av. Paulista, 114', 5),
-       ('01327-402', 'Av. Paulista, 115', 6),
+       ('11327-402', 'Av. Paulista, 114', 5),
+       ('11327-402', 'Av. Paulista, 115', 6),
        ('32456-457', 'Rua Patrulheiro Osmar tavares, 15', 7),
        ('38766-576', 'Rua Salvador, 124', 8),
-       ('69042-104', 'Rua Natal, 150', 9),
+       ('63042-104', 'Rua Natal, 150', 9),
        ('12889-907', 'Rua Buriti Alegre, 15', 10),
        ('98711-402', 'Av. Ivaldo Alves Nascimento, 114', 11),
        ('38412-486', 'Av. Mauá, 115', 12),
@@ -186,7 +187,9 @@ values ('1111111111111111', 'LUIZ F. B.', '2027-06-13', 1),
        ('3339873533333333', 'AMANDA S.', '2022-07-15', 12),
        ('1111112345911111', 'ALEXANDRE Q.', '2027-06-13', 13),
        ('1234567854363121', 'MARGARIDA C.', '2028-02-19', 14),
-       ('2222567432222222', 'WELLINGTON X.', '2025-10-03', 15);
+       ('2222567432222222', 'WELLINGTON X.', '2025-10-03', 15),
+       ('1187463789092637', 'FABRICIO SOARES', '2024-05-19', 6),
+       ('1218909678954321', 'JULIANA DONER.', '2028-08-14', 14);
 
 insert into pedido (data_pedido, status_pedido, data_entrega, preco_total, frete_total, cliente_id, endereco_id, cartao_id, n_parcelas)
 values ('2022-05-13', 'Aguardando pagamento', null, 10000, 62, 1, 1, 1, 1),
@@ -201,7 +204,14 @@ values ('2022-05-13', 'Aguardando pagamento', null, 10000, 62, 1, 1, 1, 1),
        ('2022-07-12', 'Em transporte', null, 8000, 70, 14, 14, 14, 1),
        ('2022-07-04', 'Entregue', '2022-07-11', 7000, 27, 15, 15, 15, 2),
        ('2022-05-13', 'Entregue', '2022-01-01', 500, 0, 1, 1, 1, 1),
-       ('2022-03-10', 'Processando', null, 2300, 20, 3, 3, 3, 1);
+       ('2022-03-10', 'Processando', null, 2300, 20, 3, 3, 3, 1),
+       ('2023-02-13', 'Em transporte', null, 2000, 10, 2, 1, 2, 3),
+       ('2023-02-10', 'Entregue', '2023-02-13', 2000, 12, 2, 2, 2, 4),
+       ('2023-03-10', 'Entregue', '2023-03-13', 3000, 0, 1, 3, 1, 4),
+       ('2023-03-15', 'Em transporte', null, 150, 0, 3, 3, 3, 1),
+       ('2023-03-25', 'Em transporte', null, 400, 0, 3, 3, 3, 1),
+       ('2023-02-25', 'Em transporte', null, 2000.00, 50, 3, 3, 3, 1),
+       ('2023-02-25', 'Em transporte', null, 2000.00, 20, 1, 1, 1, 1);
 
 insert into pedido_produto(pedido_id, produto_id, preco, quantidade, frete)
 VALUES (1, 1, 6000.00, 1, 10),
@@ -233,7 +243,14 @@ VALUES (1, 1, 6000.00, 1, 10),
        (1, 8, 1000.00, 3, 40),
        (2, 9, 3000.00, 1, 25),
        (3, 10, 2000.00, 1, 25),
-       (4, 1, 6000.00, 1, 50);
+       (4, 1, 6000.00, 1, 50),
+       (14, 3, 2000.00, 1, 10),
+       (15, 3, 2000.00, 1, 12),
+       (16, 9, 3000.00, 1, 0),
+       (17, 11, 150.00, 1, 0),
+       (18, 5, 400.00, 1, 20),
+       (19, 3, 2000.00, 1, 50),
+       (20, 3, 2000.00, 1, 20);
 
 insert into carrinho(cliente_id, produto_id, quantidade)
 VALUES (5, 1, 1),
@@ -257,7 +274,11 @@ VALUES (5, 1, 1),
        (1, 8, 3),
        (3, 9, 1),
        (2, 10, 1),
-       (6, 2, 1);
+       (6, 2, 1),
+       (2, 3, 2),
+       (1, 9, 1),
+       (3, 11, 1),
+       (3, 5, 1);
 
 insert into comentario(cliente_id, produto_id, comentario, avaliacao, data_comentario)
 VALUES (1, 1, 'Produto de qualidade', 5, '2022-05-13'),
