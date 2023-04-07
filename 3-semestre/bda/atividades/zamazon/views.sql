@@ -21,4 +21,5 @@ from loja l
          join produto p on l.id = p.loja_id
          join pedido_produto pp on p.id = pp.produto_id
          join pedido p2 on pp.pedido_id = p2.id
-group by 1, 3, 4;
+group by 1, 3, 4
+order by id, mes desc;
