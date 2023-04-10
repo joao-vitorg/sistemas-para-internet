@@ -445,6 +445,25 @@ union all
                 0));
 ```
 
+-- Letra B) Elabore um relatório que liste todos os clientes do zamazon e marque-os como frequente e não frequente caso ele tenha realizado 
+-- mais pedidos que a media dos clientes.
+
+```sql
+(select c.nome, c.email, 'Frequente' as situacao
+ from cliente c
+          left join pedido p on p.cliente_id = c.id
+ group by c.id
+ having count(p.id) >= (select format(count(1) / (select count(1) from cliente), 2) as media_pedidos from pedido)
+ order by c.id desc)
+union all
+(select c.nome, c.email, 'Infrequente' as situacao
+ from cliente c
+          left join pedido p on p.cliente_id = c.id
+ group by c.id
+ having count(p.id) < (select format(count(1) / (select count(1) from cliente), 2) as media_pedidos from pedido)
+ order by c.id desc);
+```
+
 # VIEWS 
 
 -- View com todos os dados dos clientes menos a senha
