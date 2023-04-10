@@ -333,6 +333,7 @@ select c.nome, p.id, p.data_pedido, p.data_entrega, day(p.data_entrega) - day(p.
 from cliente c
          join pedido p on c.id = p.cliente_id
 where p.data_entrega in (select p.data_entrega from pedido p where p.data_pedido < DATE_SUB(current_date(), INTERVAL 7 DAY));
+```
 
 # *RELATÓRIO JOÃO MARCOS*
 
