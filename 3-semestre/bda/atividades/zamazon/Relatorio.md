@@ -406,22 +406,6 @@ FROM PRODUTO p
 WHERE p.preco > (SELECT AVG(preco) FROM PRODUTO);
 ```
 
--- o nome da loja e respectivo número de produtos separados por categoria
-```sql
-SELECT l.nome, c.descricao AS categoria, COUNT(*) AS num_produtos
-FROM LOJA l
-INNER JOIN PRODUTO p ON l.id = p.loja_id
-INNER JOIN CATEGORIA c ON p.categoria_id = c.id
-GROUP BY l.nome, c.descricao;
-```
-
---o nome da loja e o nome dos produtos que ela vende
-```sql
-SELECT l.nome_loja, p.nome_produto
-FROM loja l
-INNER JOIN produto p ON p.id_loja = l.id_loja;
-```
-
 -- nome do produto e da categoria, apenas dos produtos que custam mais de 50 unidades monetárias (a moeda não está especificada na tabela).
 ```sql
 SELECT p.nome , c.descricao as categoria
@@ -429,4 +413,20 @@ FROM produto p
 JOIN categoria c on p.categoria_id = c.id
 WHERE p.preco > 2000.00
 ORDER BY c.descricao, p.nome;
+```
+
+-- o nome da loja e respectivo produtos
+```sql
+SELECT l.nome AS loja, p.nome AS produto
+FROM loja AS l
+LEFT JOIN produto AS p ON l.id = p.id_loja;
+```
+
+--listar produto e sua respectivas categorias
+```sql
+SELECT p.nome AS produto, c.descricao AS categoria
+FROM produto AS p
+INNER JOIN categoria AS c ON p.categoria_id = c.id;
+```
+
 
