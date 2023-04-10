@@ -1,4 +1,4 @@
-# c. rws
+# Etapa 1: Modelo Físico, Carga de Dados e Relatórios
 
 ```sql
 drop database if exists zamazon;
@@ -12,7 +12,7 @@ create table loja
     nome     varchar(50) not null,
     telefone varchar(15) not null
 );
-```
+
 
 create table categoria
 (
@@ -295,3 +295,4 @@ VALUES (1, 1, 'Produto de qualidade', 5, '2022-05-13'),
        (11, 6, 'Bom', 4, '2022-02-01'),
        (13, 9, 'Deixa a desejar', 2, '2022-07-12'),
        (10, 10, 'Produto de qualidade', 4, '2022-07-04');;
+```
