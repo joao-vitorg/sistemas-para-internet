@@ -376,14 +376,16 @@ where p.data_entrega in (select p.data_entrega from pedido p where p.data_pedido
 # *RELATÓRIO JOÃO PEDRO*
 
 -- clientes que gastaram menos que a media por pedidos
+
 ```sql
 select nome, email
 from cliente
 where id in (select cliente_id from pedido group by cliente_id having sum(preco_total) < (select ROUND(avg(preco_total), 2) from pedido));
 ```
 
-```sql
+
 -- Clientes que compraram mais de 2 celulares samsung galaxy
+```sql
 select c.nome, c.email
 from cliente c
 where c.id in (select p.cliente_id
