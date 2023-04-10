@@ -397,6 +397,50 @@ where c.id in (select p.cliente_id
                having count(pp.quantidade) >= 2);
 ```
 
+-- clientes que gastaram menos que a media por pedidos
+```sql
+select nome, email
+from cliente
+where id in (select cliente_id from pedido group by cliente_id having sum(preco_total) < (select ROUND(avg(preco_total), 2) from pedido));
+```
+
+-- Clientes que compraram mais de 2 celulares samsung galaxy
+```sql
+select c.nome, c.email
+from cliente c
+where c.id in (select p.cliente_id
+               from pedido p
+                        inner join pedido_produto pp on pp.pedido_id = p.id
+                        inner join produto prod on prod.id = pp.produto_id
+               where prod.nome = 'Galaxy S20'
+               group by p.cliente_id
+               having count(pp.quantidade) >= 2);
+```
+
+-- Valor total gasto em frete por loja e produto
+```sql
+select l.nome as loja, prod.nome as produto, sum(p.frete_total) as vlr_gasto_frete
+from pedido p
+         left join pedido_produto pp on p.id = pp.pedido_id
+         left join produto prod on prod.id = pp.produto_id
+         left join loja l on l.id = prod.loja_id
+group by pp.produto_id
+order by vlr_gasto_frete desc;
+```
+
+-- Produto que foi parcelado mais vezes nos pedidos
+```sql
+select l.nome as loja, prod.nome as produto, count(*) as qtd_pedidos_parcelado
+from pedido p
+         inner join pedido_produto pp on pp.pedido_id = p.id
+         inner join produto prod on prod.id = pp.produto_id
+         inner join loja l on l.id = prod.loja_id
+where p.n_parcelas > 1
+group by prod.id
+order by qtd_pedidos_parcelado desc
+limit 1;
+```
+
 # *RELATÓRIO LAURA CRISTINA*
 
 -- o nome e preço dos produtos em que preço é maior que a média de preço de todos os produtos da loja
