@@ -372,3 +372,59 @@ from cliente c
          join pedido p on c.id = p.cliente_id
 where p.data_entrega in (select p.data_entrega from pedido p where p.data_pedido < DATE_SUB(current_date(), INTERVAL 7 DAY));
 ```
+
+# *RELATÓRIO JOÃO PEDRO*
+
+-- clientes que gastaram menos que a media por pedidos
+```sql
+select nome, email
+from cliente
+where id in (select cliente_id from pedido group by cliente_id having sum(preco_total) < (select ROUND(avg(preco_total), 2) from pedido));
+```
+
+```sql
+-- Clientes que compraram mais de 2 celulares samsung galaxy
+select c.nome, c.email
+from cliente c
+where c.id in (select p.cliente_id
+               from pedido p
+                        inner join pedido_produto pp on pp.pedido_id = p.id
+                        inner join produto prod on prod.id = pp.produto_id
+               where prod.nome = 'Galaxy S20'
+               group by p.cliente_id
+               having count(pp.quantidade) >= 2);
+```
+
+# *RELATÓRIO LAURA CRISTINA*
+
+-- o nome e preço dos produtos em que preço é maior que a média de preço de todos os produtos da loja
+```sql
+SELECT p.nome, p.preco
+FROM PRODUTO p
+WHERE p.preco > (SELECT AVG(preco) FROM PRODUTO);
+```
+
+-- o nome da loja e respectivo número de produtos separados por categoria
+```sql
+SELECT l.nome, c.descricao AS categoria, COUNT(*) AS num_produtos
+FROM LOJA l
+INNER JOIN PRODUTO p ON l.id = p.loja_id
+INNER JOIN CATEGORIA c ON p.categoria_id = c.id
+GROUP BY l.nome, c.descricao;
+```
+
+--o nome da loja e o nome dos produtos que ela vende
+```sql
+SELECT l.nome_loja, p.nome_produto
+FROM loja l
+INNER JOIN produto p ON p.id_loja = l.id_loja;
+```
+
+-- nome do produto e da categoria, apenas dos produtos que custam mais de 50 unidades monetárias (a moeda não está especificada na tabela).
+```sql
+SELECT p.nome , c.descricao as categoria
+FROM produto p
+JOIN categoria c on p.categoria_id = c.id
+WHERE p.preco > 2000.00
+ORDER BY c.descricao, p.nome;
+
