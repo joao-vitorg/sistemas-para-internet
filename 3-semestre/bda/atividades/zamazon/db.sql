@@ -4,7 +4,7 @@ use zamazon;
 
 create table loja
 (
-    id       int         not null auto_increment primary key,
+    id_loja  int         not null auto_increment primary key,
     cnpj     varchar(18) not null unique,
     nome     varchar(50) not null,
     telefone varchar(15) not null
@@ -12,26 +12,26 @@ create table loja
 
 create table categoria
 (
-    id        int         not null primary key auto_increment,
-    descricao varchar(50) not null
+    id_categoria int         not null primary key auto_increment,
+    descricao    varchar(50) not null
 );
 
 create table produto
 (
-    id            int           not null primary key auto_increment,
-    nome          varchar(50)   not null,
-    descricao     text          not null,
-    preco         numeric(9, 2) not null,
-    estoque       int           not null,
-    categoria_id  int           not null,
-    fornecedor_id int           not null,
-    foreign key (categoria_id) references categoria (id),
-    foreign key (fornecedor_id) references loja (id)
+    id_produto   int           not null primary key auto_increment,
+    nome         varchar(50)   not null,
+    descricao    text          not null,
+    preco        numeric(9, 2) not null,
+    estoque      int           not null,
+    categoria_id int           not null,
+    loja_id      int           not null,
+    foreign key (categoria_id) references categoria (id_categoria),
+    foreign key (loja_id) references loja (id_loja)
 );
 
 create table cliente
 (
-    id            int         not null primary key auto_increment,
+    id_cliente    int         not null primary key auto_increment,
     email         varchar(50) not null unique,
     nome          varchar(50) not null,
     senha         varchar(50) not null,
@@ -43,26 +43,26 @@ create table cliente
 
 create table endereco
 (
-    id         int         not null primary key auto_increment,
-    cod_postal varchar(9)  not null,
-    endereco   varchar(50) not null,
-    cliente_id int         not null,
-    foreign key (cliente_id) references cliente (id)
+    id_endereco int         not null primary key auto_increment,
+    cod_postal  varchar(9)  not null,
+    endereco    varchar(50) not null,
+    cliente_id  int         not null,
+    foreign key (cliente_id) references cliente (id_cliente)
 );
 
 create table cartao
 (
-    id         int         not null primary key auto_increment,
+    id_cartao  int         not null primary key auto_increment,
     numero     varchar(16) not null,
     nome       varchar(50) not null,
     expiracao  date        not null,
     cliente_id int         not null,
-    foreign key (cliente_id) references cliente (id)
+    foreign key (cliente_id) references cliente (id_cliente)
 );
 
 create table pedido
 (
-    id            int           not null primary key auto_increment,
+    id_pedido     int           not null primary key auto_increment,
     data_pedido   date          not null,
     status_pedido varchar(100)  not null,
     data_entrega  date,
@@ -72,43 +72,46 @@ create table pedido
     cliente_id    int           not null,
     endereco_id   int           not null,
     cartao_id     int           not null,
-    foreign key (cliente_id) references cliente (id),
-    foreign key (endereco_id) references endereco (id),
-    foreign key (cartao_id) references cartao (id)
+    foreign key (cliente_id) references cliente (id_cliente),
+    foreign key (endereco_id) references endereco (id_endereco),
+    foreign key (cartao_id) references cartao (id_cartao)
 );
 
 create table pedido_produto
 (
-    pedido_id  int           not null,
-    produto_id int           not null,
-    preco      numeric(9, 2) not null,
-    quantidade int           not null,
-    frete      numeric(9, 2) not null,
-    primary key (pedido_id, produto_id),
-    foreign key (pedido_id) references pedido (id),
-    foreign key (produto_id) references produto (id)
+    id_pedido_produto int           not null primary key auto_increment,
+    pedido_id         int           not null,
+    produto_id        int           not null,
+    preco             numeric(9, 2) not null,
+    quantidade        int           not null,
+    frete             numeric(9, 2) not null,
+    unique (pedido_id, produto_id),
+    foreign key (pedido_id) references pedido (id_pedido),
+    foreign key (produto_id) references produto (id_produto)
 );
 
 create table carrinho
 (
-    cliente_id int not null,
-    produto_id int not null,
-    quantidade int not null,
-    primary key (cliente_id, produto_id),
-    foreign key (cliente_id) REFERENCES cliente (id),
-    foreign key (produto_id) REFERENCES produto (id)
+    id_carrinho int not null primary key auto_increment,
+    cliente_id  int not null,
+    produto_id  int not null,
+    quantidade  int not null,
+    unique (cliente_id, produto_id),
+    foreign key (cliente_id) REFERENCES cliente (id_cliente),
+    foreign key (produto_id) REFERENCES produto (id_produto)
 );
 
 create table comentario
 (
+    id_comentario   int          not null primary key auto_increment,
     cliente_id      int          not null,
     produto_id      int          not null,
     comentario      varchar(250) not null,
     avaliacao       int          not null,
     data_comentario date         not null,
-    primary key (cliente_id, produto_id),
-    foreign key (cliente_id) REFERENCES cliente (id),
-    foreign key (produto_id) REFERENCES produto (id)
+    unique (cliente_id, produto_id),
+    foreign key (cliente_id) REFERENCES cliente (id_cliente),
+    foreign key (produto_id) REFERENCES produto (id_produto)
 );
 
 insert into loja (cnpj, nome, telefone)
@@ -125,7 +128,7 @@ values ('Eletrônico'),
        ('Áudio'),
        ('Vídeo');
 
-insert into produto (nome, descricao, preco, estoque, categoria_id, fornecedor_id)
+insert into produto (nome, descricao, preco, estoque, categoria_id, loja_id)
 values ('Iphone 14', 'Novo smartphone da Apple.', 6500.00, 500, 1, 1),
        ('Camiseta', 'Roupa casual confortável.', 100.00, 300, 2, 2),
        ('Galaxy S20', 'Smartphone premium da Samsung.', 2000.00, 600, 1, 3),
@@ -135,7 +138,8 @@ values ('Iphone 14', 'Novo smartphone da Apple.', 6500.00, 500, 1, 1),
        ('Teclado', 'Dispositivo para entrada de texto.', 300.00, 100, 3, 5),
        ('Monitor', 'Tela de exibição para computador.', 1000.00, 500, 5, 3),
        ('Notebook', 'Computador portátil.', 3000.00, 300, 3, 3),
-       ('Smart TV', 'TV com acesso à internet.', 2000.00, 200, 5, 3);
+       ('Smart TV', 'TV com acesso à internet.', 2000.00, 200, 5, 3),
+       ('Camiseta polo', 'Roupa modelo esporte fino.', 150.00, 300, 2, 2);
 
 insert into cliente (email, nome, senha, telefone, cpf, dt_nascimento, sexo)
 values ('luiz@gmail.com', 'Luiz Fernando Barbosa', '0cc175b9c0f1b6a831c399e269772661', '34992749276', '222.222.222-22', '2001-04-23', 'M'),
@@ -159,11 +163,11 @@ values ('38400-457', 'Rua Fernando Costa, 15', 1),
        ('38411-555', 'Rua México, 124', 2),
        ('38411-104', 'Rua Blanche Galassi, 150', 3),
        ('17052-907', 'Rua Rafael Alves, 15', 4),
-       ('01327-402', 'Av. Paulista, 114', 5),
-       ('01327-402', 'Av. Paulista, 115', 6),
+       ('11327-402', 'Av. Paulista, 114', 5),
+       ('11327-402', 'Av. Paulista, 115', 6),
        ('32456-457', 'Rua Patrulheiro Osmar tavares, 15', 7),
        ('38766-576', 'Rua Salvador, 124', 8),
-       ('69042-104', 'Rua Natal, 150', 9),
+       ('63042-104', 'Rua Natal, 150', 9),
        ('12889-907', 'Rua Buriti Alegre, 15', 10),
        ('98711-402', 'Av. Ivaldo Alves Nascimento, 114', 11),
        ('38412-486', 'Av. Mauá, 115', 12),
@@ -186,7 +190,9 @@ values ('1111111111111111', 'LUIZ F. B.', '2027-06-13', 1),
        ('3339873533333333', 'AMANDA S.', '2022-07-15', 12),
        ('1111112345911111', 'ALEXANDRE Q.', '2027-06-13', 13),
        ('1234567854363121', 'MARGARIDA C.', '2028-02-19', 14),
-       ('2222567432222222', 'WELLINGTON X.', '2025-10-03', 15);
+       ('2222567432222222', 'WELLINGTON X.', '2025-10-03', 15),
+       ('1187463789092637', 'FABRICIO SOARES', '2024-05-19', 6),
+       ('1218909678954321', 'JULIANA DONER.', '2028-08-14', 14);
 
 insert into pedido (data_pedido, status_pedido, data_entrega, preco_total, frete_total, cliente_id, endereco_id, cartao_id, n_parcelas)
 values ('2022-05-13', 'Aguardando pagamento', null, 10000, 62, 1, 1, 1, 1),
@@ -201,7 +207,14 @@ values ('2022-05-13', 'Aguardando pagamento', null, 10000, 62, 1, 1, 1, 1),
        ('2022-07-12', 'Em transporte', null, 8000, 70, 14, 14, 14, 1),
        ('2022-07-04', 'Entregue', '2022-07-11', 7000, 27, 15, 15, 15, 2),
        ('2022-05-13', 'Entregue', '2022-01-01', 500, 0, 1, 1, 1, 1),
-       ('2022-03-10', 'Processando', null, 2300, 20, 3, 3, 3, 1);
+       ('2022-03-10', 'Processando', null, 2300, 20, 3, 3, 3, 1),
+       ('2023-02-13', 'Em transporte', null, 2000, 10, 2, 1, 2, 3),
+       ('2023-02-10', 'Entregue', '2023-02-13', 2000, 12, 2, 2, 2, 4),
+       ('2023-03-10', 'Entregue', '2023-03-13', 3000, 0, 1, 3, 1, 4),
+       ('2023-03-15', 'Em transporte', null, 150, 0, 3, 3, 3, 1),
+       ('2023-03-25', 'Em transporte', null, 400, 0, 3, 3, 3, 1),
+       ('2023-02-25', 'Em transporte', null, 2000.00, 50, 3, 3, 3, 1),
+       ('2023-02-25', 'Em transporte', null, 2000.00, 20, 1, 1, 1, 1);
 
 insert into pedido_produto(pedido_id, produto_id, preco, quantidade, frete)
 VALUES (1, 1, 6000.00, 1, 10),
@@ -233,7 +246,14 @@ VALUES (1, 1, 6000.00, 1, 10),
        (1, 8, 1000.00, 3, 40),
        (2, 9, 3000.00, 1, 25),
        (3, 10, 2000.00, 1, 25),
-       (4, 1, 6000.00, 1, 50);
+       (4, 1, 6000.00, 1, 50),
+       (14, 3, 2000.00, 1, 10),
+       (15, 3, 2000.00, 1, 12),
+       (16, 9, 3000.00, 1, 0),
+       (17, 11, 150.00, 1, 0),
+       (18, 5, 400.00, 1, 20),
+       (19, 3, 2000.00, 1, 50),
+       (20, 3, 2000.00, 1, 20);
 
 insert into carrinho(cliente_id, produto_id, quantidade)
 VALUES (5, 1, 1),
@@ -257,7 +277,11 @@ VALUES (5, 1, 1),
        (1, 8, 3),
        (3, 9, 1),
        (2, 10, 1),
-       (6, 2, 1);
+       (6, 2, 1),
+       (2, 3, 2),
+       (1, 9, 1),
+       (3, 11, 1),
+       (3, 5, 1);
 
 insert into comentario(cliente_id, produto_id, comentario, avaliacao, data_comentario)
 VALUES (1, 1, 'Produto de qualidade', 5, '2022-05-13'),
@@ -269,4 +293,4 @@ VALUES (1, 1, 'Produto de qualidade', 5, '2022-05-13'),
        (2, 8, 'Top', 5, '2022-03-10'),
        (11, 6, 'Bom', 4, '2022-02-01'),
        (13, 9, 'Deixa a desejar', 2, '2022-07-12'),
-       (10, 10, 'Produto de qualidade', 4, '2022-07-04');;
+       (10, 10, 'Produto de qualidade', 4, '2022-07-04');
