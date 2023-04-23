@@ -1,5 +1,5 @@
 ## 🗿 Linguagem - Front-end
 
-### [🏹 Arrow functions](arrow-functions)
+### [🗿 Introdução](introducao)
 
-### [➰ Iterators](iterators)
+### [➰ React](react/dist)
