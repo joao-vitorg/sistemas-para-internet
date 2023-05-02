@@ -1,4 +1,4 @@
-package org.example.linguagem.junit;
+package com.example.testes.linguagem.junit;
 
 public class FuncionarioTercerizado extends Funcionario {
     private double despesasAdicionais;

@@ -1,4 +1,4 @@
-package org.example.linguagem.introducao;
+package com.example.testes.linguagem.introducao;
 
 public class Calculadora {
     private int memoria;
