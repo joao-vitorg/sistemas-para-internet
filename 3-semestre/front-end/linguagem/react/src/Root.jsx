@@ -1,26 +1,25 @@
 import { Link } from "react-router-dom";
 
+const generateItens = (num, base) => (
+	<div>
+		<h2 style={{ textTransform: "capitalize" }}>{base.replaceAll("-", " ")}</h2>
+
+		<ul>
+			{[...Array(num).keys()].map((i) => (
+				<li key={i}>
+					<Link to={`/${base}/ex${i + 1}`}>Exercício {i + 1}</Link>
+				</li>
+			))}
+		</ul>
+	</div>
+);
+
 export function Component() {
 	return (
-		<>
-			<ul>
-				<ul>
-					<li>
-						<Link to={"/introducao/ex1/q1"}>Ex1q1</Link>
-					</li>
-					<li>
-						<Link to={"/introducao/ex1/q2"}>Ex1q2</Link>
-					</li>
-				</ul>
+		<div>
+			{generateItens(4, "introducao")}
 
-				<li>
-					<Link to={"/introducao/ex2"}>Ex2</Link>
-				</li>
-
-				<li>
-					<Link to={"/introducao/ex3"}>Ex3</Link>
-				</li>
-			</ul>
-		</>
+			{generateItens(5, "use-state")}
+		</div>
 	);
 }

@@ -1,4 +1,5 @@
 import Avaliacao from "../components/Avaliacao.jsx";
+import "./style.css";
 
 export function Component() {
 	const avaliacoes = [
@@ -49,8 +50,8 @@ export function Component() {
 
 	return (
 		<div className={"secao-avaliacao"}>
-			{getRamdom().map((data) => (
-				<Avaliacao {...data} key={data.nome} />
+			{getRamdom().map((data, index) => (
+				<Avaliacao {...data} key={index} />
 			))}
 		</div>
 	);

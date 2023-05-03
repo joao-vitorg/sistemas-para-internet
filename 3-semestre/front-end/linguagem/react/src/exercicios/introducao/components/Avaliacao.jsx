@@ -1,3 +1,5 @@
+import "./Avaliacao.css";
+
 export default function Avaliacao({ foto, nome, avaliacao1, avaliacao2 }) {
 	return (
 		<div className={"avaliacao"}>

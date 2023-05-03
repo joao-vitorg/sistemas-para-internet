@@ -1,5 +1,6 @@
 import Avaliacao from "../components/Avaliacao.jsx";
 import props from "./props.js";
+import "./style.css";
 
 export function Component() {
 	return (

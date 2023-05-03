@@ -1,4 +1,5 @@
 import Avaliacao from "../components/Avaliacao.jsx";
+import "./style.css";
 
 export function Component() {
 	return (

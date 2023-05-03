@@ -1,1 +1,0 @@
-import{a,j as i}from"./index-d6acc177.js";function n({foto:r,nome:c,avaliacao1:l,avaliacao2:s}){return a("div",{className:"avaliacao",children:[i("img",{src:`./img/${r}`,alt:"Foto"}),a("div",{children:[i("p",{children:c}),a("p",{children:['"',l,'"']}),a("p",{children:['"',s,'"']})]})]})}export{n as A};
