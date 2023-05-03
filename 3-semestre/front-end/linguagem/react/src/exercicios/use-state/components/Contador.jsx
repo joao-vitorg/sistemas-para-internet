@@ -12,8 +12,12 @@ export default function Contador({ limiteMin, limiteMax }) {
 				<span style={{ fontWeight: "bold" }}>Valor atual do contador:</span> {contador}
 			</p>
 			<div>
-				<button onClick={() => (contador < limiteMax ? setContador(contador + 1) : null)}>+</button>
-				<button onClick={() => (contador > limiteMin ? setContador(contador - 1) : null)}>-</button>
+				<button type={"button"} onClick={() => (contador < limiteMax ? setContador(contador + 1) : null)}>
+					+
+				</button>
+				<button type={"button"} onClick={() => (contador > limiteMin ? setContador(contador - 1) : null)}>
+					-
+				</button>
 			</div>
 			<hr />
 		</div>

@@ -9,6 +9,7 @@ export default function Paragrafos() {
 			<form>
 				<input type="text" value={texto} onChange={({ target }) => setTexto(target.value)} />
 				<button
+					type={"button"}
 					onClick={() => {
 						setParagrafos([...paragrafos, texto]);
 						setTexto("");

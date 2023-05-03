@@ -14,7 +14,9 @@ export default function FormularioNomeCompleto() {
 				<label htmlFor="sobrenome">Sobrenome: </label>
 				<input type="text" id="sobrenome" onChange={({ target }) => setSobrenome(target.value)} />
 				<br />
-				<button onClick={() => setNomeCompleto(`${nome} ${sobrenome}`)}>Exibir nome completo</button>
+				<button type={"button"} onClick={() => setNomeCompleto(`${nome} ${sobrenome}`)}>
+					Exibir nome completo
+				</button>
 			</form>
 
 			<p>{nomeCompleto}</p>
