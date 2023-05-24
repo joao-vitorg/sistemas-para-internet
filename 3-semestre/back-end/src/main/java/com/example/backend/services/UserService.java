@@ -39,17 +39,17 @@ public class UserService {
     }
 
     public UserVO findById(Long id) throws Exception {
-        var userDb = repository.findById(id).orElseThrow(() -> new ResourceNotFoundException("No records for this ID."));
-        var user = DozerMapper.parseObject(userDb, UserVO.class);
+        User userDb = repository.findById(id).orElseThrow(() -> new ResourceNotFoundException("No records for this ID."));
+        UserVO user = DozerMapper.parseObject(userDb, UserVO.class);
         user.add(linkTo(methodOn(UserController.class).findById(id)).withSelfRel());
-        //user.add(linkTo(methodOn(UserController.class).update(user)).withSelfRel());
-        //user.add(linkTo(methodOn(UserController.class).delete(id)).withSelfRel());
+        user.add(linkTo(methodOn(UserController.class).update(user)).withSelfRel());
+        user.add(linkTo(methodOn(UserController.class).delete(id)).withSelfRel());
         return user;
     }
 
     public List<UserVO> findByGroupName(String groupName) {
         List<User> users = repository.findUsersByGroupName(groupName);
-        var usersVO = DozerMapper.parseListObject(users, UserVO.class);
+        List<UserVO> usersVO = DozerMapper.parseListObject(users, UserVO.class);
         usersVO.forEach(user -> {
             try {
                 user.add(linkTo(methodOn(UserController.class).findById(user.getId()))
@@ -64,7 +64,6 @@ public class UserService {
 
     public UserVO save(UserVO userVO) throws Exception {
         if (userVO == null) throw new RequiredObjectIsNullException();
-
         User user = DozerMapper.parseObject(userVO, User.class);
         var userDb = repository.save(user);
         userVO = DozerMapper.parseObject(userDb, UserVO.class);

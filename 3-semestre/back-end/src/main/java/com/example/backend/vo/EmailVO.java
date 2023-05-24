@@ -2,11 +2,12 @@ package com.example.backend.vo;
 
 
 import com.example.backend.models.User;
+import org.springframework.hateoas.RepresentationModel;
 
 import java.io.Serializable;
 import java.util.Objects;
 
-public class EmailVO implements Serializable {
+public class EmailVO extends RepresentationModel<UserVO> implements Serializable {
     private Long id;
     private String from;
     private String to;

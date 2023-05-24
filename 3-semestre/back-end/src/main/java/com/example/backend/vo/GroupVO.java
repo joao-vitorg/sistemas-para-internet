@@ -2,13 +2,14 @@ package com.example.backend.vo;
 
 
 import com.example.backend.models.User;
+import org.springframework.hateoas.RepresentationModel;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class GroupVO implements Serializable {
+public class GroupVO extends RepresentationModel<UserVO> implements Serializable {
     private Long id;
     private String name;
     private String code;

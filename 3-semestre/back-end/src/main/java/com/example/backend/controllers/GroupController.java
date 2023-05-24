@@ -65,7 +65,7 @@ public class GroupController {
                     @ApiResponse(description = "Internal Server Error", responseCode = "500", content = @Content)
             }
     )
-    public GroupVO findById(@PathVariable("id") Long id) {
+    public GroupVO findById(@PathVariable("id") Long id) throws Exception {
         return service.findById(id);
     }
 
@@ -86,7 +86,7 @@ public class GroupController {
                     @ApiResponse(description = "Internal Server Error", responseCode = "500", content = @Content)
             }
     )
-    public GroupVO save(@RequestBody GroupVO groupVO) {
+    public GroupVO save(@RequestBody GroupVO groupVO) throws Exception {
         return service.save(groupVO);
     }
 
@@ -128,7 +128,7 @@ public class GroupController {
                     @ApiResponse(description = "Internal Server Error", responseCode = "500", content = @Content)
             }
     )
-    public GroupVO update(@RequestBody GroupVO groupVO) {
+    public GroupVO update(@RequestBody GroupVO groupVO) throws Exception {
         return service.update(groupVO);
     }
 
