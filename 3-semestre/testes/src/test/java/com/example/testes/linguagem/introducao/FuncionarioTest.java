@@ -1,4 +1,4 @@
-package com.example.testes.linguagem.junit;
+package com.example.testes.linguagem.introducao;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

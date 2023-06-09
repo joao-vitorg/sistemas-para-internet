@@ -1,4 +1,4 @@
-package com.example.testes.linguagem.jpa.services.exceptions;
+package com.example.testes.linguagem.cliente.services.exceptions;
 
 import java.io.Serial;
 

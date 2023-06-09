@@ -1,12 +1,11 @@
-package com.example.testes.linguagem.jpa.services;
+package com.example.testes.linguagem.cliente.services;
 
-import com.example.testes.linguagem.jpa.dto.ClientDTO;
-import com.example.testes.linguagem.jpa.entities.Client;
-import com.example.testes.linguagem.jpa.repositories.ClientRepository;
-import com.example.testes.linguagem.jpa.services.exceptions.DatabaseException;
-import com.example.testes.linguagem.jpa.services.exceptions.ResourceNotFoundException;
+import com.example.testes.linguagem.cliente.dto.ClientDTO;
+import com.example.testes.linguagem.cliente.entities.Client;
+import com.example.testes.linguagem.cliente.repositories.ClientRepository;
+import com.example.testes.linguagem.cliente.services.exceptions.DatabaseException;
+import com.example.testes.linguagem.cliente.services.exceptions.ResourceNotFoundException;
 import jakarta.persistence.EntityNotFoundException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.Page;
@@ -19,9 +18,11 @@ import java.util.Optional;
 
 @Service
 public class ClientService {
+    private final ClientRepository repository;
 
-    @Autowired
-    private ClientRepository repository;
+    public ClientService(ClientRepository repository) {
+        this.repository = repository;
+    }
 
     @Transactional(readOnly = true)
     public Page<ClientDTO> findAllPaged(PageRequest pageRequest) {

@@ -1,6 +1,6 @@
-package com.example.testes.linguagem.jpa.repositories;
+package com.example.testes.linguagem.cliente.repositories;
 
-import com.example.testes.linguagem.jpa.entities.Client;
+import com.example.testes.linguagem.cliente.entities.Client;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -118,13 +118,13 @@ class ClientRepositoryTest {
         String cpf = "11111111111";
         double income = 99_999D;
 
-        Client client = repository.findById(id).get();
+        Client client = repository.findById(id).orElseThrow();
         client.setName(name);
         client.setCpf(cpf);
         client.setIncome(income);
         repository.save(client);
 
-        Client newClient = repository.findById(id).get();
+        Client newClient = repository.findById(id).orElseThrow();
 
         assertEquals(name, newClient.getName());
         assertEquals(cpf, newClient.getCpf());

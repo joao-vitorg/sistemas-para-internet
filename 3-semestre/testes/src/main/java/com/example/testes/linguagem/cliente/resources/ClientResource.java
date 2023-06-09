@@ -1,8 +1,7 @@
-package com.example.testes.linguagem.jpa.resources;
+package com.example.testes.linguagem.cliente.resources;
 
-import com.example.testes.linguagem.jpa.dto.ClientDTO;
-import com.example.testes.linguagem.jpa.services.ClientService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.testes.linguagem.cliente.dto.ClientDTO;
+import com.example.testes.linguagem.cliente.services.ClientService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort.Direction;
@@ -16,8 +15,11 @@ import java.net.URI;
 @RestController
 @RequestMapping(value = "/clients")
 public class ClientResource {
-    @Autowired
-    private ClientService service;
+    private final ClientService service;
+
+    public ClientResource(ClientService service) {
+        this.service = service;
+    }
 
     @GetMapping
     public ResponseEntity<Page<ClientDTO>> findAll(@RequestParam(value = "page", defaultValue = "0") Integer page,

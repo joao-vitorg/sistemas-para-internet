@@ -1,7 +1,7 @@
-package com.example.testes.linguagem.jpa.resources.exceptions;
+package com.example.testes.linguagem.cliente.resources.exceptions;
 
-import com.example.testes.linguagem.jpa.services.exceptions.DatabaseException;
-import com.example.testes.linguagem.jpa.services.exceptions.ResourceNotFoundException;
+import com.example.testes.linguagem.cliente.services.exceptions.DatabaseException;
+import com.example.testes.linguagem.cliente.services.exceptions.ResourceNotFoundException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +13,6 @@ import java.time.Instant;
 
 @ControllerAdvice
 public class ResourceExceptionHandler {
-
     @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<StandardError> entityNotFound(ResourceNotFoundException e, HttpServletRequest request) {
         StandardError err = new StandardError();
@@ -35,5 +34,4 @@ public class ResourceExceptionHandler {
         err.setPath(request.getRequestURI());
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(err);
     }
-
 }
