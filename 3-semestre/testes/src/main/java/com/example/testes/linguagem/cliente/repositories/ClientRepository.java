@@ -1,6 +1,8 @@
 package com.example.testes.linguagem.cliente.repositories;
 
 import com.example.testes.linguagem.cliente.entities.Client;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -22,4 +24,6 @@ public interface ClientRepository extends JpaRepository<Client, Long> {
     List<Client> findByIncomeBetween(Double incomeStart, Double incomeEnd);
 
     List<Client> findByBirthDateBetween(Instant birthDateStart, Instant birthDateEnd);
+
+    Page<Client> findByIncome(double salarioI, Pageable pageable);
 }

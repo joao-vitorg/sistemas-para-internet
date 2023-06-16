@@ -3,11 +3,8 @@ package com.example.testes.linguagem.cliente.services;
 import com.example.testes.linguagem.cliente.dto.ClientDTO;
 import com.example.testes.linguagem.cliente.entities.Client;
 import com.example.testes.linguagem.cliente.repositories.ClientRepository;
-import com.example.testes.linguagem.cliente.services.exceptions.DatabaseException;
 import com.example.testes.linguagem.cliente.services.exceptions.ResourceNotFoundException;
 import jakarta.persistence.EntityNotFoundException;
-import org.springframework.dao.DataIntegrityViolationException;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -57,13 +54,13 @@ public class ClientService {
     }
 
     public void delete(Long id) {
-        try {
-            repository.deleteById(id);
-        } catch (EmptyResultDataAccessException e) {
-            throw new ResourceNotFoundException("Id not found " + id);
-        } catch (DataIntegrityViolationException e) {
-            throw new DatabaseException("Integrity violation");
-        }
+        repository.deleteById(id);
+    }
+
+    @Transactional(readOnly = true)
+    public Page<ClientDTO> findByIncome(PageRequest pageRequest, Double income) {
+        Page<Client> list = repository.findByIncome(income, pageRequest);
+        return list.map(ClientDTO::new);
     }
 
     private void updateData(Client entity, ClientDTO dto) {
