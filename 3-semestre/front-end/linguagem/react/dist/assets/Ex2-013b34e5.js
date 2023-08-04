@@ -1,1 +1,0 @@
-import{r as m,j as o,a as e}from"./index-70105e74.js";function a(){const[n,r]=m.useState("");return o("div",{children:[o("form",{children:[e("label",{htmlFor:"nome",children:"Nome: "}),e("input",{type:"text",id:"nome",onChange:({target:t})=>r(t.value)})]}),e("p",{children:n.toUpperCase()})]})}function s(){return e(a,{})}export{s as Component};

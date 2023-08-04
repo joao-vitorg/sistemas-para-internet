@@ -3,6 +3,7 @@ package com.example.projetomvc.predio.controller;
 import com.example.projetomvc.predio.model.Apartamento;
 import com.example.projetomvc.predio.repository.ApartamentoRepository;
 import com.example.projetomvc.predio.repository.ProprietarioRepository;
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -11,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/predio/apartamento")

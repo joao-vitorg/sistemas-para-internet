@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="pt-br" th:include="template :: modelo" xmlns:th="http://www.thymeleaf.org">
-    <section th:fragment="conteudo">
-        <form action="/predio/proprietario/cadastrar" method="post" th:object="${proprietario}">
-            <div class="mb-3">
-                <label for="nome">Nome</label>
-                <input class="form-control" id="nome" th:field="*{nome}" type="text" />
-                <div class="alert alert-warning" th:errors="*{nome}" th:if="${#fields.hasErrors('nome')}"></div>
-            </div>
-            <div class="mb-3">
-                <label for="telefone">Telefone</label>
-                <input class="form-control" id="telefone" th:field="*{telefone}" type="text" />
-                <div class="alert alert-warning" th:errors="*{telefone}" th:if="${#fields.hasErrors('telefone')}"></div>
-            </div>
-            <button class="btn btn-primary" type="submit">Gravar</button>
-        </form>
-    </section>
+<html lang="pt-br" th:insert="~{template :: modelo}" xmlns:th="http://www.thymeleaf.org">
+	<section th:fragment="conteudo">
+		<form action="/predio/proprietario/cadastrar" method="post" th:object="${proprietario}">
+			<div class="mb-3">
+				<label for="nome">Nome</label>
+				<input class="form-control" id="nome" th:field="*{nome}" type="text" />
+				<div class="alert alert-warning" th:errors="*{nome}" th:if="${#fields.hasErrors('nome')}"></div>
+			</div>
+			<div class="mb-3">
+				<label for="telefone">Telefone</label>
+				<input class="form-control" id="telefone" th:field="*{telefone}" type="text" />
+				<div class="alert alert-warning" th:errors="*{telefone}" th:if="${#fields.hasErrors('telefone')}"></div>
+			</div>
+			<button class="btn btn-primary" type="submit">Gravar</button>
+		</form>
+	</section>
 </html>

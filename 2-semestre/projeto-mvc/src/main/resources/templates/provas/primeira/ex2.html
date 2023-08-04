@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html lang="pt-br" th:include="template :: modelo" xmlns:th="http://www.thymeleaf.org">
-    <div th:fragment="conteudo">
-        <h2>Product list</h2>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Description</th>
-                    <th>Price</th>
-                    <th>Available from</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="product : ${listadeprodutos}">
-                    <td th:text="${product.description}"></td>
-                    <td th:text="${product.price}"></td>
-                    <td th:text="${product.availableFrom}"></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+<html lang="pt-br" th:insert="~{template :: modelo}" xmlns:th="http://www.thymeleaf.org">
+	<div th:fragment="conteudo">
+		<h2>Product list</h2>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Description</th>
+					<th>Price</th>
+					<th>Available from</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="product : ${listadeprodutos}">
+					<td th:text="${product.description}"></td>
+					<td th:text="${product.price}"></td>
+					<td th:text="${product.availableFrom}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 </html>

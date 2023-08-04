@@ -1,27 +1,27 @@
 <!DOCTYPE html>
-<html lang="pt-br" th:include="template :: modelo" xmlns:th="http://www.thymeleaf.org">
-    <section th:fragment="conteudo">
-        <form action="/jdbc/contato/cadastrar" method="post" th:object="${contato}">
-            <div class="mb-3">
-                <label class="form-label" for="nome">Nome</label>
-                <input class="form-control" id="nome" th:field="*{nome}" type="text"/>
-            </div>
-            <div class="mb-3">
-                <label class="form-label" for="telefone">Telefone</label>
-                <input class="form-control" id="telefone" th:field="*{telefone}" type="tel"/>
-            </div>
-            <div class="mb-3">
-                <label class="form-label" for="endereco">Endereço</label>
-                <input class="form-control" id="endereco" th:field="*{endereco}" type="text"/>
-            </div>
-            <div class="mb-3">
-                <label class="form-label" for="descricao">Tipo</label>
-                <select class="form-control" id="descricao" th:field="*{tipo.id}">
-                    <option th:each="t : ${tipos}" th:text="${t.descricao}" th:value="${t.id}"></option>
-                </select>
-            </div>
+<html lang="pt-br" th:insert="~{template :: modelo}" xmlns:th="http://www.thymeleaf.org">
+	<section th:fragment="conteudo">
+		<form action="/jdbc/contato/cadastrar" method="post" th:object="${contato}">
+			<div class="mb-3">
+				<label class="form-label" for="nome">Nome</label>
+				<input class="form-control" id="nome" th:field="*{nome}" type="text" />
+			</div>
+			<div class="mb-3">
+				<label class="form-label" for="telefone">Telefone</label>
+				<input class="form-control" id="telefone" th:field="*{telefone}" type="tel" />
+			</div>
+			<div class="mb-3">
+				<label class="form-label" for="endereco">Endereço</label>
+				<input class="form-control" id="endereco" th:field="*{endereco}" type="text" />
+			</div>
+			<div class="mb-3">
+				<label class="form-label" for="descricao">Tipo</label>
+				<select class="form-control" id="descricao" th:field="*{tipo.id}">
+					<option th:each="t : ${tipos}" th:text="${t.descricao}" th:value="${t.id}"></option>
+				</select>
+			</div>
 
-            <button class="btn btn-primary" type="submit">Gravar</button>
-        </form>
-    </section>
+			<button class="btn btn-primary" type="submit">Gravar</button>
+		</form>
+	</section>
 </html>

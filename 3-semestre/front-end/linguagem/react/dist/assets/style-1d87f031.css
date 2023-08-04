@@ -1,6 +1,1 @@
-.secao-avaliacao {
-	display: flex;
-	justify-content: center;
-	gap: 3rem;
-	flex-wrap: wrap;
-}
+.secao-avaliacao{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap}

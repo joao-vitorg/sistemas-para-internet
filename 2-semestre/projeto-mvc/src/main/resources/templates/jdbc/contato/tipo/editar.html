@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="pt-br" th:include="template :: modelo" xmlns:th="http://www.thymeleaf.org">
-<section th:fragment="conteudo">
-    <form action="/jdbc/contato/tipo/editar" method="post" th:object="${tipo}">
-        <label class="d-none"><input readonly th:field="*{id}"/></label>
-        <div class="mb-3">
-            <label class="form-label" for="descricao">Descrição</label>
-            <input class="form-control" id="descricao" th:field="*{descricao}" type="text"/>
-        </div>
-        <button class="btn btn-primary" type="submit">Gravar</button>
-    </form>
-</section>
+<html lang="pt-br" th:insert="~{template :: modelo}" xmlns:th="http://www.thymeleaf.org">
+	<section th:fragment="conteudo">
+		<form action="/jdbc/contato/tipo/editar" method="post" th:object="${tipo}">
+			<label class="d-none"><input readonly th:field="*{id}" /></label>
+			<div class="mb-3">
+				<label class="form-label" for="descricao">Descrição</label>
+				<input class="form-control" id="descricao" th:field="*{descricao}" type="text" />
+			</div>
+			<button class="btn btn-primary" type="submit">Gravar</button>
+		</form>
+	</section>
 </html>

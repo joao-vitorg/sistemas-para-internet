@@ -18,7 +18,7 @@ public class ProfessorController {
         this.repository = repository;
     }
 
-    @GetMapping()
+    @GetMapping(value = {"", "/"})
     public String index(Model model) {
         model.addAttribute("professores", repository.findAll());
         return "jdbc/professor/index";

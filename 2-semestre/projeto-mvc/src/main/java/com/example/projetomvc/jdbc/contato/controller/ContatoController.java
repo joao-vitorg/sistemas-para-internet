@@ -21,40 +21,40 @@ public class ContatoController {
         this.tipoRepository = tipoRepository;
     }
 
-    @GetMapping()
+    @GetMapping(value = {"", "/"})
     public String index(Model model) {
         model.addAttribute("contatos", contatoRepository.findAll());
         model.addAttribute("tipos", tipoRepository.findAll());
         return "jdbc/contato/index";
     }
 
-    @GetMapping("cadastrar")
+    @GetMapping("/cadastrar")
     public String cadastro(Model model) {
         model.addAttribute("contato", new Contato());
         model.addAttribute("tipos", tipoRepository.findAll());
         return "jdbc/contato/cadastrar";
     }
 
-    @PostMapping("cadastrar")
+    @PostMapping("/cadastrar")
     public String cadastro(Contato contato) {
         contatoRepository.save(contato);
         return "redirect:";
     }
 
-    @GetMapping("editar")
+    @GetMapping("/editar")
     public String editar(@RequestParam(value = "id") Integer id, Model model) {
         model.addAttribute("contato", contatoRepository.findById(id));
         model.addAttribute("tipos", tipoRepository.findAll());
         return "jdbc/contato/editar";
     }
 
-    @PostMapping("editar")
+    @PostMapping("/editar")
     public String editar(Contato contato) {
         contatoRepository.update(contato);
         return "redirect:";
     }
 
-    @GetMapping("excluir")
+    @GetMapping("/excluir")
     public String excluir(@RequestParam(value = "id") Integer id) {
         contatoRepository.delete(id);
         return "redirect:";

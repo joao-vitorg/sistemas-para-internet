@@ -1,40 +1,40 @@
 <!DOCTYPE html>
-<html lang="pt-br" th:include="template :: modelo" xmlns:th="http://www.thymeleaf.org">
-    <div th:fragment="conteudo">
-        <div class="row">
-            <div class="col-3">
-                <h1>Some Favorites</h1>
-                <ul class="navbar-nav">
-                    <li><a class="text-decoration-none" href="#">Celery Root</a></li>
-                    <li><a class="text-decoration-none" href="#">Spaghetti Squash</a></li>
-                    <li><a class="text-decoration-none" href="#">Killer Mushrooms</a></li>
-                </ul>
-                <form class="row">
-                    <div class="col-auto">
-                        <label>
-                            <input class="form-control" type="text" />
-                        </label>
-                    </div>
-                    <div class="col-auto">
-                        <input class="btn btn-primary" type="button" value="Search Recipes" />
-                    </div>
-                </form>
-            </div>
+<html lang="pt-br" th:insert="~{template :: modelo}" xmlns:th="http://www.thymeleaf.org">
+	<div th:fragment="conteudo">
+		<div class="row">
+			<div class="col-3">
+				<h1>Some Favorites</h1>
+				<ul class="navbar-nav">
+					<li><a class="text-decoration-none" href="#">Celery Root</a></li>
+					<li><a class="text-decoration-none" href="#">Spaghetti Squash</a></li>
+					<li><a class="text-decoration-none" href="#">Killer Mushrooms</a></li>
+				</ul>
+				<form class="row">
+					<div class="col-auto">
+						<label>
+							<input class="form-control" type="text" />
+						</label>
+					</div>
+					<div class="col-auto">
+						<input class="btn btn-primary" type="button" value="Search Recipes" />
+					</div>
+				</form>
+			</div>
 
-            <div class="col-9">
-                <h1>Wild & Wacky Vegetables</h1>
-                <p>
-                    Kale courgette salsify mustard broccoli seakale wakame potato fava bean tigernut leek celery spinach avocado cabbage celtuce rutabaga kohlrabi. Parsnip pea soko
-                    groundnut bitterleaf spring onion. Grape dulse rutabaga lentil gram kakadu plum water spinach cabbage lotus root.
-                </p>
-                <p>
-                    Mung bean quandong kale prairie turnip celery gram zucchini pumpkin green bean silver beet chard endive komatsuna eggplant kakadu plum radish broccoli. Arugula
-                    amaranth fennel wakame peanut garlic chickweed. Sorrel jícama quandong kale chickpea water chestnut rock melon aubergine lettuce pea azuki bean cress onion sea
-                    lettuce dandelion nori dulse rutabaga. Coriander napa cabbage bok choy carrot kakadu plum brussels sprout bamboo shoot salad okra cucumber garlic kombu beet
-                    greens cauliflower summer purslane. Artichoke daikon horseradish arugula taro catsear kombu rock melon pea sprouts collard greens mustard courgette lettuce soko
-                    maize plantain.
-                </p>
-            </div>
-        </div>
-    </div>
+			<div class="col-9">
+				<h1>Wild & Wacky Vegetables</h1>
+				<p>
+					Kale courgette salsify mustard broccoli seakale wakame potato fava bean tigernut leek celery spinach avocado cabbage celtuce rutabaga
+					kohlrabi. Parsnip pea soko groundnut bitterleaf spring onion. Grape dulse rutabaga lentil gram kakadu plum water spinach cabbage lotus root.
+				</p>
+				<p>
+					Mung bean quandong kale prairie turnip celery gram zucchini pumpkin green bean silver beet chard endive komatsuna eggplant kakadu plum
+					radish broccoli. Arugula amaranth fennel wakame peanut garlic chickweed. Sorrel jícama quandong kale chickpea water chestnut rock melon
+					aubergine lettuce pea azuki bean cress onion sea lettuce dandelion nori dulse rutabaga. Coriander napa cabbage bok choy carrot kakadu plum
+					brussels sprout bamboo shoot salad okra cucumber garlic kombu beet greens cauliflower summer purslane. Artichoke daikon horseradish arugula
+					taro catsear kombu rock melon pea sprouts collard greens mustard courgette lettuce soko maize plantain.
+				</p>
+			</div>
+		</div>
+	</div>
 </html>

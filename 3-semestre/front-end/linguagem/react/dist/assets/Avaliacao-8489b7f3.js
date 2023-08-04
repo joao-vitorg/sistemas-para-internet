@@ -1,1 +1,0 @@
-import{j as a,a as i}from"./index-70105e74.js";function n({foto:c,nome:r,avaliacao1:l,avaliacao2:o}){return a("div",{className:"avaliacao",children:[i("img",{src:`./img/${c}`,alt:"Foto"}),a("div",{children:[i("p",{children:r}),a("p",{children:['"',l,'"']}),a("p",{children:['"',o,'"']})]})]})}export{n as A};

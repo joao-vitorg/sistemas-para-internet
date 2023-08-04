@@ -1,42 +1,42 @@
 <!DOCTYPE html>
-<html lang="pt-br" th:include="template :: modelo" xmlns:th="http://www.thymeleaf.org">
-    <div th:fragment="conteudo">
-        <h1>Thymeleaf fragments</h1>
+<html lang="pt-br" th:insert="~{template :: modelo}" xmlns:th="http://www.thymeleaf.org">
+	<div th:fragment="conteudo">
+		<h1>Thymeleaf fragments</h1>
 
-        <div th:replace="provas/primeira/bannerElement :: banner"></div>
+		<div th:replace="~{provas/primeira/bannerElement :: banner}"></div>
 
-        <h2>Product information</h2>
-        <dl>
-            <dt>Product name</dt>
-            <dd th:text="${product.description}">Red chair</dd>
+		<h2>Product information</h2>
+		<dl>
+			<dt>Product name</dt>
+			<dd th:text="${product.description}">Red chair</dd>
 
-            <dt>Product price</dt>
-            <dd th:text="${product.price}">350</dd>
+			<dt>Product price</dt>
+			<dd th:text="${product.price}">350</dd>
 
-            <dt>Product available from</dt>
-            <dd th:text="${product.availableFrom}">28-Jun-2013</dd>
-        </dl>
+			<dt>Product available from</dt>
+			<dd th:text="${product.availableFrom}">28-Jun-2013</dd>
+		</dl>
 
-        <div th:replace="provas/primeira/bannerElement :: banner"></div>
+		<div th:replace="~{provas/primeira/bannerElement :: banner}"></div>
 
-        <h2>Customer information</h2>
-        <dl>
-            <dt>First name</dt>
-            <dd th:text="${customer.firstName}">John</dd>
+		<h2>Customer information</h2>
+		<dl>
+			<dt>First name</dt>
+			<dd th:text="${customer.firstName}">John</dd>
 
-            <dt>Last name</dt>
-            <dd th:text="${customer.lastName}">Smith</dd>
+			<dt>Last name</dt>
+			<dd th:text="${customer.lastName}">Smith</dd>
 
-            <dt>Genre</dt>
-            <dd th:text="${customer.gender}">Male</dd>
+			<dt>Genre</dt>
+			<dd th:text="${customer.gender}">Male</dd>
 
-            <dt>Payment method</dt>
-            <dd th:text="${customer.payment}">Credit card</dd>
+			<dt>Payment method</dt>
+			<dd th:text="${customer.payment}">Credit card</dd>
 
-            <dt>Balance</dt>
-            <dd th:text="'$' + ${customer.balance}">$350</dd>
-        </dl>
+			<dt>Balance</dt>
+			<dd th:text="'$' + ${customer.balance}">$350</dd>
+		</dl>
 
-        <div th:replace="provas/primeira/bannerElement :: banner"></div>
-    </div>
+		<div th:replace="~{provas/primeira/bannerElement :: banner}"></div>
+	</div>
 </html>

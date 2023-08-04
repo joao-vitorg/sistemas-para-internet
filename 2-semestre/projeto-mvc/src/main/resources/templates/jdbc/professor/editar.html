@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="pt-br" th:include="template :: modelo" xmlns:th="http://www.thymeleaf.org">
-    <div th:fragment="conteudo">
-        <form action="/jdbc/professor/editar" method="post" th:object="${Professor}">
-            <label class="d-none"><input readonly th:field="*{id}" /></label>
+<html lang="pt-br" th:insert="~{template :: modelo}" xmlns:th="http://www.thymeleaf.org">
+	<div th:fragment="conteudo">
+		<form action="/jdbc/professor/editar" method="post" th:object="${Professor}">
+			<label class="d-none"><input readonly th:field="*{id}" /></label>
 
-            <div class="mb-3">
-                <label for="nome">Nome</label>
-                <input class="form-control" id="nome" th:field="*{nome}" type="text" />
-            </div>
+			<div class="mb-3">
+				<label for="nome">Nome</label>
+				<input class="form-control" id="nome" th:field="*{nome}" type="text" />
+			</div>
 
-            <button class="btn btn-primary" type="submit">Gravar</button>
-        </form>
-    </div>
+			<button class="btn btn-primary" type="submit">Gravar</button>
+		</form>
+	</div>
 </html>

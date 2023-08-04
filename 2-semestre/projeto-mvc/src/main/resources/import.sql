@@ -1,5 +1,5 @@
 -- Database professor com nome
-create database professor;
+create or replace database professor;
 use professor;
 create table professor
 (
@@ -8,7 +8,7 @@ create table professor
 );
 
 -- Database contato com nome telefone, endereço e tipo com descrição
-create database contato;
+create or replace database contato;
 use contato;
 create table tipo
 (
