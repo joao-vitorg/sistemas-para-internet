@@ -9,9 +9,9 @@ interface props {
 	imagem: ImageSourcePropType;
 }
 
-export default function({ titulo, texto, imagem }: props) {
+export default function ({ titulo, texto, imagem }: props) {
 	return (
-		<View>
+		<View className={"p-2"}>
 			<Titulo titulo={titulo} />
 			<Paragrafo texto={texto} />
 			<Imagem imagem={imagem} />
