@@ -13,5 +13,14 @@ services:
     ports:
       - "3306:3306"
 
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    volumes:
+      - mongodb:/data/db
+    ports:
+      - "27017:27017"
+
 volumes:
   mariadb:
+  mongodb:
