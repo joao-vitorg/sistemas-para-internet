@@ -3,27 +3,27 @@ import { View } from "react-native";
 
 export default function () {
 	return (
-		<View className={"p-3 gap-3"}>
+		<View className={"gap-3 p-3"}>
 			<Link href={"/introducao/ex01"} className={"text-xl font-bold"}>
-				Exercício 2.1
+				Atividade 2.1
 			</Link>
 			<Link href={"/introducao/ex02"} className={"text-xl font-bold"}>
-				Exercício 2.2
+				Atividade 2.2
 			</Link>
 			<Link href={"/introducao/ex03"} className={"text-xl font-bold"}>
-				Exercício 2.3
+				Atividade 2.3
 			</Link>
 			<Link href={"/introducao/ex04"} className={"text-xl font-bold"}>
-				Exercício 2.4
+				Atividade 2.4
 			</Link>
 			<Link href={"/introducao/ex05"} className={"text-xl font-bold"}>
-				Exercício 2.5
+				Atividade 2.5
 			</Link>
 			<Link href={"/introducao/ex06"} className={"text-xl font-bold"}>
-				Exercício 3
+				Atividade 3
 			</Link>
 			<Link href={"/introducao/ex07"} className={"text-xl font-bold"}>
-				Exercício card
+				Atividade card
 			</Link>
 		</View>
 	);
