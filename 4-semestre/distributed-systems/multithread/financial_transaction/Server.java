@@ -10,8 +10,8 @@ public class Server {
 
         while (true) {
             Socket connection = server.accept();
-            SocketThread socketThread = new SocketThread(connection);
-            Thread thread = new Thread(socketThread);
+            ServerClient serverClient = new ServerClient(connection);
+            Thread thread = new Thread(serverClient);
             thread.start();
         }
     }
