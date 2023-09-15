@@ -5,8 +5,8 @@ import java.time.Instant;
 
 public class Transaction {
     private final double value;
-    private final Instant timestamp = Instant.now();
-    private final int network = (int) (Math.random() * 100_000);
+    private final Instant timestamp;
+    private final int network;
     private final PaymentType paymentType;
     private int nsu;
     private int responseCode;
@@ -14,6 +14,15 @@ public class Transaction {
     public Transaction(double value, PaymentType paymentType) {
         this.value = value;
         this.paymentType = paymentType;
+        timestamp = Instant.now();
+        network = (int) (Math.random() * 100_000);
+    }
+
+    public Transaction(ByteBuffer buffer) {
+        this.value = buffer.getDouble();
+        this.timestamp = Instant.ofEpochSecond(buffer.getInt());
+        this.network = buffer.getInt();
+        this.paymentType = PaymentType.values()[buffer.get()];
     }
 
     public byte[] toByteArray() {
@@ -64,6 +73,8 @@ public class Transaction {
                 ", timestamp=" + timestamp +
                 ", network=" + network +
                 ", paymentType=" + paymentType +
+                ", nsu=" + nsu +
+                ", responseCode=" + responseCode +
                 '}';
     }
 }

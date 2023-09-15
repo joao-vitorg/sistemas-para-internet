@@ -8,16 +8,16 @@ public class Card {
     private final long number;
     private final String clientName;
     private final Set<Transaction> transactions = new HashSet<>();
+    private double balance;
 
-    public Card(long number, String clientName) {
+    public Card(long number, String clientName, double balance) {
         this.number = number;
         this.clientName = clientName;
+        this.balance = balance;
     }
 
-    public Transaction addTransaction(double value, PaymentType paymentType) {
-        Transaction transaction = new Transaction(value, paymentType);
+    public void addTransaction(Transaction transaction) {
         transactions.add(transaction);
-        return transaction;
     }
 
     public long getNumber() {
@@ -28,8 +28,16 @@ public class Card {
         return clientName;
     }
 
+    public double getBalance() {
+        return balance;
+    }
+
     public Set<Transaction> getTransactions() {
         return Collections.unmodifiableSet(transactions);
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
 
     @Override
@@ -37,6 +45,7 @@ public class Card {
         return "Card{" +
                 "number=" + number +
                 ", clientName='" + clientName + '\'' +
+                ", balance=" + balance +
                 ", transactions=" + transactions +
                 '}';
     }
