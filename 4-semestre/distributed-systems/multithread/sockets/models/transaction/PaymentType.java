@@ -1,4 +1,4 @@
-package financial_transaction.models;
+package sockets.models.transaction;
 
 public enum PaymentType {
     DEBIT,

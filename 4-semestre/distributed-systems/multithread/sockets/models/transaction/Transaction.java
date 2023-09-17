@@ -1,7 +1,8 @@
-package financial_transaction.models;
+package sockets.models.transaction;
 
 import java.nio.ByteBuffer;
 import java.time.Instant;
+import java.util.Objects;
 
 public class Transaction {
     private final double value;
@@ -14,8 +15,8 @@ public class Transaction {
     public Transaction(double value, PaymentType paymentType) {
         this.value = value;
         this.paymentType = paymentType;
-        timestamp = Instant.now();
-        network = (int) (Math.random() * 100_000);
+        this.timestamp = Instant.now();
+        this.network = (int) (Math.random() * 100_000);
     }
 
     public Transaction(ByteBuffer buffer) {
@@ -67,14 +68,15 @@ public class Transaction {
     }
 
     @Override
-    public String toString() {
-        return "Transaction{" +
-                "value=" + value +
-                ", timestamp=" + timestamp +
-                ", network=" + network +
-                ", paymentType=" + paymentType +
-                ", nsu=" + nsu +
-                ", responseCode=" + responseCode +
-                '}';
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Transaction that = (Transaction) o;
+        return Double.compare(value, that.value) == 0 && network == that.network && nsu == that.nsu && responseCode == that.responseCode && Objects.equals(timestamp, that.timestamp) && paymentType == that.paymentType;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(value, timestamp, network, paymentType, nsu, responseCode);
     }
 }
