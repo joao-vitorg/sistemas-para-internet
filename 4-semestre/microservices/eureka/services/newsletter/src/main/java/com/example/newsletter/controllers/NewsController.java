@@ -27,7 +27,7 @@ public class NewsController {
     }
 
     @PostMapping
-    public News create(@RequestBody NewsDto newsDto) {
+    public String create(@RequestBody NewsDto newsDto) {
         return service.create(newsDto);
     }
 

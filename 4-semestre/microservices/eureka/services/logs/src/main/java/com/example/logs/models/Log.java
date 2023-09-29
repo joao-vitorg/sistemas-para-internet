@@ -6,5 +6,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.time.Instant;
 
 @Document
-public record Log(@Id String id, String action, Instant date, Object object, String classType) {
+public record Log(@Id String id, Action action, Instant date, String news) {
+    public Log(LogDto logDto) {
+        this(null, logDto.action(), logDto.date(), logDto.news());
+    }
 }

@@ -1,4 +1,4 @@
-package com.example.newsletter.models.log;
+package com.example.logs.models;
 
 import java.time.Instant;
 

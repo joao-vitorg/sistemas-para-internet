@@ -1,11 +1,16 @@
 spring:
   application:
-    name: newsletter-service
+    name: newsletter
   data:
     mongodb:
       port: 27017
       host: localhost
       database: microservices
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
 server:
   port: ${PORT:0}

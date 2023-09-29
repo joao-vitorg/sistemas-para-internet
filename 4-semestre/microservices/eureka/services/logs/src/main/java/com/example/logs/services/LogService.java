@@ -2,6 +2,7 @@ package com.example.logs.services;
 
 import com.example.logs.models.Log;
 import com.example.logs.repositories.LogRepository;
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,7 +19,9 @@ public class LogService {
         return logRepository.findAll();
     }
 
-    public Log create(Log log) {
-        return logRepository.save(log);
+    @RabbitListener(queues = "test")
+    public void create(String logDto) {
+        System.out.println(logDto);
+//        return logRepository.save(new Log(logDto));
     }
 }
