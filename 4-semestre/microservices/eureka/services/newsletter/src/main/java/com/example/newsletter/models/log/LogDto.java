@@ -1,6 +1,6 @@
 package com.example.newsletter.models.log;
 
-import java.time.Instant;
+import java.util.Date;
 
-public record LogDto(Action action, Instant date, String news) {
+public record LogDto(Action action, Date date, String news) {
 }
