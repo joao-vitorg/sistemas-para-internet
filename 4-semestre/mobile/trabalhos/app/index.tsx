@@ -11,6 +11,9 @@ export default function () {
 				<Link href={"/flatlist/"} className={"text-xl font-bold"}>
 					FlatList
 				</Link>
+				<Link href={"/network/"} className={"text-xl font-bold"}>
+					Network
+				</Link>
 			</View>
 		</View>
 	);
