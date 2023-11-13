@@ -28,6 +28,18 @@ services:
       - "5672:5672"
       - "15672:15672"
 
+  neo4j:
+    image: neo4j:latest
+    container_name: neo4j
+    environment:
+      - NEO4J_AUTH=neo4j/test1234
+    volumes:
+      - neo4j:/data
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+
 volumes:
   mariadb:
   mongodb:
+  neo4j:
