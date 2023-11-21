@@ -14,6 +14,9 @@ export default function () {
 				<Link href={"/network/"} className={"text-xl font-bold"}>
 					Network
 				</Link>
+				<Link href={"/firebase/"} className={"text-xl font-bold"}>
+					Firebase
+				</Link>
 			</View>
 		</View>
 	);
