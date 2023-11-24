@@ -17,6 +17,9 @@ export default function () {
 				<Link href={"/firebase/"} className={"text-xl font-bold"}>
 					Firebase
 				</Link>
+				<Link href={"/sheet/"} className={"text-xl font-bold"}>
+					Google Sheets
+				</Link>
 			</View>
 		</View>
 	);
